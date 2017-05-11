@@ -1,0 +1,32 @@
+# Header
+menu:
+  主页: /
+  归档: /archives
+  代码仓库: https://github.com/Fanlee
+  #RSS: /atom.xml
+
+# Content
+excerpt_link: 更多内容
+prev: 上一页
+next: 下一页
+reply: 评论
+share: 分享
+fancybox: true
+
+# Sidebar
+widgets:
+- search
+- music
+- category
+- recent_posts
+- tag
+- tagcloud
+
+# Miscellaneous
+google_analytics:
+duoshuo_shortname: 
+rss: 
+google_site_verification: 
+baidu_site_verification: 
+favicon: 
+music: 
