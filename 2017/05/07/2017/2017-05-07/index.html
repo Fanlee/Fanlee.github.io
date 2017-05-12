@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="数组去重" />
+  
+
+  
+  <meta name="keywords" content="javascript" />
+  
+  
+  
+  
+  
+  
+  <title>JS的数组去重 | lihuan&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="数组去重">
+<meta name="keywords" content="javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS的数组去重">
+<meta property="og:url" content="http://yoursite.com/2017/05/07/2017/2017-05-07/index.html">
+<meta property="og:site_name" content="lihuan&#39;s Blog">
+<meta property="og:description" content="数组去重">
+<meta property="og:updated_time" content="2017-05-12T01:03:29.573Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS的数组去重">
+<meta name="twitter:description" content="数组去重">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+  <!-- baidu webmaster push -->
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="lihuan&#39;s Blog" rel="home">lihuan&#39;s Blog</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">前端狗一只...</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">主页</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">归档</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://github.com/Fanlee">代码仓库</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-2017/2017-05-07" class="post-2017/2017-05-07 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title article-title">
+      JS的数组去重
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2017/05/07/2017/2017-05-07/" data-id="cj2l75cks0004rsucfh68kewj" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <h3 id="判断浏览器是否支持indexOf方法"><a href="#判断浏览器是否支持indexOf方法" class="headerlink" title="判断浏览器是否支持indexOf方法"></a>判断浏览器是否支持indexOf方法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//判断是否支持indexOf方法</span></div><div class="line"><span class="keyword">if</span>(!<span class="built_in">Array</span>.prototype.indexOf)&#123;</div><div class="line">  <span class="built_in">Array</span>.prototype.indexOf = <span class="function"><span class="keyword">function</span> (<span class="params">item</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> result = <span class="number">-1</span>;</div><div class="line">    <span class="comment">//数组为空的时候返回-1</span></div><div class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.length == <span class="number">0</span>) &#123;</div><div class="line">      <span class="keyword">return</span> result;</div><div class="line">    &#125;;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.length; i++) &#123;</div><div class="line">      <span class="keyword">if</span> (<span class="keyword">this</span>[i] === item) &#123;</div><div class="line">        <span class="comment">//当当前项的值与参数值相等的时候，结束循环</span></div><div class="line">        result = i;</div><div class="line">        <span class="keyword">break</span>;</div><div class="line">      &#125;</div><div class="line">    &#125;;</div><div class="line">    <span class="keyword">return</span> result;</div><div class="line">  &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="遍历数组法：新建一新数组，遍历数组，值不在新数组中就加入新数组"><a href="#遍历数组法：新建一新数组，遍历数组，值不在新数组中就加入新数组" class="headerlink" title="遍历数组法：新建一新数组，遍历数组，值不在新数组中就加入新数组"></a>遍历数组法：新建一新数组，遍历数组，值不在新数组中就加入新数组</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">unique</span>(<span class="params">array</span>)</span>&#123;</div><div class="line">    <span class="comment">//新建数组</span></div><div class="line">	<span class="keyword">var</span> newArr = [];</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++)&#123;</div><div class="line">	  <span class="comment">//值不在新数组中就添加到新数组</span></div><div class="line">	  <span class="keyword">if</span>(newArr.indexOf(array[i]) == <span class="number">-1</span>)&#123;</div><div class="line">		newArr.push(array[i]);</div><div class="line">	  &#125;</div><div class="line">	&#125;;</div><div class="line">	<span class="keyword">return</span> newArr</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
+<h3 id="对象键值法：该方法执行速度比其他任何方法都快，就是占用内存大一些。新建一JS对象和数组，遍历传入数组时，判断值是否为JS对象的值，不是的话给对象新增该键并放入新数组。注意点，判断是否为JS对象键时，会自动对传入的键执行”toString-”-不同的键可能会被误认为一样。"><a href="#对象键值法：该方法执行速度比其他任何方法都快，就是占用内存大一些。新建一JS对象和数组，遍历传入数组时，判断值是否为JS对象的值，不是的话给对象新增该键并放入新数组。注意点，判断是否为JS对象键时，会自动对传入的键执行”toString-”-不同的键可能会被误认为一样。" class="headerlink" title="对象键值法：该方法执行速度比其他任何方法都快，就是占用内存大一些。新建一JS对象和数组，遍历传入数组时，判断值是否为JS对象的值，不是的话给对象新增该键并放入新数组。注意点，判断是否为JS对象键时，会自动对传入的键执行”toString()”,不同的键可能会被误认为一样。"></a>对象键值法：该方法执行速度比其他任何方法都快，就是占用内存大一些。新建一JS对象和数组，遍历传入数组时，判断值是否为JS对象的值，不是的话给对象新增该键并放入新数组。注意点，判断是否为JS对象键时，会自动对传入的键执行”toString()”,不同的键可能会被误认为一样。</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">unique</span>(<span class="params">array</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> obj = &#123;&#125;,</div><div class="line">          newArr = [],</div><div class="line">          len = array.length,</div><div class="line">          val,</div><div class="line">          type;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</div><div class="line">      val = array[i];</div><div class="line">      <span class="comment">//获取值的数据类型</span></div><div class="line">      type = <span class="keyword">typeof</span> val;</div><div class="line">      <span class="comment">//判断值是否存在</span></div><div class="line">      <span class="keyword">if</span> (!obj[val]) &#123;</div><div class="line">        <span class="comment">//把type以数组的形式存入便于用indexOf对比</span></div><div class="line">        obj[val] = [type];</div><div class="line">        newArr.push(val);</div><div class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span>(obj[val].indexOf(type) &lt; <span class="number">0</span>) &#123;  <span class="comment">//值存在的情况下判断是否是相同的数据类型</span></div><div class="line">        obj[val].push(type);</div><div class="line">        newArr.push(val);</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> newArr;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<h3 id="数组下标判断法：当前数组的第i项在当前数组中第一次出现的位置不是i，那么表示第i项是重复的。"><a href="#数组下标判断法：当前数组的第i项在当前数组中第一次出现的位置不是i，那么表示第i项是重复的。" class="headerlink" title="数组下标判断法：当前数组的第i项在当前数组中第一次出现的位置不是i，那么表示第i项是重复的。"></a>数组下标判断法：当前数组的第i项在当前数组中第一次出现的位置不是i，那么表示第i项是重复的。</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">unique</span>(<span class="params">array</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> newArr = [array[<span class="number">0</span>]];</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; array.length; i++) &#123;</div><div class="line">      <span class="comment">//判断第i项出现位置下标</span></div><div class="line">      <span class="keyword">if</span> (array.indexOf(array[i]) == i) &#123;</div><div class="line">        newArr.push(array[i])</div><div class="line">      &#125;;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> newArr;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+<h3 id="排序后相邻去除法：给传入数组排序，排序后相同值相邻，然后遍历时新数组只加入不与前一值重复的值。"><a href="#排序后相邻去除法：给传入数组排序，排序后相同值相邻，然后遍历时新数组只加入不与前一值重复的值。" class="headerlink" title="排序后相邻去除法：给传入数组排序，排序后相同值相邻，然后遍历时新数组只加入不与前一值重复的值。"></a>排序后相邻去除法：给传入数组排序，排序后相同值相邻，然后遍历时新数组只加入不与前一值重复的值。</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">unique</span>(<span class="params">array</span>)</span>&#123;</div><div class="line">    <span class="comment">//先排序</span></div><div class="line">    array.sort();</div><div class="line">    <span class="keyword">var</span> newArr = [array[<span class="number">0</span>]];</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i =<span class="number">1</span>; i &lt; array.length; i++) &#123;</div><div class="line">      <span class="comment">//newArr最后一项就是array[i]的前一项</span></div><div class="line">      <span class="keyword">if</span>(array[i]  !== newArr[newArr.length - <span class="number">1</span>])&#123;</div><div class="line">        newArr.push(array[i]);</div><div class="line">      &#125;;</div><div class="line">    &#125;;</div><div class="line">    <span class="keyword">return</span> newArr;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+<h3 id="获取没重复的最右一值放入新数组。检测到有重复值时终止当前循环同时进入顶层循环的下一轮判断"><a href="#获取没重复的最右一值放入新数组。检测到有重复值时终止当前循环同时进入顶层循环的下一轮判断" class="headerlink" title="获取没重复的最右一值放入新数组。检测到有重复值时终止当前循环同时进入顶层循环的下一轮判断"></a>获取没重复的最右一值放入新数组。检测到有重复值时终止当前循环同时进入顶层循环的下一轮判断</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">unique</span>(<span class="params">array</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> r = [];</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>, len = array.length; i &lt; len; i++)&#123;</div><div class="line">      <span class="keyword">for</span>(<span class="keyword">var</span> j = i + <span class="number">1</span>; j &lt; len; j++)&#123;</div><div class="line">        <span class="keyword">if</span>(array[i] === array[j])&#123;</div><div class="line">          <span class="comment">//当两个值相同的时候,i在内循环自增1，相当于跳出本次循环，执行下一次，当前值就不能添加到新数组</span></div><div class="line">          j = ++i;</div><div class="line">        &#125;;</div><div class="line">      &#125;</div><div class="line">      r.push(array[i]);</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> r;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2017/05/07/2017/2017-05-07/">
+    <time datetime="2017-05-07T13:13:48.000Z" class="entry-date">
+        2017-05-07
+    </time>
+</a>
+    
+  <span class="article-delim">&#8226;</span>
+  <div class="article-category">
+  <a class="article-category-link" href="/categories/学习笔记/">学习笔记</a>
+  </div>
+
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+
+</div></div>
+        <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="aboutMe" class="widget widget_search">
+  <aside class="widget">
+    <h3 class="widget-title">关于我</h3>
+    <div class="widget-content">
+	  <img src="/css/images/avatar.jpg" width="100"/>
+      <p>邮箱: yd_lihuan@163.com</p>
+	  <p>QQ:549999028</p>
+    </div>
+  </aside>
+</aside>
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget-content">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/学习笔记/">学习笔记</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/2017/05/07/2017/2017-05-07/">JS的数组去重</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-content">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-content tagcloud">
+      <a href="/tags/javascript/" style="font-size: 10px;">javascript</a>
+    </div>
+  </aside>
+
+  
+</div>
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2017 李欢
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</footer>
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+</body>
+</html>
