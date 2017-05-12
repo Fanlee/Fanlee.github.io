@@ -35,7 +35,7 @@ titlecase: false #是否将标题转换成标题形式（首字母大写）
 external_link: true #在新标签页面中打开网页
 filename_case: 0
 render_drafts: false
-post_asset_folder: false #启动 Asset 文件夹
+post_asset_folder: true #启动 Asset 文件夹
 relative_link: false #把链接改为与根目录的相对位址
 future: true
 highlight: #代码块的设置
