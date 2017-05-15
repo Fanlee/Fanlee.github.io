@@ -68,6 +68,61 @@
       <div id="main" class="wrapper">
         <div id="primary" class="site-content"><div id="content" role="main">
   
+    <article id="post-2017-05-15-css之position属性" class="post-2017-05-15-css之position属性 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2017/05/15/2017-05-15-css之position属性/" data-id="cj2phqyz40002w8ucrdk420h1" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <h1 id="css之position属性"><a href="#css之position属性" class="headerlink" title="css之position属性"></a>css之position属性</h1><hr>
+<p>title: css之position属性<br>date: 2017-05-12<br>categories: 学习笔记<br>tags: CSS<br>keywords: CSS<br>description: position</p>
+<h2 id="comments-true"><a href="#comments-true" class="headerlink" title="comments: true"></a>comments: true</h2><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><blockquote>
+<p>position CSS属性选择用于定位元素的替代规则，被设计为对脚本动画效果有用。</p>
+</blockquote>
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 关键字  值 */</span></div><div class="line"><span class="attribute">position</span>: static;</div><div class="line"><span class="attribute">position</span>: relative;</div><div class="line"><span class="attribute">position</span>: absolute;</div><div class="line"><span class="attribute">position</span>: fixed;</div><div class="line"><span class="attribute">position</span>: sticky; <span class="comment">//实验性API</span></div><div class="line"></div><div class="line"><span class="comment">/* 全局值 */</span></div><div class="line"><span class="attribute">position</span>: inherit;</div><div class="line"><span class="attribute">position</span>: initial;</div><div class="line"><span class="attribute">position</span>: unset;</div></pre></td></tr></table></figure>
+<h3 id="static-元素默认定位属性"><a href="#static-元素默认定位属性" class="headerlink" title="static 元素默认定位属性"></a>static 元素默认定位属性</h3><p>默认值。没有定位，元素出现在正常的文档流中，忽略top, right, bottom, left, z-index声明。</p>
+<h3 id="relative-相对定位"><a href="#relative-相对定位" class="headerlink" title="relative 相对定位"></a>relative 相对定位</h3><p>相对自己文档流中的原始位置进行定位，<strong>不会脱离文档流</strong>。<br><img src="http://optwq0urg.bkt.clouddn.com/blog/20170512/165119169.png?imageslim" alt=""><br>上图给test4加上了position:relative效果，代码如下<br><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">position</span>: relative; <span class="attribute">top</span>:<span class="number">10px</span>; <span class="attribute">left</span>:-<span class="number">20px</span></div></pre></td></tr></table></figure></p>
+<p>可以看出test4并没有对周围的元素造成影响， 它还是存在于正常的文档流中。position:relative对 table-*-group, table-row, table-column, table-cell, table-caption 元素没有效果。</p>
+<h3 id="absolute-绝对定位"><a href="#absolute-绝对定位" class="headerlink" title="absolute 绝对定位"></a>absolute 绝对定位</h3><ol>
+<li><p>相对于static定位以外的第一个父元素进行定位， <strong>脱离文档流</strong><br><img src="http://optwq0urg.bkt.clouddn.com/blog/20170512/170435114.png?imageslim" alt="mark"><br>上图给test4加上了position:absolute效果<br>明显可以看到test4从正常的文档流中脱离了出来， test5填补了test4原本的位置。 </p>
+</li>
+<li><p>绝对定位元素可以设置外边距，且不会与其他边距合并<br>CSS代码</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span>&#123;</div><div class="line">  <span class="attribute">margin</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">padding</span>: <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.box</span> &#123;</div><div class="line">  <span class="attribute">position</span>: relative;</div><div class="line">  <span class="attribute">width</span>: <span class="number">500px</span>;</div><div class="line">  <span class="attribute">height</span>: <span class="number">200px</span>;</div><div class="line">  <span class="attribute">background</span>: lightseagreen;</div><div class="line">  <span class="attribute">margin</span>: <span class="number">30px</span></div><div class="line">&#125;</div><div class="line"><span class="selector-class">.box1</span> &#123;</div><div class="line">  <span class="attribute">position</span>: absolute;</div><div class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">margin</span>: <span class="number">20px</span>;</div><div class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</div><div class="line">  <span class="attribute">height</span>: <span class="number">50px</span>;</div><div class="line">  <span class="attribute">background</span>: red</div><div class="line">&#125;<span class="selector-tag">eight</span>: 50<span class="selector-tag">px</span>;</div><div class="line"><span class="selector-tag">background</span>: <span class="selector-tag">red</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>HTML代码<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"box"</span>&gt;</div><div class="line">  &lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"box1"</span>&gt;absolute定位元素&lt;/<span class="keyword">div</span>&gt;</div><div class="line">&lt;/<span class="keyword">div</span>&gt;</div></pre></td></tr></table></figure></p>
+<p>效果图<br><img src="http://optwq0urg.bkt.clouddn.com/blog/20170512/171943995.png?imageslim" alt="mark"></p>
+<h3 id="sticky"><a href="#sticky" class="headerlink" title="sticky"></a>sticky</h3><p>position:sticky是一个新的CSS3属性，它的表现类似position:relative和position:fixed的合体，在目标区域在屏幕中可见时，它的行为就像position:relative; 而当页面滚动超出目标区域时，它的表现就像position:fixed，它会固定在目标位置<br>CSS代码<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.container</span> &#123;</div><div class="line">  <span class="attribute">background</span>: <span class="number">#eee</span>;</div><div class="line">  <span class="attribute">width</span>: <span class="number">600px</span>;</div><div class="line">  <span class="attribute">height</span>: <span class="number">1000px</span>;</div><div class="line">  <span class="attribute">margin</span>: <span class="number">0</span> auto;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.sticky-box</span> &#123;</div><div class="line">  <span class="attribute">position</span>: -webkit-sticky;</div><div class="line">  <span class="attribute">position</span>: sticky;</div><div class="line">  <span class="attribute">height</span>: <span class="number">60px</span>;</div><div class="line">  <span class="attribute">margin-bottom</span>: <span class="number">30px</span>;</div><div class="line">  <span class="attribute">background</span>: <span class="number">#ff7300</span>;</div><div class="line">  <span class="attribute">top</span>: <span class="number">0px</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">div</span> &#123;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">30px</span>;</div><div class="line">  <span class="attribute">text-align</span>: center;</div><div class="line">  <span class="attribute">color</span>: <span class="number">#fff</span>;</div><div class="line">  <span class="attribute">line-height</span>: <span class="number">60px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>HTML代码<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"container"</span>&gt;</div><div class="line">    &lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"sticky-box"</span>&gt;内容<span class="number">1</span>&lt;/<span class="keyword">div</span>&gt;</div><div class="line">    &lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"sticky-box"</span>&gt;内容<span class="number">2</span>&lt;/<span class="keyword">div</span>&gt;</div><div class="line">    &lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"sticky-box"</span>&gt;内容<span class="number">3</span>&lt;/<span class="keyword">div</span>&gt;</div><div class="line">    &lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"sticky-box"</span>&gt;内容<span class="number">4</span>&lt;/<span class="keyword">div</span>&gt;</div><div class="line">&lt;/<span class="keyword">div</span>&gt;</div></pre></td></tr></table></figure></p>
+<p>效果图<br><img src="http://optwq0urg.bkt.clouddn.com/blog/20170515/100352640.png?imageslim" alt="mark"><br>因为设定的阈值是 top:0 ，这个值表示当元素距离页面视口（Viewport，也就是fixed定位的参照）顶部距离大于 0px 时，元素以 relative 定位表现，而当元素距离页面视口小于 0px 时，元素表现为 fixed 定位，也就会固定在顶部。<br>浏览器支持情况<br><img src="http://optwq0urg.bkt.clouddn.com/blog/20170515/100532644.png?imageslim" alt="mark"><br>IOS 家族（SAFARI &amp;&amp; IOS SAFARI）和 Firefox 很早开始就支持 position:sticky 了。而 Chrome53~55 则需要启用实验性网络平台功能才行。其中 webkit 内核的要添加上私有前缀 -webkit-。</p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2017/05/15/2017-05-15-css之position属性/">
+    <time datetime="2017-05-15T02:06:48.330Z" class="entry-date">
+        2017-05-15
+    </time>
+</a>
+    
+    
+    </footer>
+</article>
+
+
+
+
+
+
+  
     <article id="post-2017-05-12-CSS之float属性" class="post-2017-05-12-CSS之float属性 post type-post status-publish format-standard hentry">
     <!---->
 
@@ -83,7 +138,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2017/05/12/2017-05-12-CSS之float属性/" data-id="cj2livz3b0000csucj3w02gl7" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2017/05/12/2017-05-12-CSS之float属性/" data-id="cj2phqyzf0006w8ucv2djoopj" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -188,7 +243,7 @@
 <p>效果图<br><img src="http://optwq0urg.bkt.clouddn.com/blog/20170512/152135066.png?imageslim" alt="mark"></p>
 <hr>
 <h3 id="清除浮动的方法"><a href="#清除浮动的方法" class="headerlink" title="清除浮动的方法"></a>清除浮动的方法</h3><ol>
-<li>增加额外的div<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div style=<span class="string">"clear: both"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div></pre></td></tr></table></figure>
+<li>增加额外的div<figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="keyword">div</span> style=<span class="string">"clear: both"</span>&gt;&lt;/<span class="keyword">div</span>&gt;</div></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>优点：简单粗暴<br>缺点: 增加额外的无意义的标签，不利于语义化</p>
@@ -250,7 +305,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2017/05/07/2017-05-07-js数组去重/" data-id="cj2la6i6l0000cguctz83e8fe" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2017/05/07/2017-05-07-js数组去重/" data-id="cj2phqyza0004w8uciuvlhlob" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -323,6 +378,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget-content">
       <ul>
+        
+          <li>
+            <a href="/2017/05/15/2017-05-15-css之position属性/">(no title)</a>
+          </li>
         
           <li>
             <a href="/2017/05/12/2017-05-12-CSS之float属性/">CSS之float属性</a>
