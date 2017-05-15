@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="ES6" />
+  
+
+  
+  <meta name="keywords" content="ES6" />
+  
+  
+  
+  
+  
+  
+  <title>ES6学习笔记之let和const命令 | lihuan&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="ES6">
+<meta name="keywords" content="ES6">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6学习笔记之let和const命令">
+<meta property="og:url" content="http://yoursite.com/2017/05/15/2017-05-15-ES6学习笔记之let和const命令/index.html">
+<meta property="og:site_name" content="lihuan&#39;s Blog">
+<meta property="og:description" content="ES6">
+<meta property="og:updated_time" content="2017-05-15T09:49:40.252Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ES6学习笔记之let和const命令">
+<meta name="twitter:description" content="ES6">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+  <!-- baidu webmaster push -->
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="lihuan&#39;s Blog" rel="home">lihuan&#39;s Blog</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">前端狗一只...</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">主页</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">归档</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://github.com/Fanlee">代码仓库</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-2017-05-15-ES6学习笔记之let和const命令" class="post-2017-05-15-ES6学习笔记之let和const命令 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title article-title">
+      ES6学习笔记之let和const命令
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2017/05/15/2017-05-15-ES6学习笔记之let和const命令/" data-id="cj2py8ujj000190ucnmbvueva" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <p>最近一直在看阮大神的<a href="http://es6.ruanyifeng.com/" target="_blank" rel="external">ECMAScript 6入门</a>这本书，边学边记，加深印象。</p>
+<hr>
+<h1 id="let和const命令"><a href="#let和const命令" class="headerlink" title="let和const命令"></a><center>let和const命令</center></h1><p>ES5只有两种声明变量的方法：var命令和function命令。而ES6新增了四种声明变量的方法:let、const、import和class，所以ES6有6种声明变量的方法。</p>
+<h2 id="let命令"><a href="#let命令" class="headerlink" title="let命令"></a>let命令</h2><hr>
+<h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><p>let用来声明变量， 用法类似于var，但是只在let命令所在的代码块有效。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i  = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)&#123;&#125;;</div><div class="line"><span class="built_in">console</span>.log(i) <span class="comment">// 10</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)&#123;&#125;</div><div class="line"><span class="built_in">console</span>.log(i) <span class="comment">// 报错</span></div></pre></td></tr></table></figure></p>
+<h3 id="不存在变量提升"><a href="#不存在变量提升" class="headerlink" title="不存在变量提升"></a>不存在变量提升</h3><p>var声明的变量的能在变量声明之前访问，值为undefined，因为在脚本运行之前，变量foo已经存在，但是没有值，所以会输出undefined。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(a); <span class="comment">// undefined</span></div><div class="line"><span class="keyword">var</span> a = <span class="string">'hello'</span>;</div></pre></td></tr></table></figure></p>
+<p>如果用let来声明的变量在没有声明之前就进行访问的话，会抛出异常。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(a); <span class="comment">// Uncaught ReferenceError: a is not defined</span></div><div class="line"><span class="keyword">var</span> <span class="keyword">let</span> = <span class="string">'hello'</span>;</div></pre></td></tr></table></figure></p>
+<h3 id="暂时性死区"><a href="#暂时性死区" class="headerlink" title="暂时性死区"></a>暂时性死区</h3><p>在代码块内，使用let命令声明变量之前，该变量都是不可用的。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(<span class="literal">true</span>)&#123;</div><div class="line">  tmp = <span class="string">"hello"</span>;</div><div class="line">  <span class="built_in">console</span>.log(tmp); <span class="comment">// ReferenceError</span></div><div class="line">  <span class="keyword">let</span> tmp;</div><div class="line">  <span class="built_in">console</span>.log(tmp); <span class="comment">// undefined</span></div><div class="line">  tmp = <span class="string">"abc"</span>;</div><div class="line">  <span class="built_in">console</span>.log(tmp)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>上图说明在第四行用let声明变量tmp之前，都属于tmp的死区。<br><strong>注意</strong><br><strong>如果在let声明变量之前用typeof检测数据类型的话，会抛出异常。</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> x); <span class="comment">// ReferenceError</span></div><div class="line"><span class="keyword">let</span> x = <span class="number">1</span>;</div></pre></td></tr></table></figure></p>
+<h3 id="不允许重复声明"><a href="#不允许重复声明" class="headerlink" title="不允许重复声明"></a>不允许重复声明</h3><p>let不允许在相同的作用域内重复声明同一个变量<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">arg</span>)</span>&#123;</div><div class="line">  <span class="keyword">let</span> arg;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>上面代码会抛出异常，改成下面这样就不会了。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">arg</span>)</span>&#123;</div><div class="line">  &#123;</div><div class="line">    <span class="keyword">let</span> arg;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h2><p>ES5只有全局作用域和函数作用域,而ES6新增了块级作用域。</p>
+<ol>
+<li>ES6允许块级作用于任意嵌套<figure class="highlight clojure"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;&#123;&#123;&#123;&#123;let a = <span class="number">0</span>&#125;&#125;&#125;&#125;&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>上图使用了5五层块级作用域。</p>
+<ol>
+<li><p>外层作用域无法读取内层作用域的变量</p>
+<figure class="highlight clojure"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;&#123;&#123;&#123;</div><div class="line">  &#123;let a = <span class="number">0</span>&#125;</div><div class="line">  console.log(<span class="name">a</span>)<span class="comment">; // ReferenceError</span></div><div class="line">&#125;&#125;&#125;&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>不同作用域可以定义同名变量</p>
+<figure class="highlight clojure"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;&#123;&#123;&#123;</div><div class="line">  let a = <span class="number">1</span><span class="comment">;</span></div><div class="line">  &#123;</div><div class="line">    let a = <span class="number">0</span><span class="comment">;</span></div><div class="line">    console.log(<span class="name">a</span>) // <span class="number">0</span></div><div class="line">  &#125;</div><div class="line">  console.log(<span class="name">a</span>) // <span class="number">1</span></div><div class="line">&#125;&#125;&#125;&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<h2 id="const命令"><a href="#const命令" class="headerlink" title="const命令"></a>const命令</h2><h3 id="基本用法-1"><a href="#基本用法-1" class="headerlink" title="基本用法"></a>基本用法</h3><p>const声明一个只读的常量，一旦声明，值就不可以改变。<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">const <span class="literal">PI</span> = <span class="number">3.1415</span>;</div><div class="line"><span class="literal">PI</span> = <span class="number">3.14</span>;</div><div class="line">console.log(<span class="literal">PI</span>) <span class="comment">// Assignment to constant variable</span></div></pre></td></tr></table></figure></p>
+<p>const一旦声明变量，必须立即初始化。<br><figure class="highlight abnf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">const foo <span class="comment">;</span></div><div class="line"><span class="attribute">foo</span> = <span class="string">"hello"</span><span class="comment">;</span></div><div class="line">console.log(foo)<span class="comment">; // Missing initializer in const declaration</span></div></pre></td></tr></table></figure></p>
+<p>const和let相同，声明的变量只有在其所在的块级作用于有效，变量不会提升，同时也存在“暂时性死区”。</p>
+<h3 id="本质"><a href="#本质" class="headerlink" title="本质"></a>本质</h3><blockquote>
+<p>const实际上保证的，并不是变量的值不得改动，而是变量指向的那个内存地址不得改动。</p>
+</blockquote>
+<p>意思就是说用const声明的基本数据的变量是不可以改变值，而引用数据类型（主要是对象和数值）,const只能保证指针是固定的，而指向的数据是可以进行变化的。<br><figure class="highlight abnf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">const foo = &#123;&#125;<span class="comment">;</span></div><div class="line">foo.name = <span class="string">"Tom"</span><span class="comment">;</span></div><div class="line">console.log(foo)<span class="comment">; // &#123;name: "Tom"&#125;</span></div><div class="line"></div><div class="line"><span class="attribute">foo</span> = &#123;&#125;<span class="comment">; // 当把foo指向另一个对象的时候就会报错</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">const arr = []<span class="comment">;</span></div><div class="line">arr.push(<span class="string">"hello"</span>)<span class="comment">;</span></div><div class="line">console.log(arr)<span class="comment">; ["hello"]</span></div><div class="line"></div><div class="line"><span class="attribute">arr</span> = []<span class="comment">; // Assignment to constant variable.</span></div></pre></td></tr></table></figure>
+<p>如果要冻结一个对象，应该使用<em>Object.freeze</em>方法。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> foo = <span class="built_in">Object</span>.freeze(&#123;&#125;);</div><div class="line">foo.name = <span class="string">"Tom"</span>;</div><div class="line"><span class="built_in">console</span>.log(foo) <span class="comment">// &#123;&#125;</span></div></pre></td></tr></table></figure></p>
+<p>常规模式下，添加属性不起作用<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">"use strict"</span>;</div><div class="line"><span class="keyword">const</span> foo = <span class="built_in">Object</span>.freeze(&#123;&#125;);</div><div class="line">foo.name = <span class="string">"Tom"</span>;</div><div class="line"><span class="built_in">console</span>.log(foo) <span class="comment">// Cannot add property name, object is not extensible</span></div></pre></td></tr></table></figure></p>
+<p>除了将对象本身冻结，对象的属性也应该冻结。下面是一个将对象彻底冻结的函数 - . -暂时没有理解到这个方法，先直接拷过来用。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> constantize = <span class="function">(<span class="params">obj</span>) =&gt;</span> &#123;</div><div class="line">  <span class="built_in">Object</span>.freeze(obj);</div><div class="line">  <span class="built_in">Object</span>.keys(obj).forEach( <span class="function">(<span class="params">key, i</span>) =&gt;</span> &#123;</div><div class="line">    <span class="keyword">if</span> ( <span class="keyword">typeof</span> obj[key] === <span class="string">'object'</span> ) &#123;</div><div class="line">      constantize( obj[key] );</div><div class="line">    &#125;</div><div class="line">  &#125;);</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>在严格模式下会抛出异常</p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2017/05/15/2017-05-15-ES6学习笔记之let和const命令/">
+    <time datetime="2017-05-14T16:00:00.000Z" class="entry-date">
+        2017-05-15
+    </time>
+</a>
+    
+  <span class="article-delim">&#8226;</span>
+  <div class="article-category">
+  <a class="article-category-link" href="/categories/学习笔记/">学习笔记</a>
+  </div>
+
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+
+    </footer>
+</article>
+
+
+    
+<nav class="nav-single">
+    <h3 class="assistive-text">文章导航</h3>
+    
+    
+        <span class="nav-next"><a href="/2017/05/15/2017-05-15-css之position属性/" rel="next">css之position属性 <span class="meta-nav">→</span></a></span>
+    
+</nav><!-- .nav-single -->
+
+
+
+
+
+
+
+</div></div>
+        <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="aboutMe" class="widget widget_search">
+  <aside class="widget">
+    <h3 class="widget-title">关于我</h3>
+    <div class="widget-content">
+	  <img src="/css/images/avatar.jpg" width="100"/>
+      <p>邮箱: yd_lihuan@163.com</p>
+	  <p>QQ:549999028</p>
+    </div>
+  </aside>
+</aside>
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget-content">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/学习笔记/">学习笔记</a><span class="category-list-count">4</span></li></ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/2017/05/15/2017-05-15-ES6学习笔记之let和const命令/">ES6学习笔记之let和const命令</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/15/2017-05-15-css之position属性/">css之position属性</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/12/2017-05-12-CSS之float属性/">CSS之float属性</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/07/2017-05-07-js数组去重/">JS的数组去重</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-content">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-content tagcloud">
+      <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a>
+    </div>
+  </aside>
+
+  
+</div>
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2017 李欢
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</footer>
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+</body>
+</html>
