@@ -1,5 +1,4 @@
-﻿# css之position属性
----
+﻿---
 title: css之position属性
 date: 2017-05-12
 categories: 学习笔记
@@ -8,7 +7,6 @@ keywords: CSS
 description: position
 comments: true
 ---
-
 ## 简介
 > position CSS属性选择用于定位元素的替代规则，被设计为对脚本动画效果有用。
 
