@@ -68,95 +68,6 @@
       <div id="main" class="wrapper">
         <div id="primary" class="site-content"><div id="content" role="main">
   
-    <article id="post-2017-05-15-ES6学习笔记之let和const命令" class="post-2017-05-15-ES6学习笔记之let和const命令 post type-post status-publish format-standard hentry">
-    <!---->
-
-      <header class="entry-header">
-        
-        
-  
-    <h1 class="entry-title">
-      <a class="article-title" href="/2017/05/15/2017-05-15-ES6学习笔记之let和const命令/">ES6学习笔记之let和const命令</a>
-    </h1>
-  
-
-        
-        <div class="comments-link">
-            
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2017/05/15/2017-05-15-ES6学习笔记之let和const命令/" data-id="cj2py8ujj000190ucnmbvueva" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
-        </div><!-- .comments-link -->
-      </header><!-- .entry-header -->
-
-    <div class="entry-content">
-      
-        <p>最近一直在看阮大神的<a href="http://es6.ruanyifeng.com/" target="_blank" rel="external">ECMAScript 6入门</a>这本书，边学边记，加深印象。</p>
-<hr>
-<h1 id="let和const命令"><a href="#let和const命令" class="headerlink" title="let和const命令"></a><center>let和const命令</center></h1><p>ES5只有两种声明变量的方法：var命令和function命令。而ES6新增了四种声明变量的方法:let、const、import和class，所以ES6有6种声明变量的方法。</p>
-<h2 id="let命令"><a href="#let命令" class="headerlink" title="let命令"></a>let命令</h2><hr>
-<h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><p>let用来声明变量， 用法类似于var，但是只在let命令所在的代码块有效。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i  = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)&#123;&#125;;</div><div class="line"><span class="built_in">console</span>.log(i) <span class="comment">// 10</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)&#123;&#125;</div><div class="line"><span class="built_in">console</span>.log(i) <span class="comment">// 报错</span></div></pre></td></tr></table></figure></p>
-<h3 id="不存在变量提升"><a href="#不存在变量提升" class="headerlink" title="不存在变量提升"></a>不存在变量提升</h3><p>var声明的变量的能在变量声明之前访问，值为undefined，因为在脚本运行之前，变量foo已经存在，但是没有值，所以会输出undefined。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(a); <span class="comment">// undefined</span></div><div class="line"><span class="keyword">var</span> a = <span class="string">'hello'</span>;</div></pre></td></tr></table></figure></p>
-<p>如果用let来声明的变量在没有声明之前就进行访问的话，会抛出异常。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(a); <span class="comment">// Uncaught ReferenceError: a is not defined</span></div><div class="line"><span class="keyword">var</span> <span class="keyword">let</span> = <span class="string">'hello'</span>;</div></pre></td></tr></table></figure></p>
-<h3 id="暂时性死区"><a href="#暂时性死区" class="headerlink" title="暂时性死区"></a>暂时性死区</h3><p>在代码块内，使用let命令声明变量之前，该变量都是不可用的。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(<span class="literal">true</span>)&#123;</div><div class="line">  tmp = <span class="string">"hello"</span>;</div><div class="line">  <span class="built_in">console</span>.log(tmp); <span class="comment">// ReferenceError</span></div><div class="line">  <span class="keyword">let</span> tmp;</div><div class="line">  <span class="built_in">console</span>.log(tmp); <span class="comment">// undefined</span></div><div class="line">  tmp = <span class="string">"abc"</span>;</div><div class="line">  <span class="built_in">console</span>.log(tmp)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>上图说明在第四行用let声明变量tmp之前，都属于tmp的死区。<br><strong>注意</strong><br><strong>如果在let声明变量之前用typeof检测数据类型的话，会抛出异常。</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> x); <span class="comment">// ReferenceError</span></div><div class="line"><span class="keyword">let</span> x = <span class="number">1</span>;</div></pre></td></tr></table></figure></p>
-<h3 id="不允许重复声明"><a href="#不允许重复声明" class="headerlink" title="不允许重复声明"></a>不允许重复声明</h3><p>let不允许在相同的作用域内重复声明同一个变量<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">arg</span>)</span>&#123;</div><div class="line">  <span class="keyword">let</span> arg;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>上面代码会抛出异常，改成下面这样就不会了。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">arg</span>)</span>&#123;</div><div class="line">  &#123;</div><div class="line">    <span class="keyword">let</span> arg;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<hr>
-<h2 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h2><p>ES5只有全局作用域和函数作用域,而ES6新增了块级作用域。</p>
-<ol>
-<li>ES6允许块级作用于任意嵌套<figure class="highlight clojure"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;&#123;&#123;&#123;&#123;let a = <span class="number">0</span>&#125;&#125;&#125;&#125;&#125;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>上图使用了5五层块级作用域。</p>
-<ol>
-<li><p>外层作用域无法读取内层作用域的变量</p>
-<figure class="highlight clojure"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;&#123;&#123;&#123;</div><div class="line">  &#123;let a = <span class="number">0</span>&#125;</div><div class="line">  console.log(<span class="name">a</span>)<span class="comment">; // ReferenceError</span></div><div class="line">&#125;&#125;&#125;&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>不同作用域可以定义同名变量</p>
-<figure class="highlight clojure"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;&#123;&#123;&#123;</div><div class="line">  let a = <span class="number">1</span><span class="comment">;</span></div><div class="line">  &#123;</div><div class="line">    let a = <span class="number">0</span><span class="comment">;</span></div><div class="line">    console.log(<span class="name">a</span>) // <span class="number">0</span></div><div class="line">  &#125;</div><div class="line">  console.log(<span class="name">a</span>) // <span class="number">1</span></div><div class="line">&#125;&#125;&#125;&#125;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<hr>
-<h2 id="const命令"><a href="#const命令" class="headerlink" title="const命令"></a>const命令</h2><h3 id="基本用法-1"><a href="#基本用法-1" class="headerlink" title="基本用法"></a>基本用法</h3><p>const声明一个只读的常量，一旦声明，值就不可以改变。<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">const <span class="literal">PI</span> = <span class="number">3.1415</span>;</div><div class="line"><span class="literal">PI</span> = <span class="number">3.14</span>;</div><div class="line">console.log(<span class="literal">PI</span>) <span class="comment">// Assignment to constant variable</span></div></pre></td></tr></table></figure></p>
-<p>const一旦声明变量，必须立即初始化。<br><figure class="highlight abnf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">const foo <span class="comment">;</span></div><div class="line"><span class="attribute">foo</span> = <span class="string">"hello"</span><span class="comment">;</span></div><div class="line">console.log(foo)<span class="comment">; // Missing initializer in const declaration</span></div></pre></td></tr></table></figure></p>
-<p>const和let相同，声明的变量只有在其所在的块级作用于有效，变量不会提升，同时也存在“暂时性死区”。</p>
-<h3 id="本质"><a href="#本质" class="headerlink" title="本质"></a>本质</h3><blockquote>
-<p>const实际上保证的，并不是变量的值不得改动，而是变量指向的那个内存地址不得改动。</p>
-</blockquote>
-<p>意思就是说用const声明的基本数据的变量是不可以改变值，而引用数据类型（主要是对象和数值）,const只能保证指针是固定的，而指向的数据是可以进行变化的。<br><figure class="highlight abnf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">const foo = &#123;&#125;<span class="comment">;</span></div><div class="line">foo.name = <span class="string">"Tom"</span><span class="comment">;</span></div><div class="line">console.log(foo)<span class="comment">; // &#123;name: "Tom"&#125;</span></div><div class="line"></div><div class="line"><span class="attribute">foo</span> = &#123;&#125;<span class="comment">; // 当把foo指向另一个对象的时候就会报错</span></div></pre></td></tr></table></figure></p>
-<figure class="highlight abnf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">const arr = []<span class="comment">;</span></div><div class="line">arr.push(<span class="string">"hello"</span>)<span class="comment">;</span></div><div class="line">console.log(arr)<span class="comment">; ["hello"]</span></div><div class="line"></div><div class="line"><span class="attribute">arr</span> = []<span class="comment">; // Assignment to constant variable.</span></div></pre></td></tr></table></figure>
-<p>如果要冻结一个对象，应该使用<em>Object.freeze</em>方法。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> foo = <span class="built_in">Object</span>.freeze(&#123;&#125;);</div><div class="line">foo.name = <span class="string">"Tom"</span>;</div><div class="line"><span class="built_in">console</span>.log(foo) <span class="comment">// &#123;&#125;</span></div></pre></td></tr></table></figure></p>
-<p>常规模式下，添加属性不起作用<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">"use strict"</span>;</div><div class="line"><span class="keyword">const</span> foo = <span class="built_in">Object</span>.freeze(&#123;&#125;);</div><div class="line">foo.name = <span class="string">"Tom"</span>;</div><div class="line"><span class="built_in">console</span>.log(foo) <span class="comment">// Cannot add property name, object is not extensible</span></div></pre></td></tr></table></figure></p>
-<p>除了将对象本身冻结，对象的属性也应该冻结。下面是一个将对象彻底冻结的函数 - . -暂时没有理解到这个方法，先直接拷过来用。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> constantize = <span class="function">(<span class="params">obj</span>) =&gt;</span> &#123;</div><div class="line">  <span class="built_in">Object</span>.freeze(obj);</div><div class="line">  <span class="built_in">Object</span>.keys(obj).forEach( <span class="function">(<span class="params">key, i</span>) =&gt;</span> &#123;</div><div class="line">    <span class="keyword">if</span> ( <span class="keyword">typeof</span> obj[key] === <span class="string">'object'</span> ) &#123;</div><div class="line">      constantize( obj[key] );</div><div class="line">    &#125;</div><div class="line">  &#125;);</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
-<p>在严格模式下会抛出异常</p>
-
-      
-    </div><!-- .entry-content -->
-
-    <footer class="entry-meta">
-    <a href="/2017/05/15/2017-05-15-ES6学习笔记之let和const命令/">
-    <time datetime="2017-05-14T16:00:00.000Z" class="entry-date">
-        2017-05-15
-    </time>
-</a>
-    
-  <span class="article-delim">&#8226;</span>
-  <div class="article-category">
-  <a class="article-category-link" href="/categories/学习笔记/">学习笔记</a>
-  </div>
-
-    
-  <span class="article-delim">&#8226;</span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-
-    </footer>
-</article>
-
-
-
-
-
-
-  
     <article id="post-2017-05-15-css之position属性" class="post-2017-05-15-css之position属性 post type-post status-publish format-standard hentry">
     <!---->
 
@@ -172,7 +83,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2017/05/15/2017-05-15-css之position属性/" data-id="cj2py8ukn000j90ucspvmevvc" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2017/05/15/2017-05-15-css之position属性/" data-id="cj2pyhl8w00075ouc7g5ih5vk" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -226,6 +137,95 @@
 
 
   
+    <article id="post-2017-05-15-ES6学习笔记之let和const命令" class="post-2017-05-15-ES6学习笔记之let和const命令 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="/2017/05/15/2017-05-15-ES6学习笔记之let和const命令/">ES6学习笔记之let和const命令</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2017/05/15/2017-05-15-ES6学习笔记之let和const命令/" data-id="cj2pyhl9500095ouc3l6ea3iw" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <p>最近一直在看阮大神的<a href="http://es6.ruanyifeng.com/" target="_blank" rel="external">ECMAScript 6入门</a>这本书，边学边记，加深印象。</p>
+<hr>
+<h1 id="let和const命令"><a href="#let和const命令" class="headerlink" title="let和const命令"></a><center>let和const命令</center></h1><p>ES5只有两种声明变量的方法：var命令和function命令。而ES6新增了四种声明变量的方法:let、const、import和class，所以ES6有6种声明变量的方法。</p>
+<h2 id="let命令"><a href="#let命令" class="headerlink" title="let命令"></a>let命令</h2><hr>
+<h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><p>let用来声明变量， 用法类似于var，但是只在let命令所在的代码块有效。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i  = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)&#123;&#125;;</div><div class="line"><span class="built_in">console</span>.log(i) <span class="comment">// 10</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)&#123;&#125;</div><div class="line"><span class="built_in">console</span>.log(i) <span class="comment">// 报错</span></div></pre></td></tr></table></figure></p>
+<h3 id="不存在变量提升"><a href="#不存在变量提升" class="headerlink" title="不存在变量提升"></a>不存在变量提升</h3><p>var声明的变量的能在变量声明之前访问，值为undefined，因为在脚本运行之前，变量foo已经存在，但是没有值，所以会输出undefined。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(a); <span class="comment">// undefined</span></div><div class="line"><span class="keyword">var</span> a = <span class="string">'hello'</span>;</div></pre></td></tr></table></figure></p>
+<p>如果用let来声明的变量在没有声明之前就进行访问的话，会抛出异常。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(a); <span class="comment">// Uncaught ReferenceError: a is not defined</span></div><div class="line"><span class="keyword">var</span> <span class="keyword">let</span> = <span class="string">'hello'</span>;</div></pre></td></tr></table></figure></p>
+<h3 id="暂时性死区"><a href="#暂时性死区" class="headerlink" title="暂时性死区"></a>暂时性死区</h3><p>在代码块内，使用let命令声明变量之前，该变量都是不可用的。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(<span class="literal">true</span>)&#123;</div><div class="line">  tmp = <span class="string">"hello"</span>;</div><div class="line">  <span class="built_in">console</span>.log(tmp); <span class="comment">// ReferenceError</span></div><div class="line">  <span class="keyword">let</span> tmp;</div><div class="line">  <span class="built_in">console</span>.log(tmp); <span class="comment">// undefined</span></div><div class="line">  tmp = <span class="string">"abc"</span>;</div><div class="line">  <span class="built_in">console</span>.log(tmp)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>上图说明在第四行用let声明变量tmp之前，都属于tmp的死区。<br><strong>注意</strong><br><strong>如果在let声明变量之前用typeof检测数据类型的话，会抛出异常。</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> x); <span class="comment">// ReferenceError</span></div><div class="line"><span class="keyword">let</span> x = <span class="number">1</span>;</div></pre></td></tr></table></figure></p>
+<h3 id="不允许重复声明"><a href="#不允许重复声明" class="headerlink" title="不允许重复声明"></a>不允许重复声明</h3><p>let不允许在相同的作用域内重复声明同一个变量<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">arg</span>)</span>&#123;</div><div class="line">  <span class="keyword">let</span> arg;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>上面代码会抛出异常，改成下面这样就不会了。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">arg</span>)</span>&#123;</div><div class="line">  &#123;</div><div class="line">    <span class="keyword">let</span> arg;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h2><p>ES5只有全局作用域和函数作用域,而ES6新增了块级作用域。</p>
+<ol>
+<li>ES6允许块级作用于任意嵌套<figure class="highlight clojure"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;&#123;&#123;&#123;&#123;let a = <span class="number">0</span>&#125;&#125;&#125;&#125;&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>上图使用了5五层块级作用域。</p>
+<ol>
+<li><p>外层作用域无法读取内层作用域的变量</p>
+<figure class="highlight clojure"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;&#123;&#123;&#123;</div><div class="line">  &#123;let a = <span class="number">0</span>&#125;</div><div class="line">  console.log(<span class="name">a</span>)<span class="comment">; // ReferenceError</span></div><div class="line">&#125;&#125;&#125;&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>不同作用域可以定义同名变量</p>
+<figure class="highlight clojure"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;&#123;&#123;&#123;</div><div class="line">  let a = <span class="number">1</span><span class="comment">;</span></div><div class="line">  &#123;</div><div class="line">    let a = <span class="number">0</span><span class="comment">;</span></div><div class="line">    console.log(<span class="name">a</span>) // <span class="number">0</span></div><div class="line">  &#125;</div><div class="line">  console.log(<span class="name">a</span>) // <span class="number">1</span></div><div class="line">&#125;&#125;&#125;&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<h2 id="const命令"><a href="#const命令" class="headerlink" title="const命令"></a>const命令</h2><h3 id="基本用法-1"><a href="#基本用法-1" class="headerlink" title="基本用法"></a>基本用法</h3><p>const声明一个只读的常量，一旦声明，值就不可以改变。<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">const <span class="literal">PI</span> = <span class="number">3.1415</span>;</div><div class="line"><span class="literal">PI</span> = <span class="number">3.14</span>;</div><div class="line">console.log(<span class="literal">PI</span>) <span class="comment">// Assignment to constant variable</span></div></pre></td></tr></table></figure></p>
+<p>const一旦声明变量，必须立即初始化。<br><figure class="highlight abnf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">const foo <span class="comment">;</span></div><div class="line"><span class="attribute">foo</span> = <span class="string">"hello"</span><span class="comment">;</span></div><div class="line">console.log(foo)<span class="comment">; // Missing initializer in const declaration</span></div></pre></td></tr></table></figure></p>
+<p>const和let相同，声明的变量只有在其所在的块级作用于有效，变量不会提升，同时也存在“暂时性死区”。</p>
+<h3 id="本质"><a href="#本质" class="headerlink" title="本质"></a>本质</h3><blockquote>
+<p>const实际上保证的，并不是变量的值不得改动，而是变量指向的那个内存地址不得改动。</p>
+</blockquote>
+<p>意思就是说用const声明的基本数据的变量是不可以改变值，而引用数据类型（主要是对象和数值）,const只能保证指针是固定的，而指向的数据是可以进行变化的。<br><figure class="highlight abnf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">const foo = &#123;&#125;<span class="comment">;</span></div><div class="line">foo.name = <span class="string">"Tom"</span><span class="comment">;</span></div><div class="line">console.log(foo)<span class="comment">; // &#123;name: "Tom"&#125;</span></div><div class="line"></div><div class="line"><span class="attribute">foo</span> = &#123;&#125;<span class="comment">; // 当把foo指向另一个对象的时候就会报错</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">const arr = []<span class="comment">;</span></div><div class="line">arr.push(<span class="string">"hello"</span>)<span class="comment">;</span></div><div class="line">console.log(arr)<span class="comment">; ["hello"]</span></div><div class="line"></div><div class="line"><span class="attribute">arr</span> = []<span class="comment">; // Assignment to constant variable.</span></div></pre></td></tr></table></figure>
+<p>如果要冻结一个对象，应该使用<em>Object.freeze</em>方法。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> foo = <span class="built_in">Object</span>.freeze(&#123;&#125;);</div><div class="line">foo.name = <span class="string">"Tom"</span>;</div><div class="line"><span class="built_in">console</span>.log(foo) <span class="comment">// &#123;&#125;</span></div></pre></td></tr></table></figure></p>
+<p>常规模式下，添加属性不起作用<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">"use strict"</span>;</div><div class="line"><span class="keyword">const</span> foo = <span class="built_in">Object</span>.freeze(&#123;&#125;);</div><div class="line">foo.name = <span class="string">"Tom"</span>;</div><div class="line"><span class="built_in">console</span>.log(foo) <span class="comment">// Cannot add property name, object is not extensible</span></div></pre></td></tr></table></figure></p>
+<p>在严格模式下会抛出异常</p>
+<p>除了将对象本身冻结，对象的属性也应该冻结。下面是一个将对象彻底冻结的函数 - . -暂时没有理解到这个方法，先直接拷过来用。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> constantize = <span class="function">(<span class="params">obj</span>) =&gt;</span> &#123;</div><div class="line">  <span class="built_in">Object</span>.freeze(obj);</div><div class="line">  <span class="built_in">Object</span>.keys(obj).forEach( <span class="function">(<span class="params">key, i</span>) =&gt;</span> &#123;</div><div class="line">    <span class="keyword">if</span> ( <span class="keyword">typeof</span> obj[key] === <span class="string">'object'</span> ) &#123;</div><div class="line">      constantize( obj[key] );</div><div class="line">    &#125;</div><div class="line">  &#125;);</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2017/05/15/2017-05-15-ES6学习笔记之let和const命令/">
+    <time datetime="2017-05-14T16:00:00.000Z" class="entry-date">
+        2017-05-15
+    </time>
+</a>
+    
+  <span class="article-delim">&#8226;</span>
+  <div class="article-category">
+  <a class="article-category-link" href="/categories/学习笔记/">学习笔记</a>
+  </div>
+
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+
+    </footer>
+</article>
+
+
+
+
+
+
+  
     <article id="post-2017-05-12-CSS之float属性" class="post-2017-05-12-CSS之float属性 post type-post status-publish format-standard hentry">
     <!---->
 
@@ -241,7 +241,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2017/05/12/2017-05-12-CSS之float属性/" data-id="cj2py8uk4000790uc5sbl6by2" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2017/05/12/2017-05-12-CSS之float属性/" data-id="cj2pyhl8n00035oucfx8qwsdd" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -346,7 +346,7 @@
 <p>效果图<br><img src="http://optwq0urg.bkt.clouddn.com/blog/20170512/152135066.png?imageslim" alt="mark"></p>
 <hr>
 <h3 id="清除浮动的方法"><a href="#清除浮动的方法" class="headerlink" title="清除浮动的方法"></a>清除浮动的方法</h3><ol>
-<li>增加额外的div<figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="keyword">div</span> style=<span class="string">"clear: both"</span>&gt;&lt;/<span class="keyword">div</span>&gt;</div></pre></td></tr></table></figure>
+<li>增加额外的div<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div style=<span class="string">"clear: both"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>优点：简单粗暴<br>缺点: 增加额外的无意义的标签，不利于语义化</p>
@@ -408,7 +408,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2017/05/07/2017-05-07-js数组去重/" data-id="cj2py8ujq000390uccq2in3t7" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2017/05/07/2017-05-07-js数组去重/" data-id="cj2pyhl8f00015ouc83xkhgzq" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -483,11 +483,11 @@
       <ul>
         
           <li>
-            <a href="/2017/05/15/2017-05-15-ES6学习笔记之let和const命令/">ES6学习笔记之let和const命令</a>
+            <a href="/2017/05/15/2017-05-15-css之position属性/">css之position属性</a>
           </li>
         
           <li>
-            <a href="/2017/05/15/2017-05-15-css之position属性/">css之position属性</a>
+            <a href="/2017/05/15/2017-05-15-ES6学习笔记之let和const命令/">ES6学习笔记之let和const命令</a>
           </li>
         
           <li>

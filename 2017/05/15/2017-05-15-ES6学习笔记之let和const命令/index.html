@@ -24,7 +24,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/05/15/2017-05-15-ES6学习笔记之let和const命令/index.html">
 <meta property="og:site_name" content="lihuan&#39;s Blog">
 <meta property="og:description" content="ES6">
-<meta property="og:updated_time" content="2017-05-15T09:49:40.252Z">
+<meta property="og:updated_time" content="2017-05-15T09:56:39.477Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ES6学习笔记之let和const命令">
 <meta name="twitter:description" content="ES6">
@@ -85,7 +85,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2017/05/15/2017-05-15-ES6学习笔记之let和const命令/" data-id="cj2py8ujj000190ucnmbvueva" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2017/05/15/2017-05-15-ES6学习笔记之let和const命令/" data-id="cj2pyhl9500095ouc3l6ea3iw" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -128,8 +128,8 @@
 <figure class="highlight abnf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">const arr = []<span class="comment">;</span></div><div class="line">arr.push(<span class="string">"hello"</span>)<span class="comment">;</span></div><div class="line">console.log(arr)<span class="comment">; ["hello"]</span></div><div class="line"></div><div class="line"><span class="attribute">arr</span> = []<span class="comment">; // Assignment to constant variable.</span></div></pre></td></tr></table></figure>
 <p>如果要冻结一个对象，应该使用<em>Object.freeze</em>方法。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> foo = <span class="built_in">Object</span>.freeze(&#123;&#125;);</div><div class="line">foo.name = <span class="string">"Tom"</span>;</div><div class="line"><span class="built_in">console</span>.log(foo) <span class="comment">// &#123;&#125;</span></div></pre></td></tr></table></figure></p>
 <p>常规模式下，添加属性不起作用<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">"use strict"</span>;</div><div class="line"><span class="keyword">const</span> foo = <span class="built_in">Object</span>.freeze(&#123;&#125;);</div><div class="line">foo.name = <span class="string">"Tom"</span>;</div><div class="line"><span class="built_in">console</span>.log(foo) <span class="comment">// Cannot add property name, object is not extensible</span></div></pre></td></tr></table></figure></p>
-<p>除了将对象本身冻结，对象的属性也应该冻结。下面是一个将对象彻底冻结的函数 - . -暂时没有理解到这个方法，先直接拷过来用。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> constantize = <span class="function">(<span class="params">obj</span>) =&gt;</span> &#123;</div><div class="line">  <span class="built_in">Object</span>.freeze(obj);</div><div class="line">  <span class="built_in">Object</span>.keys(obj).forEach( <span class="function">(<span class="params">key, i</span>) =&gt;</span> &#123;</div><div class="line">    <span class="keyword">if</span> ( <span class="keyword">typeof</span> obj[key] === <span class="string">'object'</span> ) &#123;</div><div class="line">      constantize( obj[key] );</div><div class="line">    &#125;</div><div class="line">  &#125;);</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
 <p>在严格模式下会抛出异常</p>
+<p>除了将对象本身冻结，对象的属性也应该冻结。下面是一个将对象彻底冻结的函数 - . -暂时没有理解到这个方法，先直接拷过来用。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> constantize = <span class="function">(<span class="params">obj</span>) =&gt;</span> &#123;</div><div class="line">  <span class="built_in">Object</span>.freeze(obj);</div><div class="line">  <span class="built_in">Object</span>.keys(obj).forEach( <span class="function">(<span class="params">key, i</span>) =&gt;</span> &#123;</div><div class="line">    <span class="keyword">if</span> ( <span class="keyword">typeof</span> obj[key] === <span class="string">'object'</span> ) &#123;</div><div class="line">      constantize( obj[key] );</div><div class="line">    &#125;</div><div class="line">  &#125;);</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
 
       
     </div><!-- .entry-content -->
@@ -158,8 +158,10 @@
 <nav class="nav-single">
     <h3 class="assistive-text">文章导航</h3>
     
+        <span class="nav-previous"><a href="/2017/05/15/2017-05-15-css之position属性/" rel="prev"><span class="meta-nav">←</span> css之position属性</a></span>
     
-        <span class="nav-next"><a href="/2017/05/15/2017-05-15-css之position属性/" rel="next">css之position属性 <span class="meta-nav">→</span></a></span>
+    
+        <span class="nav-next"><a href="/2017/05/12/2017-05-12-CSS之float属性/" rel="next">CSS之float属性 <span class="meta-nav">→</span></a></span>
     
 </nav><!-- .nav-single -->
 
@@ -201,11 +203,11 @@
       <ul>
         
           <li>
-            <a href="/2017/05/15/2017-05-15-ES6学习笔记之let和const命令/">ES6学习笔记之let和const命令</a>
+            <a href="/2017/05/15/2017-05-15-css之position属性/">css之position属性</a>
           </li>
         
           <li>
-            <a href="/2017/05/15/2017-05-15-css之position属性/">css之position属性</a>
+            <a href="/2017/05/15/2017-05-15-ES6学习笔记之let和const命令/">ES6学习笔记之let和const命令</a>
           </li>
         
           <li>
