@@ -152,6 +152,8 @@ const foo = Object.freeze({});
 foo.name = "Tom";
 console.log(foo) // Cannot add property name, object is not extensible
 ```
+在严格模式下会抛出异常
+
 除了将对象本身冻结，对象的属性也应该冻结。下面是一个将对象彻底冻结的函数 - . -暂时没有理解到这个方法，先直接拷过来用。
 ```
 var constantize = (obj) => {
@@ -163,5 +165,5 @@ var constantize = (obj) => {
   });
 };
 ```
-在严格模式下会抛出异常
+
   [1]: http://es6.ruanyifeng.com/
