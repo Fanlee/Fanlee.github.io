@@ -1,21 +1,96 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
   
-  <meta name="description" content="个人博客" />
-  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
 
   
   
   
   
+
   
+    
+    
   
-  <title>lihuan&#39;s Blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="个人博客">
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="个人博客">
 <meta property="og:type" content="website">
 <meta property="og:title" content="lihuan&#39;s Blog">
 <meta property="og:url" content="http://yoursite.com/index.html">
@@ -24,525 +99,1367 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="lihuan&#39;s Blog">
 <meta name="twitter:description" content="个人博客">
-  
-  
-    <link rel="icon" href="/css/images/favicon.ico">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
 
-  
-  <!-- baidu webmaster push -->
-  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/"/>
+
+
+
+
+
+  <title>lihuan's Blog</title>
 </head>
-<body class="home blog custom-background custom-font-enabled single-author">
-  <div id="page" class="hfeed site">
-      <header id="masthead" class="site-header" role="banner">
-    <hgroup>
-      <h1 class="site-title">
-        <a href="/" title="lihuan&#39;s Blog" rel="home">lihuan&#39;s Blog</a>
-      </h1>
-      
-        <h2 class="site-description">
-          <a href="/" id="subtitle">前端狗一只...</a>
-        </h2>
-      
-    </hgroup>
 
-    <nav id="site-navigation" class="main-navigation" role="navigation">
-            <button class="menu-toggle">菜单</button>
-            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
-            <div class="menu-main-container">
-                <ul id="menu-main" class="nav-menu">
-                
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">主页</a></li>
-                
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">归档</a></li>
-                
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://github.com/Fanlee">代码仓库</a></li>
-                
-                </ul>
-            </div>
-    </nav>
-</header>
-      <div id="main" class="wrapper">
-        <div id="primary" class="site-content"><div id="content" role="main">
-  
-    <article id="post-2017-05-15-css之position属性" class="post-2017-05-15-css之position属性 post type-post status-publish format-standard hentry">
-    <!---->
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
-      <header class="entry-header">
-        
-        
-  
-    <h1 class="entry-title">
-      <a class="article-title" href="/2017/05/15/2017-05-15-css之position属性/">css之position属性</a>
-    </h1>
   
 
-        
-        <div class="comments-link">
-            
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2017/05/15/2017-05-15-css之position属性/" data-id="cj2pyhl8w00075ouc7g5ih5vk" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
-        </div><!-- .comments-link -->
-      </header><!-- .entry-header -->
 
-    <div class="entry-content">
-      
-        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><blockquote>
-<p>position CSS属性选择用于定位元素的替代规则，被设计为对脚本动画效果有用。</p>
-</blockquote>
-<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 关键字  值 */</span></div><div class="line"><span class="attribute">position</span>: static;</div><div class="line"><span class="attribute">position</span>: relative;</div><div class="line"><span class="attribute">position</span>: absolute;</div><div class="line"><span class="attribute">position</span>: fixed;</div><div class="line"><span class="attribute">position</span>: sticky; <span class="comment">//实验性API</span></div><div class="line"></div><div class="line"><span class="comment">/* 全局值 */</span></div><div class="line"><span class="attribute">position</span>: inherit;</div><div class="line"><span class="attribute">position</span>: initial;</div><div class="line"><span class="attribute">position</span>: unset;</div></pre></td></tr></table></figure>
-<h3 id="static-元素默认定位属性"><a href="#static-元素默认定位属性" class="headerlink" title="static 元素默认定位属性"></a>static 元素默认定位属性</h3><p>默认值。没有定位，元素出现在正常的文档流中，忽略top, right, bottom, left, z-index声明。</p>
-<h3 id="relative-相对定位"><a href="#relative-相对定位" class="headerlink" title="relative 相对定位"></a>relative 相对定位</h3><p>相对自己文档流中的原始位置进行定位，<strong>不会脱离文档流</strong>。<br><img src="http://optwq0urg.bkt.clouddn.com/blog/20170512/165119169.png?imageslim" alt=""><br>上图给test4加上了position:relative效果，代码如下<br><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">position</span>: relative; <span class="attribute">top</span>:<span class="number">10px</span>; <span class="attribute">left</span>:-<span class="number">20px</span></div></pre></td></tr></table></figure></p>
-<p>可以看出test4并没有对周围的元素造成影响， 它还是存在于正常的文档流中。position:relative对 table-*-group, table-row, table-column, table-cell, table-caption 元素没有效果。</p>
-<h3 id="absolute-绝对定位"><a href="#absolute-绝对定位" class="headerlink" title="absolute 绝对定位"></a>absolute 绝对定位</h3><ol>
-<li><p>相对于static定位以外的第一个父元素进行定位， <strong>脱离文档流</strong><br><img src="http://optwq0urg.bkt.clouddn.com/blog/20170512/170435114.png?imageslim" alt="mark"><br>上图给test4加上了position:absolute效果<br>明显可以看到test4从正常的文档流中脱离了出来， test5填补了test4原本的位置。 </p>
-</li>
-<li><p>绝对定位元素可以设置外边距，且不会与其他边距合并<br>CSS代码</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span>&#123;</div><div class="line">  <span class="attribute">margin</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">padding</span>: <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.box</span> &#123;</div><div class="line">  <span class="attribute">position</span>: relative;</div><div class="line">  <span class="attribute">width</span>: <span class="number">500px</span>;</div><div class="line">  <span class="attribute">height</span>: <span class="number">200px</span>;</div><div class="line">  <span class="attribute">background</span>: lightseagreen;</div><div class="line">  <span class="attribute">margin</span>: <span class="number">30px</span></div><div class="line">&#125;</div><div class="line"><span class="selector-class">.box1</span> &#123;</div><div class="line">  <span class="attribute">position</span>: absolute;</div><div class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">margin</span>: <span class="number">20px</span>;</div><div class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</div><div class="line">  <span class="attribute">height</span>: <span class="number">50px</span>;</div><div class="line">  <span class="attribute">background</span>: red</div><div class="line">&#125;<span class="selector-tag">eight</span>: 50<span class="selector-tag">px</span>;</div><div class="line"><span class="selector-tag">background</span>: <span class="selector-tag">red</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>HTML代码<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"box"</span>&gt;</div><div class="line">  &lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"box1"</span>&gt;absolute定位元素&lt;/<span class="keyword">div</span>&gt;</div><div class="line">&lt;/<span class="keyword">div</span>&gt;</div></pre></td></tr></table></figure></p>
-<p>效果图<br><img src="http://optwq0urg.bkt.clouddn.com/blog/20170512/171943995.png?imageslim" alt="mark"></p>
-<h3 id="sticky"><a href="#sticky" class="headerlink" title="sticky"></a>sticky</h3><p>position:sticky是一个新的CSS3属性，它的表现类似position:relative和position:fixed的合体，在目标区域在屏幕中可见时，它的行为就像position:relative; 而当页面滚动超出目标区域时，它的表现就像position:fixed，它会固定在目标位置<br>CSS代码<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.container</span> &#123;</div><div class="line">  <span class="attribute">background</span>: <span class="number">#eee</span>;</div><div class="line">  <span class="attribute">width</span>: <span class="number">600px</span>;</div><div class="line">  <span class="attribute">height</span>: <span class="number">1000px</span>;</div><div class="line">  <span class="attribute">margin</span>: <span class="number">0</span> auto;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.sticky-box</span> &#123;</div><div class="line">  <span class="attribute">position</span>: -webkit-sticky;</div><div class="line">  <span class="attribute">position</span>: sticky;</div><div class="line">  <span class="attribute">height</span>: <span class="number">60px</span>;</div><div class="line">  <span class="attribute">margin-bottom</span>: <span class="number">30px</span>;</div><div class="line">  <span class="attribute">background</span>: <span class="number">#ff7300</span>;</div><div class="line">  <span class="attribute">top</span>: <span class="number">0px</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">div</span> &#123;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">30px</span>;</div><div class="line">  <span class="attribute">text-align</span>: center;</div><div class="line">  <span class="attribute">color</span>: <span class="number">#fff</span>;</div><div class="line">  <span class="attribute">line-height</span>: <span class="number">60px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>HTML代码<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"container"</span>&gt;</div><div class="line">    &lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"sticky-box"</span>&gt;内容<span class="number">1</span>&lt;/<span class="keyword">div</span>&gt;</div><div class="line">    &lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"sticky-box"</span>&gt;内容<span class="number">2</span>&lt;/<span class="keyword">div</span>&gt;</div><div class="line">    &lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"sticky-box"</span>&gt;内容<span class="number">3</span>&lt;/<span class="keyword">div</span>&gt;</div><div class="line">    &lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"sticky-box"</span>&gt;内容<span class="number">4</span>&lt;/<span class="keyword">div</span>&gt;</div><div class="line">&lt;/<span class="keyword">div</span>&gt;</div></pre></td></tr></table></figure></p>
-<p>效果图<br><img src="http://optwq0urg.bkt.clouddn.com/blog/20170515/100352640.png?imageslim" alt="mark"><br>因为设定的阈值是 top:0 ，这个值表示当元素距离页面视口（Viewport，也就是fixed定位的参照）顶部距离大于 0px 时，元素以 relative 定位表现，而当元素距离页面视口小于 0px 时，元素表现为 fixed 定位，也就会固定在顶部。<br>浏览器支持情况<br><img src="http://optwq0urg.bkt.clouddn.com/blog/20170515/100532644.png?imageslim" alt="mark"><br>IOS 家族（SAFARI &amp;&amp; IOS SAFARI）和 Firefox 很早开始就支持 position:sticky 了。而 Chrome53~55 则需要启用实验性网络平台功能才行。其中 webkit 内核的要添加上私有前缀 -webkit-。</p>
 
-      
-    </div><!-- .entry-content -->
 
-    <footer class="entry-meta">
-    <a href="/2017/05/15/2017-05-15-css之position属性/">
-    <time datetime="2017-05-14T16:00:00.000Z" class="entry-date">
-        2017-05-15
-    </time>
-</a>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
     
-  <span class="article-delim">&#8226;</span>
-  <div class="article-category">
-  <a class="article-category-link" href="/categories/学习笔记/">学习笔记</a>
+  
+
+  <div class="container sidebar-position-left 
+   page-home 
+ ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">lihuan's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">前端狗一只...</p>
+      
   </div>
 
-    
-  <span class="article-delim">&#8226;</span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
-
-    </footer>
-</article>
-
-
-
-
-
-
-  
-    <article id="post-2017-05-15-ES6学习笔记之let和const命令" class="post-2017-05-15-ES6学习笔记之let和const命令 post type-post status-publish format-standard hentry">
-    <!---->
-
-      <header class="entry-header">
-        
-        
-  
-    <h1 class="entry-title">
-      <a class="article-title" href="/2017/05/15/2017-05-15-ES6学习笔记之let和const命令/">ES6学习笔记之let和const命令</a>
-    </h1>
-  
-
-        
-        <div class="comments-link">
-            
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2017/05/15/2017-05-15-ES6学习笔记之let和const命令/" data-id="cj2pyhl9500095ouc3l6ea3iw" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
-        </div><!-- .comments-link -->
-      </header><!-- .entry-header -->
-
-    <div class="entry-content">
-      
-        <p>最近一直在看阮大神的<a href="http://es6.ruanyifeng.com/" target="_blank" rel="external">ECMAScript 6入门</a>这本书，边学边记，加深印象。</p>
-<hr>
-<h1 id="let和const命令"><a href="#let和const命令" class="headerlink" title="let和const命令"></a><center>let和const命令</center></h1><p>ES5只有两种声明变量的方法：var命令和function命令。而ES6新增了四种声明变量的方法:let、const、import和class，所以ES6有6种声明变量的方法。</p>
-<h2 id="let命令"><a href="#let命令" class="headerlink" title="let命令"></a>let命令</h2><hr>
-<h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><p>let用来声明变量， 用法类似于var，但是只在let命令所在的代码块有效。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i  = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)&#123;&#125;;</div><div class="line"><span class="built_in">console</span>.log(i) <span class="comment">// 10</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)&#123;&#125;</div><div class="line"><span class="built_in">console</span>.log(i) <span class="comment">// 报错</span></div></pre></td></tr></table></figure></p>
-<h3 id="不存在变量提升"><a href="#不存在变量提升" class="headerlink" title="不存在变量提升"></a>不存在变量提升</h3><p>var声明的变量的能在变量声明之前访问，值为undefined，因为在脚本运行之前，变量foo已经存在，但是没有值，所以会输出undefined。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(a); <span class="comment">// undefined</span></div><div class="line"><span class="keyword">var</span> a = <span class="string">'hello'</span>;</div></pre></td></tr></table></figure></p>
-<p>如果用let来声明的变量在没有声明之前就进行访问的话，会抛出异常。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(a); <span class="comment">// Uncaught ReferenceError: a is not defined</span></div><div class="line"><span class="keyword">var</span> <span class="keyword">let</span> = <span class="string">'hello'</span>;</div></pre></td></tr></table></figure></p>
-<h3 id="暂时性死区"><a href="#暂时性死区" class="headerlink" title="暂时性死区"></a>暂时性死区</h3><p>在代码块内，使用let命令声明变量之前，该变量都是不可用的。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(<span class="literal">true</span>)&#123;</div><div class="line">  tmp = <span class="string">"hello"</span>;</div><div class="line">  <span class="built_in">console</span>.log(tmp); <span class="comment">// ReferenceError</span></div><div class="line">  <span class="keyword">let</span> tmp;</div><div class="line">  <span class="built_in">console</span>.log(tmp); <span class="comment">// undefined</span></div><div class="line">  tmp = <span class="string">"abc"</span>;</div><div class="line">  <span class="built_in">console</span>.log(tmp)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>上图说明在第四行用let声明变量tmp之前，都属于tmp的死区。<br><strong>注意</strong><br><strong>如果在let声明变量之前用typeof检测数据类型的话，会抛出异常。</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> x); <span class="comment">// ReferenceError</span></div><div class="line"><span class="keyword">let</span> x = <span class="number">1</span>;</div></pre></td></tr></table></figure></p>
-<h3 id="不允许重复声明"><a href="#不允许重复声明" class="headerlink" title="不允许重复声明"></a>不允许重复声明</h3><p>let不允许在相同的作用域内重复声明同一个变量<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">arg</span>)</span>&#123;</div><div class="line">  <span class="keyword">let</span> arg;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>上面代码会抛出异常，改成下面这样就不会了。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">arg</span>)</span>&#123;</div><div class="line">  &#123;</div><div class="line">    <span class="keyword">let</span> arg;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<hr>
-<h2 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h2><p>ES5只有全局作用域和函数作用域,而ES6新增了块级作用域。</p>
-<ol>
-<li>ES6允许块级作用于任意嵌套<figure class="highlight clojure"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;&#123;&#123;&#123;&#123;let a = <span class="number">0</span>&#125;&#125;&#125;&#125;&#125;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>上图使用了5五层块级作用域。</p>
-<ol>
-<li><p>外层作用域无法读取内层作用域的变量</p>
-<figure class="highlight clojure"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;&#123;&#123;&#123;</div><div class="line">  &#123;let a = <span class="number">0</span>&#125;</div><div class="line">  console.log(<span class="name">a</span>)<span class="comment">; // ReferenceError</span></div><div class="line">&#125;&#125;&#125;&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>不同作用域可以定义同名变量</p>
-<figure class="highlight clojure"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;&#123;&#123;&#123;</div><div class="line">  let a = <span class="number">1</span><span class="comment">;</span></div><div class="line">  &#123;</div><div class="line">    let a = <span class="number">0</span><span class="comment">;</span></div><div class="line">    console.log(<span class="name">a</span>) // <span class="number">0</span></div><div class="line">  &#125;</div><div class="line">  console.log(<span class="name">a</span>) // <span class="number">1</span></div><div class="line">&#125;&#125;&#125;&#125;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<hr>
-<h2 id="const命令"><a href="#const命令" class="headerlink" title="const命令"></a>const命令</h2><h3 id="基本用法-1"><a href="#基本用法-1" class="headerlink" title="基本用法"></a>基本用法</h3><p>const声明一个只读的常量，一旦声明，值就不可以改变。<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">const <span class="literal">PI</span> = <span class="number">3.1415</span>;</div><div class="line"><span class="literal">PI</span> = <span class="number">3.14</span>;</div><div class="line">console.log(<span class="literal">PI</span>) <span class="comment">// Assignment to constant variable</span></div></pre></td></tr></table></figure></p>
-<p>const一旦声明变量，必须立即初始化。<br><figure class="highlight abnf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">const foo <span class="comment">;</span></div><div class="line"><span class="attribute">foo</span> = <span class="string">"hello"</span><span class="comment">;</span></div><div class="line">console.log(foo)<span class="comment">; // Missing initializer in const declaration</span></div></pre></td></tr></table></figure></p>
-<p>const和let相同，声明的变量只有在其所在的块级作用于有效，变量不会提升，同时也存在“暂时性死区”。</p>
-<h3 id="本质"><a href="#本质" class="headerlink" title="本质"></a>本质</h3><blockquote>
-<p>const实际上保证的，并不是变量的值不得改动，而是变量指向的那个内存地址不得改动。</p>
-</blockquote>
-<p>意思就是说用const声明的基本数据的变量是不可以改变值，而引用数据类型（主要是对象和数值）,const只能保证指针是固定的，而指向的数据是可以进行变化的。<br><figure class="highlight abnf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">const foo = &#123;&#125;<span class="comment">;</span></div><div class="line">foo.name = <span class="string">"Tom"</span><span class="comment">;</span></div><div class="line">console.log(foo)<span class="comment">; // &#123;name: "Tom"&#125;</span></div><div class="line"></div><div class="line"><span class="attribute">foo</span> = &#123;&#125;<span class="comment">; // 当把foo指向另一个对象的时候就会报错</span></div></pre></td></tr></table></figure></p>
-<figure class="highlight abnf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">const arr = []<span class="comment">;</span></div><div class="line">arr.push(<span class="string">"hello"</span>)<span class="comment">;</span></div><div class="line">console.log(arr)<span class="comment">; ["hello"]</span></div><div class="line"></div><div class="line"><span class="attribute">arr</span> = []<span class="comment">; // Assignment to constant variable.</span></div></pre></td></tr></table></figure>
-<p>如果要冻结一个对象，应该使用<em>Object.freeze</em>方法。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> foo = <span class="built_in">Object</span>.freeze(&#123;&#125;);</div><div class="line">foo.name = <span class="string">"Tom"</span>;</div><div class="line"><span class="built_in">console</span>.log(foo) <span class="comment">// &#123;&#125;</span></div></pre></td></tr></table></figure></p>
-<p>常规模式下，添加属性不起作用<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">"use strict"</span>;</div><div class="line"><span class="keyword">const</span> foo = <span class="built_in">Object</span>.freeze(&#123;&#125;);</div><div class="line">foo.name = <span class="string">"Tom"</span>;</div><div class="line"><span class="built_in">console</span>.log(foo) <span class="comment">// Cannot add property name, object is not extensible</span></div></pre></td></tr></table></figure></p>
-<p>在严格模式下会抛出异常</p>
-<p>除了将对象本身冻结，对象的属性也应该冻结。下面是一个将对象彻底冻结的函数 - . -暂时没有理解到这个方法，先直接拷过来用。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> constantize = <span class="function">(<span class="params">obj</span>) =&gt;</span> &#123;</div><div class="line">  <span class="built_in">Object</span>.freeze(obj);</div><div class="line">  <span class="built_in">Object</span>.keys(obj).forEach( <span class="function">(<span class="params">key, i</span>) =&gt;</span> &#123;</div><div class="line">    <span class="keyword">if</span> ( <span class="keyword">typeof</span> obj[key] === <span class="string">'object'</span> ) &#123;</div><div class="line">      constantize( obj[key] );</div><div class="line">    &#125;</div><div class="line">  &#125;);</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
-
-      
-    </div><!-- .entry-content -->
-
-    <footer class="entry-meta">
-    <a href="/2017/05/15/2017-05-15-ES6学习笔记之let和const命令/">
-    <time datetime="2017-05-14T16:00:00.000Z" class="entry-date">
-        2017-05-15
-    </time>
-</a>
-    
-  <span class="article-delim">&#8226;</span>
-  <div class="article-category">
-  <a class="article-category-link" href="/categories/学习笔记/">学习笔记</a>
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
   </div>
-
-    
-  <span class="article-delim">&#8226;</span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-
-    </footer>
-</article>
-
-
-
-
-
-
-  
-    <article id="post-2017-05-12-CSS之float属性" class="post-2017-05-12-CSS之float属性 post type-post status-publish format-standard hentry">
-    <!---->
-
-      <header class="entry-header">
-        
-        
-  
-    <h1 class="entry-title">
-      <a class="article-title" href="/2017/05/12/2017-05-12-CSS之float属性/">CSS之float属性</a>
-    </h1>
-  
-
-        
-        <div class="comments-link">
-            
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2017/05/12/2017-05-12-CSS之float属性/" data-id="cj2pyhl8n00035oucfx8qwsdd" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
-        </div><!-- .comments-link -->
-      </header><!-- .entry-header -->
-
-    <div class="entry-content">
-      
-        <h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><blockquote>
-<p>CSS的float属性可以使一个元素脱离正常的文档流，然后被安放在它所在容器的左端或者右端，并且其他的文本和行内元素环绕它。</p>
-</blockquote>
-<h3 id="float属性介绍"><a href="#float属性介绍" class="headerlink" title="float属性介绍"></a>float属性介绍</h3><ul>
-<li>left: 元素向左浮动</li>
-<li>float: 元素向右浮动</li>
-<li>none: 默认值</li>
-<li>inherit： 默认值 </li>
-</ul>
-<p>由于float使用了块布局， 所以它会改变display的计算值</p>
-<table>
-<thead>
-<tr>
-<th>指定值</th>
-<th>计算值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>inline</td>
-<td>block</td>
-</tr>
-<tr>
-<td>inline-block</td>
-<td>block</td>
-</tr>
-<tr>
-<td>inline-table</td>
-<td>table</td>
-</tr>
-<tr>
-<td>table-row</td>
-<td>block</td>
-</tr>
-<tr>
-<td>table-row-group</td>
-<td>block</td>
-</tr>
-<tr>
-<td>table-column</td>
-<td>block</td>
-</tr>
-<tr>
-<td>tabale-column-group</td>
-<td>block</td>
-</tr>
-<tr>
-<td>tabel-cell</td>
-<td>block</td>
-</tr>
-<tr>
-<td>table-caption</td>
-<td>block</td>
-</tr>
-<tr>
-<td>table-header-group</td>
-<td>block</td>
-</tr>
-<tr>
-<td>table-footer-group</td>
-<td>block</td>
-</tr>
-<tr>
-<td>flex</td>
-<td>flex,float对这样的元素不起作用</td>
-</tr>
-<tr>
-<td>inline-flex</td>
-<td>inline-flex, float对这样的元素不起作用</td>
-</tr>
-</tbody>
-</table>
-<h3 id="浮动元素是如何定位的"><a href="#浮动元素是如何定位的" class="headerlink" title="浮动元素是如何定位的"></a>浮动元素是如何定位的</h3><p>当一个元素浮动后，它会被移除正常的文档流，然后向左或是向右平移，一直平移到碰到了所处容器的边缘或者碰到另外一个浮动元素。<br>不管一个元素是行内元素还是块级元素，如果被设置了浮动，那浮动元素会生成一个块级框，可以设置它的width和height</p>
-<h3 id="浮动元素的一些特性"><a href="#浮动元素的一些特性" class="headerlink" title="浮动元素的一些特性"></a>浮动元素的一些特性</h3><p>  浮动元素浮动的时候， margin不会超过包含块的padding</p>
-<p>CSS代码<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span>&#123; <span class="attribute">width</span>: <span class="number">200px</span>; <span class="attribute">height</span>: <span class="number">500px</span>; <span class="attribute">background</span>: lightseagreen; <span class="attribute">padding</span>: <span class="number">10px</span>&#125;</div><div class="line"><span class="selector-class">.box1</span>&#123; <span class="attribute">width</span>: <span class="number">100px</span>; <span class="attribute">height</span>: <span class="number">50px</span>; <span class="attribute">background</span>: orangered; <span class="attribute">margin</span>: <span class="number">20px</span>&#125;</div></pre></td></tr></table></figure></p>
-<p>HTML代码<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"box"</span>&gt;</div><div class="line">  &lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"box1"</span>&gt;&lt;/<span class="keyword">div</span>&gt;</div><div class="line">&lt;/<span class="keyword">div</span>&gt;</div></pre></td></tr></table></figure></p>
-<p>效果图<br><img src="http://optwq0urg.bkt.clouddn.com/blog/20170512/151930154.png?imageslim" alt="mark"></p>
-<p>  如果有多个浮动元素，后面浮动元素的margin不会超过前面浮动元素的margin, 多个浮动元素，浮动元素会按顺序排列而不发生重叠现象</p>
-<p>CSS代码<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span>&#123; <span class="attribute">width</span>: <span class="number">400px</span>; <span class="attribute">height</span>: <span class="number">500px</span>; <span class="attribute">background</span>: lightseagreen; <span class="attribute">padding</span>: <span class="number">10px</span>&#125;</div><div class="line"><span class="selector-class">.box1</span>&#123; <span class="attribute">width</span>: <span class="number">100px</span>; <span class="attribute">height</span>: <span class="number">50px</span>; <span class="attribute">background</span>: orangered; <span class="attribute">margin</span>: <span class="number">10px</span>; <span class="attribute">float</span>: left&#125;</div></pre></td></tr></table></figure></p>
-<p>HTML代码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"box"</span>&gt;</div><div class="line">  <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box1"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line">  &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"box1"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line">  &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"box1"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line">  &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"box1"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line">&lt;<span class="regexp">/div&gt;</span></div></pre></td></tr></table></figure></p>
-<p>效果图<br><img src="http://optwq0urg.bkt.clouddn.com/blog/20170512/152028555.png?imageslim" alt="mark"></p>
-<p>如果两个元素一个左浮动，一个右浮动，左浮动元素的marginRinght和右浮动的marginLeft不会重叠</p>
-<p>CSS代码<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span>&#123; <span class="attribute">width</span>: <span class="number">219px</span>; <span class="attribute">height</span>: <span class="number">500px</span>; <span class="attribute">background</span>: lightseagreen;&#125;</div><div class="line"><span class="selector-class">.box1</span>&#123; <span class="attribute">width</span>: <span class="number">100px</span>; <span class="attribute">height</span>: <span class="number">50px</span>; <span class="attribute">background</span>: orangered; <span class="attribute">margin-right</span>: <span class="number">10px</span>; <span class="attribute">float</span>: left&#125;</div><div class="line"><span class="selector-class">.box2</span>&#123; <span class="attribute">width</span>: <span class="number">100px</span>; <span class="attribute">height</span>: <span class="number">50px</span>; <span class="attribute">background</span>: orangered; <span class="attribute">margin-left</span>: <span class="number">10px</span>; <span class="attribute">float</span>: left&#125;</div></pre></td></tr></table></figure></p>
-<p>HTML代码<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"box"</span>&gt;</div><div class="line">  &lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"box1"</span>&gt;左浮动元素&lt;/<span class="keyword">div</span>&gt;</div><div class="line">  &lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"box2"</span>&gt;右浮动元素&lt;/<span class="keyword">div</span>&gt;</div><div class="line">&lt;/<span class="keyword">div</span>&gt;</div></pre></td></tr></table></figure></p>
-<p>效果图<br><img src="http://optwq0urg.bkt.clouddn.com/blog/20170512/152111850.png?imageslim" alt="mark"></p>
-<h3 id="浮动元素重叠问题"><a href="#浮动元素重叠问题" class="headerlink" title="浮动元素重叠问题"></a>浮动元素重叠问题</h3><ol>
-<li>块级元素与浮动元素发生重叠，边框和背景会显示在浮动元素之下，内容会显示在浮动元素之上<br>CSS<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span>&#123; <span class="attribute">width</span>: <span class="number">400px</span>; <span class="attribute">height</span>: <span class="number">500px</span>; <span class="attribute">background</span>: lightseagreen;&#125;</div><div class="line"><span class="selector-class">.box1</span>&#123;<span class="attribute">background</span>: blue; <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#000</span>&#125;</div><div class="line"><span class="selector-class">.box2</span>&#123; <span class="attribute">width</span>: <span class="number">100px</span>; <span class="attribute">height</span>: <span class="number">50px</span>; <span class="attribute">background</span>: orangered; <span class="attribute">margin-left</span>: <span class="number">10px</span>; <span class="attribute">float</span>: left; <span class="attribute">margin-top</span>: -<span class="number">10px</span>&#125;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>HTML<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"box"</span>&gt;</div><div class="line">  &lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"box1"</span>&gt;我是文字文字我是文字文字我是文字文字我是文字文字我是文字文字我是文字文字我是文字文字我是文字文字我是文字文字&lt;/<span class="keyword">div</span>&gt;</div><div class="line">  &lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"box2"</span>&gt;右浮动元素&lt;/<span class="keyword">div</span>&gt;</div><div class="line">&lt;/<span class="keyword">div</span>&gt;</div></pre></td></tr></table></figure></p>
-<p>效果图<br><img src="http://optwq0urg.bkt.clouddn.com/blog/20170512/152124073.png?imageslim" alt="mark"></p>
-<ol>
-<li>行内元素与浮动元素发生重叠，其边框，背景和内容都会显示在浮动元素之上<br>CSS<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span>&#123; <span class="attribute">width</span>: <span class="number">400px</span>; <span class="attribute">height</span>: <span class="number">500px</span>; <span class="attribute">background</span>: lightseagreen;&#125;</div><div class="line"><span class="selector-tag">span</span>&#123; <span class="attribute">background</span>: palevioletred; &#125;</div><div class="line"><span class="selector-class">.box2</span>&#123; <span class="attribute">width</span>: <span class="number">100px</span>; <span class="attribute">height</span>: <span class="number">50px</span>; <span class="attribute">background</span>: orangered; <span class="attribute">margin-left</span>: <span class="number">10px</span>; <span class="attribute">float</span>: left; <span class="attribute">margin-top</span>: -<span class="number">10px</span>&#125;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>HTML<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"box"</span>&gt;</div><div class="line">  &lt;span&gt;我是文字文字我是文字文字我是文字文字我是文字文字我是文字文字我是文字文字我是文字文字我是文字文字我是文字文字&lt;/span&gt;</div><div class="line">  &lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"box2"</span>&gt;浮动元素&lt;/<span class="keyword">div</span>&gt;</div><div class="line">&lt;/<span class="keyword">div</span>&gt;</div></pre></td></tr></table></figure></p>
-<p>效果图<br><img src="http://optwq0urg.bkt.clouddn.com/blog/20170512/152135066.png?imageslim" alt="mark"></p>
-<hr>
-<h3 id="清除浮动的方法"><a href="#清除浮动的方法" class="headerlink" title="清除浮动的方法"></a>清除浮动的方法</h3><ol>
-<li>增加额外的div<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div style=<span class="string">"clear: both"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>优点：简单粗暴<br>缺点: 增加额外的无意义的标签，不利于语义化</p>
-<ol>
-<li>父级元素增加overflow: hidden(关键在于触发了BFC)<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.clearfix</span>&#123; <span class="attribute">overflow</span>:hidden&#125;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>优点：代码量少，没有额外的标签<br>缺点： 如果子元素超出父元素的范围，会造成超出的部分被隐藏</p>
-<ol>
-<li>after伪类<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">clearfix</span>&#123;<span class="attribute">zoom</span>:<span class="number">1</span>&#125;</div><div class="line"><span class="selector-tag">clearfix</span><span class="selector-pseudo">:after</span>&#123;<span class="attribute">display</span>:block; <span class="attribute">content</span>:<span class="string">""</span>; <span class="attribute">clear</span>:both; <span class="attribute">visibility</span>: hidden;&#125;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>优点：没有额外标签，综合起来算比较好的方法<br>缺点：稍显复杂<br><em>推荐使用这种方法</em></p>
-<h3 id="float应用场景"><a href="#float应用场景" class="headerlink" title="float应用场景"></a>float应用场景</h3><p>float最初应用就是文字环绕效果<br>CSS代码<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span>&#123; <span class="attribute">width</span>: <span class="number">400px</span>; <span class="attribute">height</span>: <span class="number">500px</span>; <span class="attribute">background</span>: lightseagreen;&#125;</div><div class="line"><span class="selector-tag">img</span>&#123; <span class="attribute">float</span>: left&#125;</div></pre></td></tr></table></figure></p>
-<p>HTML代码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"box"</span>&gt;</div><div class="line">  <span class="xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"demo6.png"</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span></span></div><div class="line">  文字环绕文字环绕文字环绕文字环绕文字环绕文字环绕文字环绕文字环绕文字环绕文字环绕文字环绕文字环绕文字环绕文字环绕文字环绕文字环绕文字环绕文字环绕文字环绕文字环绕</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>效果图<br><img src="http://optwq0urg.bkt.clouddn.com/blog/20170512/152143717.png?imageslim" alt="mark"></p>
-<p>还可用于横向菜单排列，但是更推荐使用display:inline-block,除了文字环绕效果，在其他几乎所有的应用场景中，float能实现的效果，display:inline-block都能实现。<br>推荐一篇张鑫旭大神的关于<a href="http://www.zhangxinxu.com/wordpress/2010/01/css-float%E6%B5%AE%E5%8A%A8%E7%9A%84%E6%B7%B1%E5%85%A5%E7%A0%94%E7%A9%B6%E3%80%81%E8%AF%A6%E8%A7%A3%E5%8F%8A%E6%8B%93%E5%B1%95%E4%B8%80/" target="_blank" rel="external">float</a>的文章,写的特别有意思。</p>
-
-      
-    </div><!-- .entry-content -->
-
-    <footer class="entry-meta">
-    <a href="/2017/05/12/2017-05-12-CSS之float属性/">
-    <time datetime="2017-05-11T16:00:00.000Z" class="entry-date">
-        2017-05-12
-    </time>
-</a>
-    
-  <span class="article-delim">&#8226;</span>
-  <div class="article-category">
-  <a class="article-category-link" href="/categories/学习笔记/">学习笔记</a>
-  </div>
-
-    
-  <span class="article-delim">&#8226;</span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
-
-    </footer>
-</article>
-
-
-
-
-
-
-  
-    <article id="post-2017-05-07-js数组去重" class="post-2017-05-07-js数组去重 post type-post status-publish format-standard hentry">
-    <!---->
-
-      <header class="entry-header">
-        
-        
-  
-    <h1 class="entry-title">
-      <a class="article-title" href="/2017/05/07/2017-05-07-js数组去重/">JS的数组去重</a>
-    </h1>
-  
-
-        
-        <div class="comments-link">
-            
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2017/05/07/2017-05-07-js数组去重/" data-id="cj2pyhl8f00015ouc83xkhgzq" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
-        </div><!-- .comments-link -->
-      </header><!-- .entry-header -->
-
-    <div class="entry-content">
-      
-        <h3 id="判断浏览器是否支持indexOf方法"><a href="#判断浏览器是否支持indexOf方法" class="headerlink" title="判断浏览器是否支持indexOf方法"></a>判断浏览器是否支持indexOf方法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//判断是否支持indexOf方法</span></div><div class="line"><span class="keyword">if</span>(!<span class="built_in">Array</span>.prototype.indexOf)&#123;</div><div class="line">  <span class="built_in">Array</span>.prototype.indexOf = <span class="function"><span class="keyword">function</span> (<span class="params">item</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> result = <span class="number">-1</span>;</div><div class="line">    <span class="comment">//数组为空的时候返回-1</span></div><div class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.length == <span class="number">0</span>) &#123;</div><div class="line">      <span class="keyword">return</span> result;</div><div class="line">    &#125;;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.length; i++) &#123;</div><div class="line">      <span class="keyword">if</span> (<span class="keyword">this</span>[i] === item) &#123;</div><div class="line">        <span class="comment">//当当前项的值与参数值相等的时候，结束循环</span></div><div class="line">        result = i;</div><div class="line">        <span class="keyword">break</span>;</div><div class="line">      &#125;</div><div class="line">    &#125;;</div><div class="line">    <span class="keyword">return</span> result;</div><div class="line">  &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="遍历数组法：新建一新数组，遍历数组，值不在新数组中就加入新数组"><a href="#遍历数组法：新建一新数组，遍历数组，值不在新数组中就加入新数组" class="headerlink" title="遍历数组法：新建一新数组，遍历数组，值不在新数组中就加入新数组"></a>遍历数组法：新建一新数组，遍历数组，值不在新数组中就加入新数组</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">unique</span>(<span class="params">array</span>)</span>&#123;</div><div class="line">    <span class="comment">//新建数组</span></div><div class="line">	<span class="keyword">var</span> newArr = [];</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++)&#123;</div><div class="line">	  <span class="comment">//值不在新数组中就添加到新数组</span></div><div class="line">	  <span class="keyword">if</span>(newArr.indexOf(array[i]) == <span class="number">-1</span>)&#123;</div><div class="line">		newArr.push(array[i]);</div><div class="line">	  &#125;</div><div class="line">	&#125;;</div><div class="line">	<span class="keyword">return</span> newArr</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
-<h3 id="对象键值法：该方法执行速度比其他任何方法都快，就是占用内存大一些。新建一JS对象和数组，遍历传入数组时，判断值是否为JS对象的值，不是的话给对象新增该键并放入新数组。注意点，判断是否为JS对象键时，会自动对传入的键执行”toString-”-不同的键可能会被误认为一样。"><a href="#对象键值法：该方法执行速度比其他任何方法都快，就是占用内存大一些。新建一JS对象和数组，遍历传入数组时，判断值是否为JS对象的值，不是的话给对象新增该键并放入新数组。注意点，判断是否为JS对象键时，会自动对传入的键执行”toString-”-不同的键可能会被误认为一样。" class="headerlink" title="对象键值法：该方法执行速度比其他任何方法都快，就是占用内存大一些。新建一JS对象和数组，遍历传入数组时，判断值是否为JS对象的值，不是的话给对象新增该键并放入新数组。注意点，判断是否为JS对象键时，会自动对传入的键执行”toString()”,不同的键可能会被误认为一样。"></a>对象键值法：该方法执行速度比其他任何方法都快，就是占用内存大一些。新建一JS对象和数组，遍历传入数组时，判断值是否为JS对象的值，不是的话给对象新增该键并放入新数组。注意点，判断是否为JS对象键时，会自动对传入的键执行”toString()”,不同的键可能会被误认为一样。</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">unique</span>(<span class="params">array</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> obj = &#123;&#125;,</div><div class="line">          newArr = [],</div><div class="line">          len = array.length,</div><div class="line">          val,</div><div class="line">          type;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</div><div class="line">      val = array[i];</div><div class="line">      <span class="comment">//获取值的数据类型</span></div><div class="line">      type = <span class="keyword">typeof</span> val;</div><div class="line">      <span class="comment">//判断值是否存在</span></div><div class="line">      <span class="keyword">if</span> (!obj[val]) &#123;</div><div class="line">        <span class="comment">//把type以数组的形式存入便于用indexOf对比</span></div><div class="line">        obj[val] = [type];</div><div class="line">        newArr.push(val);</div><div class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span>(obj[val].indexOf(type) &lt; <span class="number">0</span>) &#123;  <span class="comment">//值存在的情况下判断是否是相同的数据类型</span></div><div class="line">        obj[val].push(type);</div><div class="line">        newArr.push(val);</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> newArr;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
-<h3 id="数组下标判断法：当前数组的第i项在当前数组中第一次出现的位置不是i，那么表示第i项是重复的。"><a href="#数组下标判断法：当前数组的第i项在当前数组中第一次出现的位置不是i，那么表示第i项是重复的。" class="headerlink" title="数组下标判断法：当前数组的第i项在当前数组中第一次出现的位置不是i，那么表示第i项是重复的。"></a>数组下标判断法：当前数组的第i项在当前数组中第一次出现的位置不是i，那么表示第i项是重复的。</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">unique</span>(<span class="params">array</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> newArr = [array[<span class="number">0</span>]];</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; array.length; i++) &#123;</div><div class="line">      <span class="comment">//判断第i项出现位置下标</span></div><div class="line">      <span class="keyword">if</span> (array.indexOf(array[i]) == i) &#123;</div><div class="line">        newArr.push(array[i])</div><div class="line">      &#125;;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> newArr;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
-<h3 id="排序后相邻去除法：给传入数组排序，排序后相同值相邻，然后遍历时新数组只加入不与前一值重复的值。"><a href="#排序后相邻去除法：给传入数组排序，排序后相同值相邻，然后遍历时新数组只加入不与前一值重复的值。" class="headerlink" title="排序后相邻去除法：给传入数组排序，排序后相同值相邻，然后遍历时新数组只加入不与前一值重复的值。"></a>排序后相邻去除法：给传入数组排序，排序后相同值相邻，然后遍历时新数组只加入不与前一值重复的值。</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">unique</span>(<span class="params">array</span>)</span>&#123;</div><div class="line">    <span class="comment">//先排序</span></div><div class="line">    array.sort();</div><div class="line">    <span class="keyword">var</span> newArr = [array[<span class="number">0</span>]];</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i =<span class="number">1</span>; i &lt; array.length; i++) &#123;</div><div class="line">      <span class="comment">//newArr最后一项就是array[i]的前一项</span></div><div class="line">      <span class="keyword">if</span>(array[i]  !== newArr[newArr.length - <span class="number">1</span>])&#123;</div><div class="line">        newArr.push(array[i]);</div><div class="line">      &#125;;</div><div class="line">    &#125;;</div><div class="line">    <span class="keyword">return</span> newArr;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
-<h3 id="获取没重复的最右一值放入新数组。检测到有重复值时终止当前循环同时进入顶层循环的下一轮判断"><a href="#获取没重复的最右一值放入新数组。检测到有重复值时终止当前循环同时进入顶层循环的下一轮判断" class="headerlink" title="获取没重复的最右一值放入新数组。检测到有重复值时终止当前循环同时进入顶层循环的下一轮判断"></a>获取没重复的最右一值放入新数组。检测到有重复值时终止当前循环同时进入顶层循环的下一轮判断</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">unique</span>(<span class="params">array</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> r = [];</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>, len = array.length; i &lt; len; i++)&#123;</div><div class="line">      <span class="keyword">for</span>(<span class="keyword">var</span> j = i + <span class="number">1</span>; j &lt; len; j++)&#123;</div><div class="line">        <span class="keyword">if</span>(array[i] === array[j])&#123;</div><div class="line">          <span class="comment">//当两个值相同的时候,i在内循环自增1，相当于跳出本次循环，执行下一次，当前值就不能添加到新数组</span></div><div class="line">          j = ++i;</div><div class="line">        &#125;;</div><div class="line">      &#125;</div><div class="line">      r.push(array[i]);</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> r;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
-
-      
-    </div><!-- .entry-content -->
-
-    <footer class="entry-meta">
-    <a href="/2017/05/07/2017-05-07-js数组去重/">
-    <time datetime="2017-05-07T13:13:48.000Z" class="entry-date">
-        2017-05-07
-    </time>
-</a>
-    
-  <span class="article-delim">&#8226;</span>
-  <div class="article-category">
-  <a class="article-category-link" href="/categories/学习笔记/">学习笔记</a>
-  </div>
-
-    
-  <span class="article-delim">&#8226;</span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-
-    </footer>
-</article>
-
-
-
-
-
-
-  
-  
-
-</div></div>
-        <div id="secondary" class="widget-area" role="complementary">
-  
-    <aside id="aboutMe" class="widget widget_search">
-  <aside class="widget">
-    <h3 class="widget-title">关于我</h3>
-    <div class="widget-content">
-	  <img src="/css/images/avatar.jpg" width="100"/>
-      <p>邮箱: yd_lihuan@163.com</p>
-	  <p>QQ:549999028</p>
-    </div>
-  </aside>
-</aside>
-  
-    
-  
-    
-  <aside class="widget">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget-content">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/学习笔记/">学习笔记</a><span class="category-list-count">4</span></li></ul>
-    </div>
-  </aside>
-
-  
-    
-  <aside class="widget">
-    <h3 class="widget-title">Recents</h3>
-    <div class="widget-content">
-      <ul>
-        
-          <li>
-            <a href="/2017/05/15/2017-05-15-css之position属性/">css之position属性</a>
-          </li>
-        
-          <li>
-            <a href="/2017/05/15/2017-05-15-ES6学习笔记之let和const命令/">ES6学习笔记之let和const命令</a>
-          </li>
-        
-          <li>
-            <a href="/2017/05/12/2017-05-12-CSS之float属性/">CSS之float属性</a>
-          </li>
-        
-          <li>
-            <a href="/2017/05/07/2017-05-07-js数组去重/">JS的数组去重</a>
-          </li>
-        
-      </ul>
-    </div>
-  </aside>
-
-  
-    
-  <aside class="widget">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget-content">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">2</span></li></ul>
-    </div>
-  </aside>
-
-  
-    
-  <aside class="widget">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget-content tagcloud">
-      <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a>
-    </div>
-  </aside>
-
-  
 </div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/15/2017-05-15-css之position属性/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="李欢">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lihuan's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/05/15/2017-05-15-css之position属性/" itemprop="url">css之position属性</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-15T00:00:00+08:00">
+                2017-05-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          简介
+position CSS属性选择用于定位元素的替代规则，被设计为对脚本动画效果有用。
+
+语法1234567891011/* 关键字  值 */position: static;position: relative;position: absolute;position: fixed;posit
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/05/15/2017-05-15-css之position属性/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/15/2017-05-15-ES6学习笔记之let和const命令/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="李欢">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lihuan's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/05/15/2017-05-15-ES6学习笔记之let和const命令/" itemprop="url">ES6学习笔记之let和const命令</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-15T00:00:00+08:00">
+                2017-05-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          最近一直在看阮大神的ECMAScript 6入门这本书，边学边记，加深印象。
+
+let和const命令ES5只有两种声明变量的方法：var命令和function命令。而ES6新增了四种声明变量的方法:let、const、import和class，所以ES6有6种声明变量的方法。
+let命令
+基本用法
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/05/15/2017-05-15-ES6学习笔记之let和const命令/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/12/2017-05-12-CSS之float属性/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="李欢">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lihuan's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/05/12/2017-05-12-CSS之float属性/" itemprop="url">CSS之float属性</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-12T00:00:00+08:00">
+                2017-05-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          概述
+CSS的float属性可以使一个元素脱离正常的文档流，然后被安放在它所在容器的左端或者右端，并且其他的文本和行内元素环绕它。
+
+float属性介绍
+left: 元素向左浮动
+float: 元素向右浮动
+none: 默认值
+inherit： 默认值 
+
+由于float使用了块布局， 所以它会改变
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/05/12/2017-05-12-CSS之float属性/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/07/2017-05-07-js数组去重/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="李欢">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lihuan's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/05/07/2017-05-07-js数组去重/" itemprop="url">JS的数组去重</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-07T21:13:48+08:00">
+                2017-05-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          判断浏览器是否支持indexOf方法123456789101112131415161718//判断是否支持indexOf方法if(!Array.prototype.indexOf)&#123;  Array.prototype.indexOf = function (item)&#123;    v
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/05/07/2017-05-07-js数组去重/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+  </section>
+
+  
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="李欢" />
+          <p class="site-author-name" itemprop="name">李欢</p>
+           
+              <p class="site-description motion-element" itemprop="description">个人博客</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Fanlee" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/2784226692/profile?topnav=1&wvr=6" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
       </div>
-      <footer id="colophon" role="contentinfo">
-    <p>&copy; 2017 李欢
-    All rights reserved.</p>
-    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
-</footer>
-    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+    </main>
 
-<script src="/js/jquery-2.0.3.min.js"></script>
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">李欢</span>
+</div>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
 
 
-<script src="/js/script.js"></script>
+        
 
-<script src="/js/navigation.js"></script>
+        
+      </div>
+    </footer>
 
-<div id="bg"></div>
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
 
   </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (search_path.endsWith("json")) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
 </body>
 </html>
