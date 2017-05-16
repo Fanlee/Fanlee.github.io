@@ -64,7 +64,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: cyanstyle
+theme: next
 stylus:
   compress: true #自适应布局
 
@@ -76,10 +76,10 @@ deploy:
   branch: master
 
 # title 外部链接
-links_title: Links
-links:
-  MacTalk: http://macshuo.com/
-  title: http://example.com/
+# links_title: Links
+# links:
+  # MacTalk: http://macshuo.com/
+  # title: http://example.com/
 
 # 侧边社交链接
 social:
@@ -111,5 +111,3 @@ wechat_subscriber:
 search:
   path: search.xml
   field: post
-  format: html
-  limit: 10000

@@ -4,7 +4,6 @@ date: 2017-05-15
 categories: 学习笔记
 tags: javascript
 keywords: ES6
-description: ES6
 comments: true
 ---
 
