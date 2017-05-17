@@ -1,0 +1,1163 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="ES6" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="ES5中字符串的属性和方法lengthSting类型的每个实例都有一个length的属性，表示字符串包含多少个字符。12let stringValue = &apos;hello&apos;;console.log(stringValue.length) // 5 charAt()和charCodeAt()用于访问字符串中特定的字符，两个方法都接受一个参数，即字符所在的下标位置。其中charAt()方法返回下标所在的">
+<meta name="keywords" content="ES6">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6学习笔记之字符串的扩展">
+<meta property="og:url" content="http://yoursite.com/2017/05/17/2017-05-17-ES6学习笔记之字符串的扩展/index.html">
+<meta property="og:site_name" content="lihuan&#39;s Blog">
+<meta property="og:description" content="ES5中字符串的属性和方法lengthSting类型的每个实例都有一个length的属性，表示字符串包含多少个字符。12let stringValue = &apos;hello&apos;;console.log(stringValue.length) // 5 charAt()和charCodeAt()用于访问字符串中特定的字符，两个方法都接受一个参数，即字符所在的下标位置。其中charAt()方法返回下标所在的">
+<meta property="og:image" content="http://optwq0urg.bkt.clouddn.com/blog/20170517/143957231.png?imageslim">
+<meta property="og:updated_time" content="2017-05-17T08:24:14.602Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ES6学习笔记之字符串的扩展">
+<meta name="twitter:description" content="ES5中字符串的属性和方法lengthSting类型的每个实例都有一个length的属性，表示字符串包含多少个字符。12let stringValue = &apos;hello&apos;;console.log(stringValue.length) // 5 charAt()和charCodeAt()用于访问字符串中特定的字符，两个方法都接受一个参数，即字符所在的下标位置。其中charAt()方法返回下标所在的">
+<meta name="twitter:image" content="http://optwq0urg.bkt.clouddn.com/blog/20170517/143957231.png?imageslim">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/05/17/2017-05-17-ES6学习笔记之字符串的扩展/"/>
+
+
+
+
+
+  <title>ES6学习笔记之字符串的扩展 | lihuan's Blog</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">lihuan's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">前端狗一只...</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/17/2017-05-17-ES6学习笔记之字符串的扩展/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="李欢">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lihuan's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">ES6学习笔记之字符串的扩展</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-17T00:00:00+08:00">
+                2017-05-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="ES5中字符串的属性和方法"><a href="#ES5中字符串的属性和方法" class="headerlink" title="ES5中字符串的属性和方法"></a>ES5中字符串的属性和方法</h2><h3 id="length"><a href="#length" class="headerlink" title="length"></a>length</h3><p>Sting类型的每个实例都有一个<code>length</code>的属性，表示字符串包含多少个字符。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> stringValue = <span class="string">'hello'</span>;</div><div class="line"><span class="built_in">console</span>.log(stringValue.length) <span class="comment">// 5</span></div></pre></td></tr></table></figure></p>
+<h3 id="charAt-和charCodeAt"><a href="#charAt-和charCodeAt" class="headerlink" title="charAt()和charCodeAt()"></a>charAt()和charCodeAt()</h3><p>用于访问字符串中特定的字符，两个方法都接受一个参数，即字符所在的下标位置。其中<code>charAt()</code>方法返回下标所在的字符，而<code>charCodeAt()</code>则返回下标对应的字符的字符编码。<br><figure class="highlight openscad"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">let</span> <span class="built_in">str</span> = 'hello';</div><div class="line">console.<span class="built_in">log</span>(<span class="built_in">str</span>.charAt(<span class="number">1</span>)); <span class="comment">// e</span></div><div class="line">console.<span class="built_in">log</span>(<span class="built_in">str</span>.charCodeAt(<span class="number">1</span>)); <span class="comment">// 101</span></div></pre></td></tr></table></figure></p>
+<p>还可以通过方括号加下标直接取到对应字符<br><figure class="highlight openscad"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">let</span> <span class="built_in">str</span> = 'hello';</div><div class="line">console.<span class="built_in">log</span>(<span class="built_in">str</span>[<span class="number">1</span>]); <span class="comment">// e</span></div></pre></td></tr></table></figure></p>
+<h3 id="concat"><a href="#concat" class="headerlink" title="concat()"></a>concat()</h3><p>用于将多个字符拼接起来，返回拼接得到的新字符，不会修改字符串本身的值。<br><figure class="highlight openscad"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">let</span> <span class="built_in">str</span> = <span class="string">"hello"</span>;</div><div class="line"><span class="built_in">let</span> result = <span class="built_in">str</span>.<span class="built_in">concat</span>(<span class="string">" world"</span>,<span class="string">"!"</span>);</div><div class="line">console.<span class="built_in">log</span>(result) <span class="comment">//hello world!</span></div></pre></td></tr></table></figure></p>
+<p>但是实际应用中还是用“+”操作符更方便。</p>
+<h3 id="slice-、substr-、substring"><a href="#slice-、substr-、substring" class="headerlink" title="slice()、substr()、substring()"></a>slice()、substr()、substring()</h3><p>这三个方法都会返回被操作字符串的一个子字符串，而且也都接受一或两个参数。第一个参数指定子字符串开始的位置，第二个参数表示子字符串到哪里结束。<code>slice()</code>和<code>substring()</code>的第二个参数指定子字符串最后一个字符的位置(不包含字符本身)。而<code>substr()</code>的第二个参数指定的则是返回的字符个数。如果不给这些方法指定第二个参数，则将字符串的长度作为结束位置。它们都不会修改字符串本身的值。<br><figure class="highlight openscad"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">let</span> <span class="built_in">str</span> = <span class="string">"hello world"</span>;</div><div class="line">console.<span class="built_in">log</span>(<span class="built_in">str</span>.slice(<span class="number">3</span>)); <span class="comment">// lo world</span></div><div class="line">console.<span class="built_in">log</span>(<span class="built_in">str</span>.substr(<span class="number">3</span>)); <span class="comment">// lo world</span></div><div class="line">console.<span class="built_in">log</span>(<span class="built_in">str</span>.substring(<span class="number">3</span>)); <span class="comment">// lo world</span></div><div class="line"></div><div class="line">console.<span class="built_in">log</span>(<span class="built_in">str</span>.slice(<span class="number">3</span>, <span class="number">7</span>)); <span class="comment">// lo w</span></div><div class="line">console.<span class="built_in">log</span>(<span class="built_in">str</span>.substr(<span class="number">3</span>, <span class="number">7</span>)); <span class="comment">// lo worl</span></div><div class="line">console.<span class="built_in">log</span>(<span class="built_in">str</span>.substring(<span class="number">3</span>, <span class="number">7</span>)); <span class="comment">// lo w</span></div></pre></td></tr></table></figure></p>
+<p>如果传递给这些方法的参数是负值，结果就不相同了。</p>
+<ol>
+<li><code>slice()</code>方法会将传入的负值与字符串的长度相加。</li>
+<li><code>substr()</code>将负的第一个参数加上字符串的长度，将负的第二个参数转换为0。</li>
+<li><code>substring()</code>方法会将所有的负的参数转换为0。<figure class="highlight openscad"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">let</span> <span class="built_in">str</span> = <span class="string">"hello world"</span>;</div><div class="line">console.<span class="built_in">log</span>(<span class="built_in">str</span>.slice(-<span class="number">3</span>)); <span class="comment">// rld</span></div><div class="line">console.<span class="built_in">log</span>(<span class="built_in">str</span>.substr(-<span class="number">3</span>)); <span class="comment">// rld</span></div><div class="line">console.<span class="built_in">log</span>(<span class="built_in">str</span>.substring(-<span class="number">3</span>)); <span class="comment">// hello world</span></div><div class="line"></div><div class="line">console.<span class="built_in">log</span>(<span class="built_in">str</span>.slice(<span class="number">3</span>, -<span class="number">4</span>)); <span class="comment">// lo w</span></div><div class="line">console.<span class="built_in">log</span>(<span class="built_in">str</span>.substr(<span class="number">3</span>, -<span class="number">4</span>)); <span class="comment">// (空字符串)</span></div><div class="line">console.<span class="built_in">log</span>(<span class="built_in">str</span>.substring(<span class="number">3</span>, -<span class="number">4</span>)); <span class="comment">// hel</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><strong>注意:</strong><code>substring()</code>这个方法始终会将较小的数作为开始位置，较大的数作为结束位置。</p>
+<h3 id="indexOf-和lastIndexOf"><a href="#indexOf-和lastIndexOf" class="headerlink" title="indexOf()和lastIndexOf()"></a>indexOf()和lastIndexOf()</h3><p>两个方法都是从字符串中搜索给定的子字符串，然后返回字符串的位置。如果没有找到就返回-1。<code>indexOf()</code>从字符串的开头向后进行搜索，而<code>lastIndexOf()</code>与之相反。<br><figure class="highlight processing"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">let <span class="built_in">str</span> = <span class="string">"hello world"</span>;</div><div class="line">console.<span class="built_in">log</span>(<span class="built_in">str</span>.indexOf(<span class="string">'o'</span>)); <span class="comment">// 4</span></div><div class="line">console.<span class="built_in">log</span>(<span class="built_in">str</span>.lastIndexOf(<span class="string">'o'</span>)); <span class="comment">// 7</span></div></pre></td></tr></table></figure></p>
+<p>这两个方法都可以接受第二个参数，指定搜索的起始位置。<br><figure class="highlight processing"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">let <span class="built_in">str</span> = <span class="string">"hello world"</span>;</div><div class="line">console.<span class="built_in">log</span>(<span class="built_in">str</span>.indexOf(<span class="string">'o'</span>, <span class="number">6</span>)); <span class="comment">// 7</span></div><div class="line">console.<span class="built_in">log</span>(<span class="built_in">str</span>.lastIndexOf(<span class="string">'o'</span>, <span class="number">6</span>)); <span class="comment">// 4</span></div></pre></td></tr></table></figure></p>
+<p>搜索字符串中所有匹配的字符<br><figure class="highlight hsp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">let <span class="keyword">str</span> = <span class="string">"hello world hello world hello world hello world"</span><span class="comment">;</span></div><div class="line">let arr = []<span class="comment">;</span></div><div class="line">let <span class="keyword">pos</span> = str.indexOf(<span class="string">"o"</span>)<span class="comment">;</span></div><div class="line"><span class="keyword">while</span> ( <span class="keyword">pos</span> &gt; <span class="number">-1</span>)&#123;</div><div class="line">  arr.push(<span class="keyword">pos</span>)<span class="comment">;</span></div><div class="line">  <span class="keyword">pos</span> = str.indexOf(<span class="string">"o"</span>, <span class="keyword">pos</span>+<span class="number">1</span>)<span class="comment">;</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="trim"><a href="#trim" class="headerlink" title="trim()"></a>trim()</h3><p>这个方法会创建一个字符串的副本，删除前置及后缀的空格，返回结果，不会修改原始字符串。<br><figure class="highlight openscad"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">let</span> <span class="built_in">str</span> = <span class="string">" hello world "</span>;</div><div class="line">console.<span class="built_in">log</span>(<span class="built_in">str</span>.trim()); <span class="comment">// "hello world"</span></div></pre></td></tr></table></figure></p>
+<h3 id="toLowerCase-、toLocaleLowerCase-、toUpperCase-和toLocaleUpperCase"><a href="#toLowerCase-、toLocaleLowerCase-、toUpperCase-和toLocaleUpperCase" class="headerlink" title="toLowerCase()、toLocaleLowerCase()、toUpperCase()和toLocaleUpperCase()"></a>toLowerCase()、toLocaleLowerCase()、toUpperCase()和toLocaleUpperCase()</h3><p>常用的是<code>toLowerCase()</code>和<code>toUpperCase()</code>,<code>toLocaleLowerCase()</code>和<code>toLocaleUpperCase()</code>是针对特定的地区实现的。<br><code>toUpperCase()</code>小写转大写，<code>toLowerCase()</code>大写转小写。<br><figure class="highlight openscad"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">let</span> <span class="built_in">str</span> = <span class="string">"HELLO WORLD"</span>;</div><div class="line">console.<span class="built_in">log</span>(<span class="built_in">str</span>.toLowerCase()); <span class="comment">// "hello wprld"</span></div><div class="line"></div><div class="line"><span class="built_in">let</span> <span class="built_in">str</span> = <span class="string">"hello wprld"</span>;</div><div class="line">console.<span class="built_in">log</span>(<span class="built_in">str</span>.toLowerCase()); <span class="comment">// "HELLO WORLD"</span></div></pre></td></tr></table></figure></p>
+<h3 id="match"><a href="#match" class="headerlink" title="match()"></a>match()</h3><p>在字符串上调用这个方法，本质上与调用<code>RegExp</code>的<code>exec()</code>方法相同，<code>match()</code>方法只接受一个参数，要么是一个正则表达式，要么是一个<code>RegExp</code>对象。<br><figure class="highlight coq"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> text = <span class="string">"cat, bat, sat, fat"</span>;</div><div class="line"><span class="keyword">let</span> <span class="built_in">pattern</span> = /.<span class="built_in">at</span>/;</div><div class="line"><span class="keyword">let</span> matchs = text.<span class="keyword">match</span>(<span class="built_in">pattern</span>);</div><div class="line">console.log(matchs) // [<span class="string">"cat"</span>, index: <span class="number">0</span>, input: <span class="string">"cat, bat, sat, fat"</span>]</div></pre></td></tr></table></figure></p>
+<h3 id="search"><a href="#search" class="headerlink" title="search()"></a>search()</h3><p>这个方法唯一参数与<code>match()</code>参数相同，<code>search()</code>方法返回字符串第一个匹配项的索引，如果没有找到匹配项，则返回<code>-1</code>。<br><figure class="highlight openscad"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">let</span> <span class="built_in">text</span> = <span class="string">"cat, bat, sat, fat"</span>;</div><div class="line">var pos = <span class="built_in">text</span>.<span class="built_in">search</span>(/at/);</div><div class="line">console.<span class="built_in">log</span>(pos) <span class="comment">// 1</span></div></pre></td></tr></table></figure></p>
+<h3 id="replace"><a href="#replace" class="headerlink" title="replace()"></a>replace()</h3><p>这个方法接受两个参数：第一个参数可以是一个RegExp对象或者一个字符串，第二个参数可以是一个字符串或者一个函数。如果第一个参数是一个字符串，就只会替换第一个字符串，如果要替换所有的字符串，就必须要用正则表达式，全局(g)替换。<br><figure class="highlight nimrod"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> text = <span class="string">"cat, bat, sat, fat"</span>;</div><div class="line"><span class="keyword">var</span> <span class="literal">result</span> = text.replace(<span class="string">"at"</span>, <span class="string">"fu"</span>);</div><div class="line">console.log(<span class="literal">result</span>); // <span class="string">"cfu, bat, sat, fat"</span></div><div class="line"></div><div class="line"><span class="keyword">let</span> text = <span class="string">"cat, bat, sat, fat"</span>;</div><div class="line"><span class="keyword">var</span> <span class="literal">result</span> = text.replace(/at/g, <span class="string">"fu"</span>);</div><div class="line">console.log(<span class="literal">result</span>); // <span class="string">"cfu, bfu, sfu, ffu"</span></div></pre></td></tr></table></figure></p>
+<p><code>replace()</code>的第二个方法可以是一个函数，在只有一个匹配项的情况下，会向这个函数传递三个参数：模式的匹配项，模式的匹配项在字符串中的位置和原始字符串。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> text = <span class="string">"&lt;p class=\"active\"&gt;Hello world&lt;/p&gt;"</span>;</div><div class="line"><span class="keyword">let</span> result = text.replace(<span class="regexp">/[&lt;&gt;"&amp;]/g</span>, <span class="function"><span class="keyword">function</span> (<span class="params">match, pos, oldText</span>) </span>&#123;</div><div class="line">  <span class="keyword">switch</span> (match) &#123;</div><div class="line">    <span class="keyword">case</span> <span class="string">"&lt;"</span> :</div><div class="line">      <span class="keyword">return</span> <span class="string">"&amp;lt;"</span>;</div><div class="line">    <span class="keyword">case</span> <span class="string">"&gt;"</span> :</div><div class="line">      <span class="keyword">return</span> <span class="string">"&amp;gt;"</span>;</div><div class="line">    <span class="keyword">case</span>  <span class="string">"&amp;"</span> :</div><div class="line">      <span class="keyword">return</span> <span class="string">"&amp;amp;"</span>;</div><div class="line">    <span class="keyword">case</span> <span class="string">"\""</span> :</div><div class="line">      <span class="keyword">return</span> <span class="string">"&amp;quot;"</span>;</div><div class="line">  &#125;</div><div class="line">&#125;);</div><div class="line"><span class="built_in">console</span>.log(result) <span class="comment">// "&amp;lt;p class=&amp;quot;active&amp;quot;&amp;gt;Hello world&amp;lt;/p&amp;gt;"</span></div></pre></td></tr></table></figure></p>
+<h3 id="split"><a href="#split" class="headerlink" title="split()"></a>split()</h3><p>这个方法可以基于指定的分隔符把一个字符串分割成多个子字符串，并将结果放在一个数组里面。分隔符可以是字符串，也可以是RegExp对象。<code>split()</code>方法可以接受可选的第二个参数，用于指定数组的大小。<br><figure class="highlight maxima"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">let</span> <span class="built_in">color</span> = <span class="string">"red, yellow, green, pink"</span>;</div><div class="line"><span class="built_in">let</span> color1 = <span class="built_in">color</span>.<span class="built_in">split</span>(<span class="string">","</span>); // [<span class="string">"red"</span>, <span class="string">" yellow"</span>, <span class="string">" green"</span>, <span class="string">" pink"</span>]</div><div class="line"><span class="built_in">let</span> color2 = <span class="built_in">color</span>.<span class="built_in">split</span>(<span class="string">","</span>, <span class="number">2</span>); // [<span class="string">"red"</span>, <span class="string">" yellow"</span>]</div></pre></td></tr></table></figure></p>
+<h3 id="localeCompare"><a href="#localeCompare" class="headerlink" title="localeCompare()"></a>localeCompare()</h3><p>这个方法用于比较两个字符串，并返回下列结果之一:</p>
+<ol>
+<li>如果字符串在字母表中位置在参数之前，则返回一个负数</li>
+<li>字符串等于参数，返回0</li>
+<li>如果字符串在字母表中位置在参数之后，返回一个正数</li>
+</ol>
+<figure class="highlight openscad"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">let</span> <span class="built_in">str</span> = <span class="string">"yellow"</span>;</div><div class="line">console.<span class="built_in">log</span>(<span class="built_in">str</span>.localeCompare(<span class="string">"black"</span>)); <span class="comment">// 1</span></div><div class="line">console.<span class="built_in">log</span>(<span class="built_in">str</span>.localeCompare(<span class="string">"yellow"</span>)); <span class="comment">// 0</span></div><div class="line">console.<span class="built_in">log</span>(<span class="built_in">str</span>.localeCompare(<span class="string">"zoom"</span>)); <span class="comment">// -1</span></div></pre></td></tr></table></figure>
+<p><strong>注意:</strong><code>localeCompare()</code>返回的数值取决于实现，不一定是1， -1， 0。</p>
+<h3 id="String-fromCharCode"><a href="#String-fromCharCode" class="headerlink" title="String.fromCharCode()"></a>String.fromCharCode()</h3><p>这个方法是接收一个或多个字符编码，然后转换成字符串。<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">console.log(String.fromCharCode(<span class="number">104</span>, <span class="number">101</span>, <span class="number">108</span>, <span class="number">108</span>, <span class="number">111</span>)); <span class="comment">// hello</span></div></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="ES6字符串的扩展"><a href="#ES6字符串的扩展" class="headerlink" title="ES6字符串的扩展"></a>ES6字符串的扩展</h2><p>javascript允许采用<code>\uxxxx</code>表示一个字符，但是只限于码点在<code>\u0000</code>~<code>\uFFFF</code>之间，超出这个范围的字符就必须用双字节表示。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="string">"\uD842\uDFB7"</span>); <span class="comment">// "𠮷"</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">"\u20BB7"</span>); <span class="comment">// " 7"</span></div></pre></td></tr></table></figure></p>
+<p>但是ES6只要将码点放入大括号中， 就能正确解读。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="string">"\u&#123;20BB7&#125;"</span>); <span class="comment">// "𠮷"</span></div></pre></td></tr></table></figure></p>
+<h3 id="codePointAt"><a href="#codePointAt" class="headerlink" title="codePointAt()"></a>codePointAt()</h3><p><code>codePointAt()</code>方法能够正确处理四个字节的字符（Unicode码点大于<code>0xFFFF</code>的字符），返回一个字符的码点（十进制）。<br><figure class="highlight sqf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">let <span class="built_in">str</span> = <span class="string">'𠮷a'</span>;</div><div class="line">console.<span class="built_in">log</span>(<span class="built_in">str</span>.codePointAt(<span class="number">0</span>).<span class="built_in">toString</span>(<span class="number">16</span>)); <span class="comment">// "20bb7"</span></div><div class="line">console.<span class="built_in">log</span>(<span class="built_in">str</span>.codePointAt(<span class="number">1</span>)); <span class="comment">// "dfb7"</span></div><div class="line">console.<span class="built_in">log</span>(<span class="built_in">str</span>.codePointAt(<span class="number">2</span>)); <span class="comment">// "61"</span></div></pre></td></tr></table></figure></p>
+<p>可以看出<code>codePointAt()</code>的参数任然是不对的，要取到<code>a</code>必须的传入2才能取到，要解决这种问题可以用<code>for...of</code>循环实现，因为它会正确识别32位的UTF-16字符。<br><figure class="highlight xquery"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> str = <span class="string">'𠮷a'</span>;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> c <span class="keyword">of</span> str)&#123;</div><div class="line">  console.log(c.codePointAt(<span class="number">0</span>).toString(<span class="number">16</span>)); //<span class="string">"20bb7"</span> <span class="string">"61"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><code>codePointAt()</code>是判断一个字符是由两字节组成还是四字节组成最简单的办法。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">isBit</span>(<span class="params">value</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> value.codePointAt(<span class="number">0</span>) &gt; <span class="number">0xFFFF</span>;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(isBit(<span class="string">"𠮷"</span>)); <span class="comment">// true</span></div><div class="line"><span class="built_in">console</span>.log(isBit(<span class="string">"a"</span>)); <span class="comment">// false</span></div></pre></td></tr></table></figure></p>
+<h3 id="String-fromCodePoint"><a href="#String-fromCodePoint" class="headerlink" title="String.fromCodePoint()"></a>String.fromCodePoint()</h3><p>用于从码点返回对应字符，能够识别Unicode编号大于<code>0xFFFF</code>的字符。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">String</span>.fromCodePoint(<span class="number">0x20BB7</span>) <span class="comment">// "𠮷"</span></div></pre></td></tr></table></figure></p>
+<p>###字符串的遍历接口<br>ES6新增字符串遍历接口，字符串可以用<code>for...of</code>循环遍历。<br><figure class="highlight xquery"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> str = <span class="string">"hello"</span>;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> s <span class="keyword">of</span> str)&#123;</div><div class="line">  console.log(s) // <span class="string">"h"</span> <span class="string">"e"</span> <span class="string">"l"</span> <span class="string">"l"</span> <span class="string">"o"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这个遍历器最大的优点是可以识别大于0xFFFF的码点，传统的for循环无法识别这样的码点。<br><figure class="highlight openscad"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">let</span> <span class="built_in">str</span> = <span class="string">"𠮷"</span>;</div><div class="line"><span class="keyword">for</span>(<span class="built_in">let</span> i = <span class="number">0</span>; i &lt; <span class="built_in">str</span>.length; i++)&#123;</div><div class="line">  console.<span class="built_in">log</span>(<span class="built_in">str</span>[i]) <span class="comment">// � � (打印出来是这种无法识别的符号)</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">for</span>(<span class="built_in">let</span> s of <span class="built_in">str</span>)&#123;</div><div class="line"> console.<span class="built_in">log</span>(s) <span class="comment">// "𠮷"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="includes-、startsWith-、endsWith"><a href="#includes-、startsWith-、endsWith" class="headerlink" title="includes()、startsWith()、endsWith()"></a>includes()、startsWith()、endsWith()</h3><ol>
+<li><code>includes()</code>：返回布尔值，表示是否找到了参数字符串</li>
+<li><code>startsWith()</code>：返回布尔值，表示参数字符串是否在源字符串头部</li>
+<li><code>endsWith()</code>：返回布尔值，表示参数字符串是否在源字符串尾部<figure class="highlight processing"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">let <span class="built_in">str</span> = <span class="string">"hello world!"</span>;</div><div class="line">console.<span class="built_in">log</span>(<span class="built_in">str</span>.includes(<span class="string">"hello"</span>)); <span class="comment">// true</span></div><div class="line">console.<span class="built_in">log</span>(<span class="built_in">str</span>.startsWith(<span class="string">"hello"</span>)); <span class="comment">// true</span></div><div class="line">console.<span class="built_in">log</span>(<span class="built_in">str</span>.endsWith(<span class="string">"!"</span>)); <span class="comment">// true</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>这三个方法都可以接受第二个参数，<code>endsWith</code>的行为与其他两个方法有所不同。它针对前<code>n</code>个字符，而其他两个方法针对从第<code>n</code>个位置直到字符串结束。<br><figure class="highlight processing"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"> let <span class="built_in">str</span> = <span class="string">"hello world!"</span>;</div><div class="line">console.<span class="built_in">log</span>(<span class="built_in">str</span>.includes(<span class="string">"world"</span>, <span class="number">6</span>))</div><div class="line">console.<span class="built_in">log</span>(<span class="built_in">str</span>.startsWith(<span class="string">"world"</span>, <span class="number">6</span> ))</div><div class="line">console.<span class="built_in">log</span>(<span class="built_in">str</span>.endsWith(<span class="string">"hello"</span>, <span class="number">5</span>))</div></pre></td></tr></table></figure></p>
+<h3 id="repeat"><a href="#repeat" class="headerlink" title="repeat()"></a>repeat()</h3><p>这个方法接收一个参数，表示要将原字符重复的次数。<br><figure class="highlight openscad"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">let</span> <span class="built_in">str</span> = <span class="string">"abc"</span>;</div><div class="line">console.<span class="built_in">log</span>( <span class="built_in">str</span>.repeat(<span class="number">3</span>)) <span class="comment">// "abcabcabc"</span></div><div class="line">console.<span class="built_in">log</span>( <span class="built_in">str</span>.repeat(<span class="number">0</span>)) <span class="comment">// ""</span></div></pre></td></tr></table></figure></p>
+<p>如果参数不是正整数，则有下面几种情况：</p>
+<ol>
+<li>如果参数是小数，会被取整</li>
+<li>如果是负数或者是Infinity，会报错</li>
+<li>如果是0~-1之间的小数，则为0</li>
+<li>如果是NaN，则为0</li>
+<li>如果是字符串，则会先转换成数字</li>
+</ol>
+<h3 id="padStart-和padEnd"><a href="#padStart-和padEnd" class="headerlink" title="padStart()和padEnd()"></a>padStart()和padEnd()</h3><p>字符串自动补全功能，如果字符串不够长度，会在头部或者尾部补全。这两个方法都可接收两个参数，第一个参数指定字符串的最小长度，第二个参数则是用来补全的字符串。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log( <span class="string">'x'</span>.padStart(<span class="number">5</span>, <span class="string">'ab'</span>)); <span class="comment">// "ababx"</span></div><div class="line"><span class="built_in">console</span>.log( <span class="string">'x'</span>.padStart(<span class="number">4</span>, <span class="string">'ab'</span>)) <span class="comment">// "abax"</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log( <span class="string">'x'</span>.padEnd(<span class="number">5</span>, <span class="string">'ab'</span>)); <span class="comment">// "xabab"</span></div><div class="line"><span class="built_in">console</span>.log( <span class="string">'x'</span>.padEnd(<span class="number">4</span>, <span class="string">'ab'</span>)); <span class="comment">// "xaba"</span></div></pre></td></tr></table></figure></p>
+<p>当原字符串的长度大于指定的最小长度的时候，返回原字符串本身。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log( <span class="string">'xxxxxxx'</span>.padStart(<span class="number">5</span>, <span class="string">'ab'</span>)); <span class="comment">// "xxxxxxx"</span></div></pre></td></tr></table></figure></p>
+<p>如果用来补全的字符串与原字符串长度的和大于指定的最小长度的时候，则会截取超出指定的最小长度的字符。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log( <span class="string">'xxx'</span>.padStart(<span class="number">10</span>, <span class="string">'0123456789'</span>)); <span class="comment">// "0123456xxx"</span></div></pre></td></tr></table></figure></p>
+<p>如果省略第二个参数，默认使用空格补全长度。<br><figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="string">'x'</span>.padStart(<span class="number">4</span>) <span class="regexp">//</span> <span class="string">'   x'</span></div><div class="line"><span class="string">'x'</span>.padEnd(<span class="number">4</span>) <span class="regexp">//</span> <span class="string">'x   '</span></div></pre></td></tr></table></figure></p>
+<p>padStart的常见用途是为数值补全指定位数。下面代码生成10位的数值字符串。<br><figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">'1'</span>.padStart(<span class="number">10</span>, <span class="string">'0'</span>) <span class="regexp">//</span> <span class="string">"0000000001"</span></div></pre></td></tr></table></figure></p>
+<p>另一个用途是提示字符串格式。<br><figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="string">'12'</span>.padStart(<span class="number">10</span>, <span class="string">'YYYY-MM-DD'</span>) <span class="regexp">//</span> <span class="string">"YYYY-MM-12"</span></div><div class="line"><span class="string">'09-12'</span>.padStart(<span class="number">10</span>, <span class="string">'YYYY-MM-DD'</span>) <span class="regexp">//</span> <span class="string">"YYYY-09-12"</span></div></pre></td></tr></table></figure></p>
+<h3 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h3><p>模板字符串（template string）是增强版的字符串，用反引号（`）标识。它可以当作普通字符串使用，也可以用来定义多行字符串，或者在字符串中嵌入变量。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 普通字符串</span></div><div class="line"><span class="string">`hello world!`</span>;</div><div class="line"><span class="comment">//多行字符串</span></div><div class="line"><span class="string">`How are you</span></div><div class="line">I'm fine`</div><div class="line"><span class="comment">//字符串中嵌入变量</span></div><div class="line"><span class="keyword">let</span> name=<span class="string">"Tom"</span>;</div><div class="line"><span class="keyword">let</span> age = <span class="number">20</span>;</div><div class="line"><span class="string">`my name is <span class="subst">$&#123;name&#125;</span>,  I'm <span class="subst">$&#123;age&#125;</span> years old`</span>;</div></pre></td></tr></table></figure></p>
+<p>模板中使用多行字符串，空格和缩进会保留在输出之中。<br><figure class="highlight maxima"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"> <span class="built_in">let</span> str = `</div><div class="line">  &lt;ul&gt;</div><div class="line">    &lt;<span class="built_in">li</span>&gt;<span class="built_in">first</span>&lt;/<span class="built_in">li</span>&gt;</div><div class="line">    &lt;<span class="built_in">li</span>&gt;<span class="built_in">second</span>&lt;/<span class="built_in">li</span>&gt;</div><div class="line">  &lt;ul&gt;</div><div class="line">`;</div><div class="line">console.<span class="built_in">log</span>(str)</div></pre></td></tr></table></figure></p>
+<p>效果图如下<br><img src="http://optwq0urg.bkt.clouddn.com/blog/20170517/143957231.png?imageslim" alt="mark"></p>
+<p>模板字符串中嵌入变量，需要将变量名写在<code>${}</code>中。大括号内可以放任意的JavaScript表达式<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> x = <span class="number">1</span>,</div><div class="line">    y = <span class="number">2</span>;</div><div class="line"><span class="string">`<span class="subst">$&#123;x&#125;</span> + <span class="subst">$&#123;y&#125;</span> = <span class="subst">$&#123;x + y&#125;</span>`</span> <span class="comment">// "1 + 2 = 3"</span></div><div class="line"></div><div class="line"><span class="keyword">let</span> obj = &#123;<span class="attr">x</span> : <span class="number">1</span>, <span class="attr">y</span> : <span class="number">2</span>&#125;;</div><div class="line"><span class="string">`<span class="subst">$&#123;obj.x&#125;</span> + <span class="subst">$&#123;obj.y&#125;</span> = <span class="subst">$&#123;obj.x + obj.y&#125;</span>`</span> <span class="comment">// "1 + 2 = 3"</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="string">"hello world"</span>;</div><div class="line">&#125;</div><div class="line"><span class="string">`Hi, <span class="subst">$&#123;fn()&#125;</span>`</span> <span class="comment">// "Hi, hello world"</span></div></pre></td></tr></table></figure></p>
+<p>模板字符串中的变量没有声明，就会报错。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">`hello, <span class="subst">$&#123;text&#125;</span>`</span> <span class="comment">// Uncaught ReferenceError: text is not defined</span></div></pre></td></tr></table></figure></p>
+<p>模板字符串的大括号内部是一个字符串，将会原样输出。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">`hello, <span class="subst">$&#123;<span class="string">'world'</span>&#125;</span>`</span> <span class="comment">// "hello, world"</span></div></pre></td></tr></table></figure></p>
+<h3 id="标签模板"><a href="#标签模板" class="headerlink" title="标签模板"></a>标签模板</h3><p>模板字符串可以紧跟在一个函数名后面，该函数将被调用来处理这个模板字符串。如果模板字符串里面有变量，就会将模板字符串先处理成多个参数，再调用函数。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> a = <span class="number">5</span>;</div><div class="line"><span class="keyword">let</span> b = <span class="number">10</span>;</div><div class="line"></div><div class="line">tag<span class="string">`Hello <span class="subst">$&#123; a + b &#125;</span> world <span class="subst">$&#123; a * b &#125;</span>`</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">tag</span>(<span class="params">arr, value1, value2</span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(arr); <span class="comment">//  ["Hello ", " world ", "", raw: Array(3)]</span></div><div class="line">  <span class="built_in">console</span>.log(value1); <span class="comment">// 15</span></div><div class="line">  <span class="built_in">console</span>.log(value2); <span class="comment">// 50</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><code>tag</code>函数的第一个参数是一个数组，该数组的成员是模板字符串中那些没有变量替换的部分。其他参数，都是模板字符串各个变量被替换后的值。</p>
+<h3 id="String-raw"><a href="#String-raw" class="headerlink" title="String.raw()"></a>String.raw()</h3><p><code>String.raw</code>方法，往往用来充当模板字符串的处理函数，返回一个斜杠都被转义（即斜杠前面再加一个斜杠）的字符串，对应于替换变量后的模板字符串。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="built_in">String</span>.raw<span class="string">`Hi\n<span class="subst">$&#123;<span class="number">2</span>+<span class="number">3</span>&#125;</span>!`</span> === <span class="string">"Hi\\n5!"</span>) <span class="comment">// true</span></div></pre></td></tr></table></figure></p>
+<p>如果原字符串的斜杠已经转义，那么<code>String.raw</code>不会做任何处理。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="built_in">String</span>.raw<span class="string">`Hi\\n<span class="subst">$&#123;<span class="number">2</span>+<span class="number">3</span>&#125;</span>!`</span>) <span class="comment">// "Hi\\n5!"</span></div></pre></td></tr></table></figure></p>
+<p><code>String.raw</code>方法也可以作为正常的函数使用。这时，它的第一个参数，应该是一个具有<code>raw</code>属性的对象，且<code>raw</code>属性的值应该是一个数组。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">String</span>.raw(&#123; <span class="attr">raw</span>: <span class="string">'test'</span> &#125;, <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>);</div><div class="line"><span class="comment">// 't0e1s2t'</span></div><div class="line"></div><div class="line"><span class="comment">// 等同于</span></div><div class="line"><span class="built_in">String</span>.raw(&#123; <span class="attr">raw</span>: [<span class="string">'t'</span>,<span class="string">'e'</span>,<span class="string">'s'</span>,<span class="string">'t'</span>] &#125;, <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>);</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/weixin.png" alt="李欢 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信添加我</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ES6/" rel="tag"># ES6</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/16/2017-05-16-ES6学习笔记之变量的解构赋值/" rel="next" title="ES6学习笔记之变量的解构赋值">
+                <i class="fa fa-chevron-left"></i> ES6学习笔记之变量的解构赋值
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="李欢" />
+          <p class="site-author-name" itemprop="name">李欢</p>
+           
+              <p class="site-description motion-element" itemprop="description">个人博客</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Fanlee" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/2784226692/profile?topnav=1&wvr=6" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ES5中字符串的属性和方法"><span class="nav-number">1.</span> <span class="nav-text">ES5中字符串的属性和方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#length"><span class="nav-number">1.1.</span> <span class="nav-text">length</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#charAt-和charCodeAt"><span class="nav-number">1.2.</span> <span class="nav-text">charAt()和charCodeAt()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#concat"><span class="nav-number">1.3.</span> <span class="nav-text">concat()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#slice-、substr-、substring"><span class="nav-number">1.4.</span> <span class="nav-text">slice()、substr()、substring()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#indexOf-和lastIndexOf"><span class="nav-number">1.5.</span> <span class="nav-text">indexOf()和lastIndexOf()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#trim"><span class="nav-number">1.6.</span> <span class="nav-text">trim()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#toLowerCase-、toLocaleLowerCase-、toUpperCase-和toLocaleUpperCase"><span class="nav-number">1.7.</span> <span class="nav-text">toLowerCase()、toLocaleLowerCase()、toUpperCase()和toLocaleUpperCase()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#match"><span class="nav-number">1.8.</span> <span class="nav-text">match()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#search"><span class="nav-number">1.9.</span> <span class="nav-text">search()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#replace"><span class="nav-number">1.10.</span> <span class="nav-text">replace()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#split"><span class="nav-number">1.11.</span> <span class="nav-text">split()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#localeCompare"><span class="nav-number">1.12.</span> <span class="nav-text">localeCompare()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String-fromCharCode"><span class="nav-number">1.13.</span> <span class="nav-text">String.fromCharCode()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ES6字符串的扩展"><span class="nav-number">2.</span> <span class="nav-text">ES6字符串的扩展</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#codePointAt"><span class="nav-number">2.1.</span> <span class="nav-text">codePointAt()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String-fromCodePoint"><span class="nav-number">2.2.</span> <span class="nav-text">String.fromCodePoint()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#includes-、startsWith-、endsWith"><span class="nav-number">2.3.</span> <span class="nav-text">includes()、startsWith()、endsWith()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#repeat"><span class="nav-number">2.4.</span> <span class="nav-text">repeat()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#padStart-和padEnd"><span class="nav-number">2.5.</span> <span class="nav-text">padStart()和padEnd()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模板字符串"><span class="nav-number">2.6.</span> <span class="nav-text">模板字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标签模板"><span class="nav-number">2.7.</span> <span class="nav-text">标签模板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String-raw"><span class="nav-number">2.8.</span> <span class="nav-text">String.raw()</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">李欢</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (search_path.endsWith("json")) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
