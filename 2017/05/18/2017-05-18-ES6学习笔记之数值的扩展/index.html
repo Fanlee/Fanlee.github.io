@@ -1,0 +1,1146 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="ES6" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="ES5中的Number类型Number采用IEEE754格式来表示整数和浮点数。整数可以通过十进制、八进制、十六进制字面量来表示。 八进制字面量第一位必须是0，如果字面值中的数值超过范围，前导的零将会被省略，后面数值当作十进制解析。123console.log(070); // 56console.log(08); // 8console.log(089)； // 89 八进制字面量在严格模式下会">
+<meta name="keywords" content="ES6">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6学习笔记之数值的扩展">
+<meta property="og:url" content="http://yoursite.com/2017/05/18/2017-05-18-ES6学习笔记之数值的扩展/index.html">
+<meta property="og:site_name" content="lihuan&#39;s Blog">
+<meta property="og:description" content="ES5中的Number类型Number采用IEEE754格式来表示整数和浮点数。整数可以通过十进制、八进制、十六进制字面量来表示。 八进制字面量第一位必须是0，如果字面值中的数值超过范围，前导的零将会被省略，后面数值当作十进制解析。123console.log(070); // 56console.log(08); // 8console.log(089)； // 89 八进制字面量在严格模式下会">
+<meta property="og:updated_time" content="2017-05-18T06:35:40.228Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ES6学习笔记之数值的扩展">
+<meta name="twitter:description" content="ES5中的Number类型Number采用IEEE754格式来表示整数和浮点数。整数可以通过十进制、八进制、十六进制字面量来表示。 八进制字面量第一位必须是0，如果字面值中的数值超过范围，前导的零将会被省略，后面数值当作十进制解析。123console.log(070); // 56console.log(08); // 8console.log(089)； // 89 八进制字面量在严格模式下会">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/05/18/2017-05-18-ES6学习笔记之数值的扩展/"/>
+
+
+
+
+
+  <title>ES6学习笔记之数值的扩展 | lihuan's Blog</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">lihuan's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">前端狗一只...</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/18/2017-05-18-ES6学习笔记之数值的扩展/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="李欢">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lihuan's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">ES6学习笔记之数值的扩展</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-18T00:00:00+08:00">
+                2017-05-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="ES5中的Number类型"><a href="#ES5中的Number类型" class="headerlink" title="ES5中的Number类型"></a>ES5中的Number类型</h2><p><code>Number</code>采用IEEE754格式来表示整数和浮点数。<br>整数可以通过十进制、八进制、十六进制字面量来表示。</p>
+<p>八进制字面量第一位必须是<code>0</code>，如果字面值中的数值超过范围，前导的零将会被省略，后面数值当作十进制解析。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">console.<span class="built_in">log</span>(<span class="number">070</span>); <span class="comment">// 56</span></div><div class="line">console.<span class="built_in">log</span>(<span class="number">08</span>); <span class="comment">// 8</span></div><div class="line">console.<span class="built_in">log</span>(<span class="number">089</span>)； <span class="comment">// 89</span></div></pre></td></tr></table></figure></p>
+<p>八进制字面量在严格模式下会报错</p>
+<p>十六进制字面量前两位必须是<code>0x</code>,超出字面量会报错。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">console.<span class="built_in">log</span>(<span class="number">0xF</span>); <span class="comment">// 15</span></div><div class="line">console.<span class="built_in">log</span>(<span class="number">0</span>xG); <span class="comment">// Uncaught SyntaxError: Invalid or unexpected token</span></div></pre></td></tr></table></figure></p>
+<p>在进行算术计算的时候，八进制和十六进制的数值最终都会转换成十进制。</p>
+<h3 id="浮点数值"><a href="#浮点数值" class="headerlink" title="浮点数值"></a>浮点数值</h3><p>浮点数值需要的内存空间是保存整数值的两倍，如果小数点后面没有任何数值，或者浮点数本身就表示一个整数，那么都会转换为整数。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">console.<span class="built_in">log</span>(<span class="number">10.</span>); <span class="comment">// 10</span></div><div class="line">console.<span class="built_in">log</span>(<span class="number">10.0</span>); <span class="comment">// 10</span></div></pre></td></tr></table></figure></p>
+<h3 id="数值范围"><a href="#数值范围" class="headerlink" title="数值范围"></a>数值范围</h3><p><code>ECMAScripot</code>的数值范围在<code>Number.MIN_VALUE</code>和<code>Number.MAX_VALUE</code>之间，如果超出这个范围， 将会被转换成<code>Infinity</code>值，该值不能用于计算，要想确定一个值是否是有穷的，通过<code>isFinite()</code>判断，函数参数位于最大值与最小值之间返回<code>true</code>。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>.MIN_VALUE); <span class="comment">// 5e-324</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>.MAX_VALUE); <span class="comment">// 1.7976931348623157e+308</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">isFinite</span>(<span class="built_in">Number</span>.MIN_VALUE + <span class="built_in">Number</span>.MIN_VALUE)); <span class="comment">// false</span></div></pre></td></tr></table></figure></p>
+<h3 id="NaN"><a href="#NaN" class="headerlink" title="NaN"></a>NaN</h3><p>这个数值表示一个本来要返回数值的操作数未返回数值的情况。</p>
+<ol>
+<li>任何涉及到NaN的操作都会返回<code>NaN</code></li>
+<li><code>NaN</code>与任何值都不相等，包括自身<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="literal">NaN</span> === <span class="literal">NaN</span>) <span class="comment">// false</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><code>ECMAScript</code>定义了<code>isNaN()</code>函数，该函数接收一个参数，会尝试将这个参数转换成数值，转换成功返回<code>false</code>, 失败返回<code>true</code>。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="built_in">isNaN</span>(<span class="literal">NaN</span>)); <span class="comment">// true</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">isNaN</span>(<span class="number">10</span>)); <span class="comment">// false</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">isNaN</span>(<span class="string">'10'</span>)); <span class="comment">// false</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">isNaN</span>(<span class="string">'color'</span>)); <span class="comment">// true</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">isNaN</span>(<span class="literal">true</span>)); <span class="comment">// false</span></div></pre></td></tr></table></figure></p>
+<h3 id="数值转换"><a href="#数值转换" class="headerlink" title="数值转换"></a>数值转换</h3><p>有三个函数可以把非数值转换为数值：<code>Number()</code>、<code>parseInt()</code>和<code>parseFloat()</code>。<code>Number()</code>可用于任何数据类型，另两个则专门用于把字符串转换成数值。</p>
+<p><code>Number()</code>转换规则如下：</p>
+<ol>
+<li>如果是Boolean值，则把<code>true</code>和<code>false</code>转换成1和0</li>
+<li>如果是数值，返回本身</li>
+<li>如果是<code>Null</code>， 返回0</li>
+<li>如果是<code>undefined</code>，返回<code>NaN</code></li>
+<li><p>如果是字符串，则有一下几种情况</p>
+<ul>
+<li>如果字符串中只包含数字，则转换成对应十进制</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="string">"10"</span>)); <span class="comment">// 10</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="string">"+10"</span>)); <span class="comment">//10</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="string">"-10"</span>)); <span class="comment">// -10</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="string">"010"</span>)); <span class="comment">// 10</span></div></pre></td></tr></table></figure>
+<ul>
+<li>如果字符串中包含有效的浮点格式，则转换成对应的浮点数值。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="string">"10.3"</span>)); <span class="comment">// 10.3</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="string">"+10.3"</span>)); <span class="comment">// 10.3</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="string">"-10.3"</span>)); <span class="comment">//-10.3</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="string">"010.3"</span>)); <span class="comment">// 10.3</span></div></pre></td></tr></table></figure>
+<ul>
+<li>如果字符串中包含有效的十六进制格式，则转换成相同大小的十进制整数值。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="string">"0xF"</span>)); <span class="comment">// 15</span></div></pre></td></tr></table></figure>
+<ul>
+<li>如果字符串为空，则转换为0</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="string">" "</span>)); <span class="comment">// 0</span></div></pre></td></tr></table></figure>
+<ul>
+<li>字符串中包含除上述格式之外的字符， 则转换为<code>NaN</code></li>
+</ul>
+</li>
+<li>如果是对象， 则调用对象的<code>valueOf()</code>方法，然后按照前面规则转换，如果转换结果是<code>NaN</code>，则调用对象的<code>toString()</code>方法，再次依照前面规则转换。日期对象会转换成相应的毫秒数。</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> now = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(now)); <span class="comment">// 1495076392196</span></div></pre></td></tr></table></figure>
+<p><code>parseInt()</code>函数在转换字符串时会忽略字符串前面的空格，直到找到第一个非空格字符串。如果第一个字符不是数字字符或者负号，就会返回<code>NaN</code>，如果第一个字符是数字字符，<code>parseInt()</code>会继续解析后面的字符，直到解析完所有字符或者遇到非数字字符。<code>parseInt()</code>解析空字符串会返回<code>NaN</code>。同样，<code>parseInt()</code>也能辨别各种整数格式。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="built_in">parseInt</span>(<span class="string">""</span>)); <span class="comment">// NaN</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">parseInt</span>(<span class="string">"123abc"</span>)); <span class="comment">// 123</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">parseInt</span>(<span class="string">"abc123"</span>)); <span class="comment">// NaN</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">parseInt</span>(<span class="string">"10.2"</span>)); <span class="comment">// 10</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">parseInt</span>(<span class="string">"070"</span>)); <span class="comment">// 70 (ECMAScript5已经不具备解析八进制的能力，所以认为前导的0无效)</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">parseInt</span>(<span class="string">"0xFWQR"</span>)); <span class="comment">// 15</span></div></pre></td></tr></table></figure></p>
+<p><code>parseInt()</code>可以接受第二个参数来指定整数的格式。默认是转换成十进制。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="built_in">parseInt</span>(<span class="string">"10"</span>, <span class="number">2</span>)); <span class="comment">// 2</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">parseInt</span>(<span class="string">"10"</span>, <span class="number">8</span>)); <span class="comment">// 8</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">parseInt</span>(<span class="string">"10"</span>, <span class="number">10</span>)); <span class="comment">// 10</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">parseInt</span>(<span class="string">"10"</span>, <span class="number">16</span>)); <span class="comment">// 16</span></div></pre></td></tr></table></figure></p>
+<p><code>parseFloat()</code>函数与<code>parseInt()</code>类似，不同的是<code>parseFloat()</code>解析完成或者遇到第一个无效的浮点数字字符为止，但是第一个小数点是有效的。<code>parseFloat()</code>始终会忽略前导的零，十六进制的字符串始终会被转换成0，由于<code>parseFloat()</code>只解析十进制值，所以布恩那个指定第二个参数，如果字符串包含的是一个可解析成整数的数值，<code>parseFloat()</code>会返回整数。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="built_in">parseFloat</span>(<span class="string">"123abc"</span>)); <span class="comment">// 123</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">parseFloat</span>(<span class="string">"0xF"</span>)); <span class="comment">// 0</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">parseFloat</span>(<span class="string">"10.5"</span>)); <span class="comment">// 10.5</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">parseFloat</span>(<span class="string">"10.5.5"</span>)); <span class="comment">// 10.5</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">parseFloat</span>(<span class="string">"010.5"</span>)); <span class="comment">// 10.5</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">parseFloat</span>(<span class="string">"10.0"</span>)); <span class="comment">// 10</span></div></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="ES6数值扩展"><a href="#ES6数值扩展" class="headerlink" title="ES6数值扩展"></a>ES6数值扩展</h2><h3 id="二进制和八进制表示法"><a href="#二进制和八进制表示法" class="headerlink" title="二进制和八进制表示法"></a>二进制和八进制表示法</h3><p>ES6提供了新的二进制和八进制数值的新写法，分别用0b和0o表示。<br><figure class="highlight maxima"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">console.<span class="built_in">log</span>(<span class="number">0b0001</span>); // <span class="number">1</span></div><div class="line">console.<span class="built_in">log</span>(<span class="number">0o70</span>); // <span class="number">56</span></div></pre></td></tr></table></figure></p>
+<p>要把二进制和八进制转换成十进制，调用Number()方法。<br><figure class="highlight maxima"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">console.<span class="built_in">log</span>(Number(<span class="number">0b0001</span>)); // <span class="number">1</span></div><div class="line">console.<span class="built_in">log</span>(Number(<span class="number">0o70</span>)); // <span class="number">56</span></div></pre></td></tr></table></figure></p>
+<h3 id="Number-isFinite-、Number-isNaN"><a href="#Number-isFinite-、Number-isNaN" class="headerlink" title="Number.isFinite()、Number.isNaN()"></a>Number.isFinite()、Number.isNaN()</h3><p>这两个方法与传统的全局方法<code>isFinite()</code>和<code>isNaN()</code>相比，这两个新方法只对数值有效。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="built_in">isFinite</span>(<span class="string">"10"</span>)); <span class="comment">// true</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>.isFinite(<span class="string">"10"</span>)); <span class="comment">// false</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">isNaN</span>(<span class="string">"NaN"</span>)); <span class="comment">// true</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>.isNaN(<span class="string">"NaN"</span>)); <span class="comment">// false</span></div></pre></td></tr></table></figure></p>
+<h3 id="Number-parseInt-Number-parseFloat"><a href="#Number-parseInt-Number-parseFloat" class="headerlink" title="Number.parseInt(), Number.parseFloat()"></a>Number.parseInt(), Number.parseFloat()</h3><p>与ES5<code>parseInt()</code>和<code>parseFloat()</code>行为完全一样。这样做的目的，是逐步减少全局性方法，使得语言逐步模块化。</p>
+<h3 id="Number-isInteger"><a href="#Number-isInteger" class="headerlink" title="Number.isInteger()"></a>Number.isInteger()</h3><p>用来判断一个数是否为整数。同样能够识别不同格式的整数，如果第一位是零，则忽略。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>.isInteger(<span class="number">10</span>)); <span class="comment">// true</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>.isInteger(<span class="string">"10"</span>)); <span class="comment">// false</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>.isInteger(<span class="number">10.0</span>)); <span class="comment">// true</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>.isInteger(<span class="number">10.1</span>)); <span class="comment">// false</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>.isInteger(<span class="number">010</span>)); <span class="comment">// true</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>.isInteger(<span class="number">0xF</span>)); <span class="comment">// true</span></div></pre></td></tr></table></figure></p>
+<h3 id="Number-EPSILON"><a href="#Number-EPSILON" class="headerlink" title="Number.EPSILON"></a>Number.EPSILON</h3><p>引入一个这么小的量的目的，在于为浮点数计算，设置一个误差范围。如果浮点数的计算误差小于<code>Number.EPSILON</code>，我们就可以认为等到了正确的结果。<br><figure class="highlight fortran"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">console.<span class="built_in">log</span>(<span class="keyword">Number</span>.<span class="built_in">EPSILON</span>); // <span class="number">2.220446049250313e-16</span></div></pre></td></tr></table></figure></p>
+<h3 id="安全整数和Number-isSafeInteger"><a href="#安全整数和Number-isSafeInteger" class="headerlink" title="安全整数和Number.isSafeInteger()"></a>安全整数和Number.isSafeInteger()</h3><p>ES6引入了<code>Number.MAX_SAFE_INTEGER</code>和<code>Number.MIN_SAFE_INTEGER</code>这两个常量，用来表示安全整数范围的上下限。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>.MAX_SAFE_INTEGER); <span class="comment">// 9007199254740991</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>.MIN_SAFE_INTEGER); <span class="comment">// -9007199254740991</span></div></pre></td></tr></table></figure></p>
+<p><code>Number.isSafeInteger()</code>则是用来判断一个整数是否落在这个范围之内。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>.isSafeInteger(<span class="built_in">Number</span>.MAX_SAFE_INTEGER + <span class="number">1</span>)); <span class="comment">//false</span></div></pre></td></tr></table></figure></p>
+<p>验证的时候不止要验证结果是否为安全数，还要验证参与计算的值是否为安全数。</p>
+<hr>
+<p>ES6在Math对象上新增了17个与数学相关的方法，新增了4个对数相关方法，新增了6个三角函数方法，一个指数运算符。<br>具体请参考<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Math" target="_blank" rel="external">MDN</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/weixin.png" alt="李欢 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信添加我</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ES6/" rel="tag"># ES6</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/17/2017-05-17-ES6学习笔记之字符串的扩展/" rel="next" title="ES6学习笔记之字符串的扩展">
+                <i class="fa fa-chevron-left"></i> ES6学习笔记之字符串的扩展
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="李欢" />
+          <p class="site-author-name" itemprop="name">李欢</p>
+           
+              <p class="site-description motion-element" itemprop="description">个人博客</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Fanlee" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/2784226692/profile?topnav=1&wvr=6" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ES5中的Number类型"><span class="nav-number">1.</span> <span class="nav-text">ES5中的Number类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#浮点数值"><span class="nav-number">1.1.</span> <span class="nav-text">浮点数值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数值范围"><span class="nav-number">1.2.</span> <span class="nav-text">数值范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NaN"><span class="nav-number">1.3.</span> <span class="nav-text">NaN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数值转换"><span class="nav-number">1.4.</span> <span class="nav-text">数值转换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ES6数值扩展"><span class="nav-number">2.</span> <span class="nav-text">ES6数值扩展</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#二进制和八进制表示法"><span class="nav-number">2.1.</span> <span class="nav-text">二进制和八进制表示法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Number-isFinite-、Number-isNaN"><span class="nav-number">2.2.</span> <span class="nav-text">Number.isFinite()、Number.isNaN()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Number-parseInt-Number-parseFloat"><span class="nav-number">2.3.</span> <span class="nav-text">Number.parseInt(), Number.parseFloat()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Number-isInteger"><span class="nav-number">2.4.</span> <span class="nav-text">Number.isInteger()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Number-EPSILON"><span class="nav-number">2.5.</span> <span class="nav-text">Number.EPSILON</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安全整数和Number-isSafeInteger"><span class="nav-number">2.6.</span> <span class="nav-text">安全整数和Number.isSafeInteger()</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">李欢</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (search_path.endsWith("json")) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
