@@ -142,6 +142,7 @@ console.log(undefined == null); // true
 ### Boolean类型
 Boolean类型有两个字面值：true和false。ECMAScript所有类型的值都能通过Boolean()转型函数转换为Boolean值。
 转换规则如下：
+
 | 数据类型        | 转化为true的值 | 转化为false的值 |
 | -------------   |:--------------:| :--------------:|
 | Boolean         | true           | false           |
@@ -193,6 +194,7 @@ console.log(isNaN('10')); // false
 console.log(isNaN('color')); // true
 console.log(isNaN(true)); // false
 ```
+
 #### 数值转换
 有三个函数可以把非数值转换为数值：`Number()`、`parseInt()`和`parseFloat()`。`Number()`可用于任何数据类型，另两个则专门用于把字符串转换成数值。
 
@@ -329,6 +331,7 @@ console.log(p1.propertyIsEnumerable('toString')); //false
  - toLocaleString(): 返回对象的字符串表示法，该字符串与执行环境的地区对应
  - toString(): 返回对象的字符串表示
  - valueOf(): 返回对象的字符串、数值和布尔值表示
+
 ## 操作符
 ### 一元操作符
 只能操作一个值的操作符叫做一元操作符。分为递增和递减操作符，递增和递减操作符又有前置型和后置型两种。
@@ -376,11 +379,12 @@ console.log(num) // -20
             16 +  0   +   0  +   2   +  0 = 18
 ```
 负数是用二进制的补码进行存储。计算一个数值的二进制补码需要经过下面步骤：
-
  1. 求这个数值绝对值的二进制码
  2. 求二进制的反码，即0替换成1，1替换成0
  3. 得到二进制反码加1
+
 求-18的二进制码步骤如下：
+
 ```
 (1)先取到18的二进制码
 0000 0000 0000 0000 0000 0000 0001 0010
