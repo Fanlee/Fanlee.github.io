@@ -1,0 +1,1309 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Javascript" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="语法区分大小写ECMAScript是区分大小写的，包括变量，函数名和操作符。 标识符标识符指的是函数，变量，属性的名字。必须要遵循以下规则：  第一个字符必须是字母、下划线、或者美元符号 其他字符可以是字符、下划线、美元符号或者数字  标识符推荐采用驼峰大小写格式。 注释单行注释1// 单行注释 块级注释123/* * 块级注释 */ 严格模式除了正常运行模式，ECMAScript5添加了第二种正">
+<meta name="keywords" content="Javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javascript高级程序设计-基础概念">
+<meta property="og:url" content="http://yoursite.com/2017/06/02/2017-06-02-Javascript高级程序设计-基础概念/index.html">
+<meta property="og:site_name" content="lihuan&#39;s Blog">
+<meta property="og:description" content="语法区分大小写ECMAScript是区分大小写的，包括变量，函数名和操作符。 标识符标识符指的是函数，变量，属性的名字。必须要遵循以下规则：  第一个字符必须是字母、下划线、或者美元符号 其他字符可以是字符、下划线、美元符号或者数字  标识符推荐采用驼峰大小写格式。 注释单行注释1// 单行注释 块级注释123/* * 块级注释 */ 严格模式除了正常运行模式，ECMAScript5添加了第二种正">
+<meta property="og:updated_time" content="2017-06-02T08:39:07.645Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Javascript高级程序设计-基础概念">
+<meta name="twitter:description" content="语法区分大小写ECMAScript是区分大小写的，包括变量，函数名和操作符。 标识符标识符指的是函数，变量，属性的名字。必须要遵循以下规则：  第一个字符必须是字母、下划线、或者美元符号 其他字符可以是字符、下划线、美元符号或者数字  标识符推荐采用驼峰大小写格式。 注释单行注释1// 单行注释 块级注释123/* * 块级注释 */ 严格模式除了正常运行模式，ECMAScript5添加了第二种正">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/06/02/2017-06-02-Javascript高级程序设计-基础概念/"/>
+
+
+
+
+
+  <title>Javascript高级程序设计-基础概念 | lihuan's Blog</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">lihuan's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">前端狗一只...</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/02/2017-06-02-Javascript高级程序设计-基础概念/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="李欢">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lihuan's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Javascript高级程序设计-基础概念</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-02T00:00:00+08:00">
+                2017-06-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><h3 id="区分大小写"><a href="#区分大小写" class="headerlink" title="区分大小写"></a>区分大小写</h3><p>ECMAScript是区分大小写的，包括变量，函数名和操作符。</p>
+<h3 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h3><p>标识符指的是函数，变量，属性的名字。必须要遵循以下规则：</p>
+<ol>
+<li>第一个字符必须是字母、下划线、或者美元符号</li>
+<li>其他字符可以是字符、下划线、美元符号或者数字</li>
+</ol>
+<p>标识符推荐采用驼峰大小写格式。</p>
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p>单行注释<br><figure class="highlight 1c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 单行注释</span></div></pre></td></tr></table></figure></p>
+<p>块级注释<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line"> * 块级注释</div><div class="line"> */</div></pre></td></tr></table></figure></p>
+<h3 id="严格模式"><a href="#严格模式" class="headerlink" title="严格模式"></a>严格模式</h3><p>除了正常运行模式，ECMAScript5添加了第二种正常运行模式：“严格模式”。<br>设立严格模式的目的：</p>
+<ul>
+<li>消除Javascript语法一些不合理、不严谨的地方，减少一些怪异的行为</li>
+<li>消除代码运行的一些不安全之处，保证代码运行的安全</li>
+<li>提高编译器效率，增加运行速度</li>
+<li>为未来的新版本Javascript做好铺垫</li>
+</ul>
+<p>严格模式有两种调用方法：</p>
+<ol>
+<li><p>整个脚本启用严格模式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">"use strict"</span>;</div></pre></td></tr></table></figure>
+</li>
+<li><p>函数内部启用严格模式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line"><span class="meta">   "use strict"</span>;</div><div class="line">&#125;())</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>不管在什么情况下启用严格模式都必须放在第一行，否则不会生效。</p>
+<h3 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h3><p>ECMAScript中的语句以分号结尾，虽然可以不写，但是不推荐。分号加与不加完全取决于个人习惯，但为了代码稳定（解析出错）还是建议使用分号断句。<br>Javascript自动加分号规则：</p>
+<ol>
+<li>当有换行符（包括含有换行符的多行注释），并且下一个token没法跟前面的语法匹配时，会自动补分号。</li>
+<li>当有}时，如果缺少分号，会补分号。</li>
+<li>当程序源代码结束时，如果缺少分号，会补分号。<br>结论：<ol>
+<li>在return、break、continue、后自增、后自减五种语句中，换行符可以完全替代分号的作用。</li>
+<li>var、if、do、while、for、continue、break、return、with、switch、throw、try、 debugger几种关键字开头的语句，以及空语句，上一行加不加分号影响不大。</li>
+<li>凡表达式语句和函数表达式语句，后面不加分号非常危险，情况极其复杂。</li>
+<li>凡(和[开头的语句，前面不加分号极度危险。</li>
+</ol>
+</li>
+</ol>
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p>ECMAScript变量是松散类型的，可以用来保存任何类型的数据。声明变量要使用var操作符后跟变量名。<br><figure class="highlight delphi"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> <span class="keyword">message</span>;</div></pre></td></tr></table></figure></p>
+<p>上面代码是未初始化变量，会保存特殊值“undefined”。<br>也可以在声明的时候直接初始化变量。<br><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">var message</span> = <span class="string">"hi"</span>;</div></pre></td></tr></table></figure></p>
+<p>使用var声明的变量会成为定义该变量作用域的局部变量。在函数中通过var声明的变量会在函数退出后销毁。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> a = <span class="number">1</span>;</div><div class="line">&#125;;</div><div class="line">test();</div><div class="line"><span class="built_in">console</span>.log(a) <span class="comment">// Uncaught ReferenceError: a is not defined</span></div></pre></td></tr></table></figure></p>
+<p>上面代码如果省略var就会创建一个全局变量，在全局作用于内任何地方都能访问到。<br><figure class="highlight delphi"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">()</span><span class="comment">&#123;</span></span></div><div class="line">  a = 1;</div><div class="line">&#125;;</div><div class="line">test();</div><div class="line">console.log(a) <span class="comment">// 1</span></div></pre></td></tr></table></figure></p>
+<p>一条语句可以定义多个变量，通过逗号分割开。<br><figure class="highlight nix"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var <span class="attr">a</span> = <span class="number">1</span>,</div><div class="line">    <span class="attr">b</span> = <span class="number">2</span>,</div><div class="line">    <span class="attr">c</span> = <span class="string">"hello"</span>;</div></pre></td></tr></table></figure></p>
+<p>严格模式下，定义名为eval和arguments的变量会报错。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">"use strict"</span>;</div><div class="line"><span class="keyword">var</span> <span class="built_in">eval</span> = <span class="string">"hello"</span> <span class="comment">// Uncaught SyntaxError: Unexpected eval or arguments in strict mode</span></div></pre></td></tr></table></figure></p>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>ECMAScript有5种基本数据类型：Undefined、Null、Boolean、Number、String和一种引用数据类型：Object。</p>
+<h3 id="typeof操作符"><a href="#typeof操作符" class="headerlink" title="typeof操作符"></a>typeof操作符</h3><p>用来检测变量的数据类型<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a;</div><div class="line"><span class="keyword">var</span> b = <span class="string">'hi'</span>;</div><div class="line"><span class="keyword">var</span> c = <span class="number">1</span>;</div><div class="line"><span class="keyword">var</span> d = <span class="literal">true</span>;</div><div class="line"><span class="keyword">var</span> e = &#123;&#125;;</div><div class="line"><span class="keyword">var</span> f = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line"><span class="keyword">var</span> g = <span class="keyword">new</span> <span class="built_in">RegExp</span>;</div><div class="line"><span class="keyword">var</span> h = <span class="literal">null</span>;</div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> a); <span class="comment">// undefined</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> b); <span class="comment">// string</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> c); <span class="comment">// number</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> d); <span class="comment">// boolean</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> e); <span class="comment">// object</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> f); <span class="comment">// function</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> g); <span class="comment">// object</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> h); <span class="comment">// object</span></div></pre></td></tr></table></figure></p>
+<p>typeof null会返回object,因为null被认为是一个空的对象。</p>
+<h3 id="Undefined类型"><a href="#Undefined类型" class="headerlink" title="Undefined类型"></a>Undefined类型</h3><p>使用var声明变量时未进行初始化，这个变量的值就是undefined。主要用来区分空对象指针与未经初始化的变量。<br>未初始化的变量和未定义的变量是不一样的，直接使用未定义的变量会报错。<br><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var a;</div><div class="line"><span class="built_in">console</span>.log(a); <span class="regexp">//</span> <span class="literal">undefined</span></div><div class="line"><span class="built_in">console</span>.log(b); <span class="regexp">//</span> Uncaught ReferenceError: b <span class="keyword">is</span> <span class="keyword">not</span> defined</div></pre></td></tr></table></figure></p>
+<h3 id="Null类型"><a href="#Null类型" class="headerlink" title="Null类型"></a>Null类型</h3><p>null表示一个对象的空指针，如果定义的变量将来用于保存对象，最好将该变量初始化为null。<br>undefined的值派生自null，所以相等测试返回true。<br><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="literal">undefined</span> == <span class="literal">null</span>); <span class="regexp">//</span> <span class="literal">true</span></div></pre></td></tr></table></figure></p>
+<h3 id="Boolean类型"><a href="#Boolean类型" class="headerlink" title="Boolean类型"></a>Boolean类型</h3><p>Boolean类型有两个字面值：true和false。ECMAScript所有类型的值都能通过Boolean()转型函数转换为Boolean值。<br>转换规则如下：</p>
+<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th style="text-align:center">转化为true的值</th>
+<th style="text-align:center">转化为false的值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Boolean</td>
+<td style="text-align:center">true</td>
+<td style="text-align:center">false</td>
+</tr>
+<tr>
+<td>String</td>
+<td style="text-align:center">非空字符串</td>
+<td style="text-align:center">“”（空字符串）</td>
+</tr>
+<tr>
+<td>Number</td>
+<td style="text-align:center">非零数字</td>
+<td style="text-align:center">0和NaN</td>
+</tr>
+<tr>
+<td>Object</td>
+<td style="text-align:center">任何对象</td>
+<td style="text-align:center">null</td>
+</tr>
+<tr>
+<td>Undefined</td>
+<td style="text-align:center">不能转化为true</td>
+<td style="text-align:center">Undefined</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Number类型"><a href="#Number类型" class="headerlink" title="Number类型"></a>Number类型</h3><p>Number类型使用IEEE754来表示整数和浮点数。<br>整数可以通过十进制、八进制、十六进制来表示。<br>八进制第一位必须是0，后面是八进制数字序列（0~7），如果数值超出了范围，则省略前导的0，后面数字以十进制解析。<strong>八进制在严格模式下无效，会抛出异常</strong>。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">console.<span class="built_in">log</span>(<span class="number">070</span>) <span class="comment">// 56</span></div><div class="line">console.<span class="built_in">log</span>(<span class="number">079</span>); <span class="comment">// 79</span></div></pre></td></tr></table></figure></p>
+<p>十六进制前两位必须是0x开头，后面是十六进制数字序列（0~7及A~F）。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">console.<span class="built_in">log</span>(<span class="number">0xA</span>); <span class="comment">// 10</span></div></pre></td></tr></table></figure></p>
+<h4 id="浮点数值"><a href="#浮点数值" class="headerlink" title="浮点数值"></a>浮点数值</h4><p>浮点数值需要的内存空间是整数的两倍，所以ECMAScript会将小数点后没有数字的（如1.）和本身就表示一个整数的（如1.0）的浮点数值转化为整数。<br>可以用科学计数法表示极大或者极小的浮点数值。默认情况下ECMAScript会将小数点后带有6个零以上的浮点数在转化为e表示法。如：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">console.<span class="built_in">log</span>(<span class="number">3.12e7</span>) <span class="comment">// 31200000</span></div><div class="line">console.<span class="built_in">log</span>(<span class="number">3.12e-6</span>) <span class="comment">// 0.00000312</span></div><div class="line">console.<span class="built_in">log</span>(<span class="number">3.12e-7</span>) <span class="comment">// 3.12e-7</span></div></pre></td></tr></table></figure></p>
+<p>浮点数值在任何机器的上都不能直接判断相等，最好通过精度来判断。</p>
+<h4 id="数值范围"><a href="#数值范围" class="headerlink" title="数值范围"></a>数值范围</h4><p><code>ECMAScripot</code>的数值范围在<code>Number.MIN_VALUE</code>和<code>Number.MAX_VALUE</code>之间，如果超出这个范围， 将会被转换成<code>Infinity</code>值，该值不能用于计算，要想确定一个值是否是有穷的，通过<code>isFinite()</code>判断，函数参数位于最大值与最小值之间返回<code>true</code>。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>.MIN_VALUE); <span class="comment">// 5e-324</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>.MAX_VALUE); <span class="comment">// 1.7976931348623157e+308</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">isFinite</span>(<span class="built_in">Number</span>.MIN_VALUE + <span class="built_in">Number</span>.MIN_VALUE)); <span class="comment">// false</span></div></pre></td></tr></table></figure></p>
+<h4 id="NaN"><a href="#NaN" class="headerlink" title="NaN"></a>NaN</h4><p>这个数值表示一个本来要返回数值的操作数未返回数值的情况。</p>
+<ol>
+<li>任何涉及到NaN的操作都会返回<code>NaN</code></li>
+<li><code>NaN</code>与任何值都不相等，包括自身<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="literal">NaN</span> === <span class="literal">NaN</span>) <span class="comment">// false</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><code>ECMAScript</code>定义了<code>isNaN()</code>函数，该函数接收一个参数，会尝试将这个参数转换成数值，转换成功返回<code>false</code>, 失败返回<code>true</code>。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="built_in">isNaN</span>(<span class="literal">NaN</span>)); <span class="comment">// true</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">isNaN</span>(<span class="number">10</span>)); <span class="comment">// false</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">isNaN</span>(<span class="string">'10'</span>)); <span class="comment">// false</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">isNaN</span>(<span class="string">'color'</span>)); <span class="comment">// true</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">isNaN</span>(<span class="literal">true</span>)); <span class="comment">// false</span></div></pre></td></tr></table></figure></p>
+<h4 id="数值转换"><a href="#数值转换" class="headerlink" title="数值转换"></a>数值转换</h4><p>有三个函数可以把非数值转换为数值：<code>Number()</code>、<code>parseInt()</code>和<code>parseFloat()</code>。<code>Number()</code>可用于任何数据类型，另两个则专门用于把字符串转换成数值。</p>
+<p><code>Number()</code>转换规则如下：</p>
+<ol>
+<li>如果是Boolean值，则把<code>true</code>和<code>false</code>转换成1和0</li>
+<li>如果是数值，返回本身</li>
+<li>如果是<code>Null</code>， 返回0</li>
+<li>如果是<code>undefined</code>，返回<code>NaN</code></li>
+<li><p>如果是字符串，则有一下几种情况</p>
+<ul>
+<li>如果字符串中只包含数字，则转换成对应十进制</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="string">"10"</span>)); <span class="comment">// 10</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="string">"+10"</span>)); <span class="comment">//10</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="string">"-10"</span>)); <span class="comment">// -10</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="string">"010"</span>)); <span class="comment">// 10</span></div></pre></td></tr></table></figure>
+<ul>
+<li>如果字符串中包含有效的浮点格式，则转换成对应的浮点数值。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="string">"10.3"</span>)); <span class="comment">// 10.3</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="string">"+10.3"</span>)); <span class="comment">// 10.3</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="string">"-10.3"</span>)); <span class="comment">//-10.3</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="string">"010.3"</span>)); <span class="comment">// 10.3</span></div></pre></td></tr></table></figure>
+<ul>
+<li>如果字符串中包含有效的十六进制格式，则转换成相同大小的十进制整数值。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="string">"0xF"</span>)); <span class="comment">// 15</span></div></pre></td></tr></table></figure>
+<ul>
+<li>如果字符串为空，则转换为0</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="string">" "</span>)); <span class="comment">// 0</span></div></pre></td></tr></table></figure>
+<ul>
+<li>字符串中包含除上述格式之外的字符， 则转换为<code>NaN</code></li>
+</ul>
+</li>
+<li>如果是对象， 则调用对象的<code>valueOf()</code>方法，然后按照前面规则转换，如果转换结果是<code>NaN</code>，则调用对象的<code>toString()</code>方法，再次依照前面规则转换。日期对象会转换成相应的毫秒数。</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> now = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(now)); <span class="comment">// 1495076392196</span></div></pre></td></tr></table></figure>
+<p><code>parseInt()</code>函数在转换字符串时会忽略字符串前面的空格，直到找到第一个非空格字符串。如果第一个字符不是数字字符或者负号，就会返回<code>NaN</code>，如果第一个字符是数字字符，<code>parseInt()</code>会继续解析后面的字符，直到解析完所有字符或者遇到非数字字符。<code>parseInt()</code>解析空字符串会返回<code>NaN</code>。同样，<code>parseInt()</code>也能辨别各种整数格式。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="built_in">parseInt</span>(<span class="string">""</span>)); <span class="comment">// NaN</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">parseInt</span>(<span class="string">"123abc"</span>)); <span class="comment">// 123</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">parseInt</span>(<span class="string">"abc123"</span>)); <span class="comment">// NaN</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">parseInt</span>(<span class="string">"10.2"</span>)); <span class="comment">// 10</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">parseInt</span>(<span class="string">"070"</span>)); <span class="comment">// 70 (ECMAScript5已经不具备解析八进制的能力，所以认为前导的0无效)</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">parseInt</span>(<span class="string">"0xFWQR"</span>)); <span class="comment">// 15</span></div></pre></td></tr></table></figure></p>
+<p><code>parseInt()</code>可以接受第二个参数来指定整数的格式。默认是转换成十进制。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="built_in">parseInt</span>(<span class="string">"10"</span>, <span class="number">2</span>)); <span class="comment">// 2</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">parseInt</span>(<span class="string">"10"</span>, <span class="number">8</span>)); <span class="comment">// 8</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">parseInt</span>(<span class="string">"10"</span>, <span class="number">10</span>)); <span class="comment">// 10</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">parseInt</span>(<span class="string">"10"</span>, <span class="number">16</span>)); <span class="comment">// 16</span></div></pre></td></tr></table></figure></p>
+<p><code>parseFloat()</code>函数与<code>parseInt()</code>类似，不同的是<code>parseFloat()</code>解析完成或者遇到第一个无效的浮点数字字符为止，但是第一个小数点是有效的。<code>parseFloat()</code>始终会忽略前导的零，十六进制的字符串始终会被转换成0，由于<code>parseFloat()</code>只解析十进制值，所以不能指定第二个参数，如果字符串包含的是一个可解析成整数的数值，<code>parseFloat()</code>会返回整数。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="built_in">parseFloat</span>(<span class="string">"123abc"</span>)); <span class="comment">// 123</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">parseFloat</span>(<span class="string">"0xF"</span>)); <span class="comment">// 0</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">parseFloat</span>(<span class="string">"10.5"</span>)); <span class="comment">// 10.5</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">parseFloat</span>(<span class="string">"10.5.5"</span>)); <span class="comment">// 10.5</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">parseFloat</span>(<span class="string">"010.5"</span>)); <span class="comment">// 10.5</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">parseFloat</span>(<span class="string">"10.0"</span>)); <span class="comment">// 10</span></div></pre></td></tr></table></figure></p>
+<h3 id="String类型"><a href="#String类型" class="headerlink" title="String类型"></a>String类型</h3><p><code>String</code>由零或者多个16为Unicode字符组成的字符序列，可以用双引号或者单引号表示。</p>
+<h4 id="字符串的特点"><a href="#字符串的特点" class="headerlink" title="字符串的特点"></a>字符串的特点</h4><p>字符串是不可变的，要改变某个变量保存的字符串首先要先销毁原来的字符串。然后用新值填充该变量。</p>
+<h4 id="转换为字符串"><a href="#转换为字符串" class="headerlink" title="转换为字符串"></a>转换为字符串</h4><p>可以通过<code>toString()</code>将<code>Number</code>、<code>Boolean</code>、<code>Object</code>和<code>String</code>类型的数据转换为字符串，该方法可以接收一个参数：输出数值的基数。<br>在不知道值是不是<code>Null</code>或<code>Undefined</code>的情况下，可以通过<code>String()</code>方法进行转换。转换规则如下：</p>
+<ul>
+<li>如果值有<code>toString()</code>方法，则直接调用该方法</li>
+<li>如果值为<code>null</code>，返回<code>null</code></li>
+<li>如果值为<code>undefined</code>，返回<code>undefined</code></li>
+</ul>
+<h3 id="Object类型"><a href="#Object类型" class="headerlink" title="Object类型"></a>Object类型</h3><p>ECMAScript对象就是一组数据和功能的集合。<br>可以通过<code>new</code>操作符后跟要创建的对象类型的名称来创建。创建<code>Object</code>类型的实例并为其添加属性和方法就可以创建自定义对象。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line">person.name = <span class="string">"Tom"</span>;</div><div class="line">person.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  alert(<span class="keyword">this</span>.name);</div><div class="line">&#125;</div><div class="line">person.sayName(); <span class="comment">// Tom</span></div></pre></td></tr></table></figure></p>
+<p><code>Object</code>类型是所有它的实例的基础，它所具有的所有属性和方法都能被实例所共享。<br><code>Object</code>每个实例都有一下属性和方法：</p>
+<ul>
+<li><p>constructor: 保存着用于创建当前对象的函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line"><span class="built_in">console</span>.log(obj.constructor === <span class="built_in">Object</span>) <span class="comment">// true</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>hasOwnProperty(): 检查给定属性是否存在当前实例中，如果存在于原型中返回true，实例本身属性返回false</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line">Person.prototype.name = <span class="string">"Tom"</span>;</div><div class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> Person();</div><div class="line">person.age = <span class="number">20</span>;</div><div class="line"><span class="built_in">console</span>.log(Person.hasOwnProperty(<span class="string">"name"</span>)); <span class="comment">// true</span></div><div class="line"><span class="built_in">console</span>.log(Person.hasOwnProperty(<span class="string">"age"</span>)); <span class="comment">// false</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>isPrototypeOf(): 用于检查传入的对象是否是另一个对象的原型</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Bar</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line">Foo.prototype = <span class="keyword">new</span> Bar();</div><div class="line"><span class="keyword">var</span> f1 = <span class="keyword">new</span> Foo();</div><div class="line"><span class="built_in">console</span>.log(Bar.prototype.isPrototypeOf(f1)) <span class="comment">// true</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>propertyIsEnumerable(): 检查给定的属性能否通过<code>for-in</code>来枚举</p>
+<ol>
+<li>这个属性必须属于实例的，并且不属于原型。</li>
+<li>这个属性必须是可枚举的，也就是自定义的属性。</li>
+<li>如果对象没有指定的属性，该方法返回false</li>
+</ol>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line">Person.prototype.name = <span class="string">'Tom'</span>;</div><div class="line"><span class="keyword">var</span> p1 = <span class="keyword">new</span> Person();</div><div class="line">p1.age = <span class="number">20</span>;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> attr <span class="keyword">in</span> p1) &#123;</div><div class="line"><span class="built_in">console</span>.log(attr) <span class="comment">// age name</span></div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(p1.propertyIsEnumerable(<span class="string">'age'</span>))  <span class="comment">// true</span></div><div class="line"><span class="built_in">console</span>.log(p1.propertyIsEnumerable(<span class="string">'name'</span>)); <span class="comment">// false</span></div><div class="line"><span class="built_in">console</span>.log(p1.propertyIsEnumerable(<span class="string">'toString'</span>)); <span class="comment">//false</span></div></pre></td></tr></table></figure>
+<ul>
+<li>toLocaleString(): 返回对象的字符串表示法，该字符串与执行环境的地区对应</li>
+<li>toString(): 返回对象的字符串表示</li>
+<li>valueOf(): 返回对象的字符串、数值和布尔值表示</li>
+</ul>
+<h2 id="操作符"><a href="#操作符" class="headerlink" title="操作符"></a>操作符</h2><h3 id="一元操作符"><a href="#一元操作符" class="headerlink" title="一元操作符"></a>一元操作符</h3><p>只能操作一个值的操作符叫做一元操作符。分为递增和递减操作符，递增和递减操作符又有前置型和后置型两种。<br>前置型：递增和递减操作在语句求值之前执行<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> num1 = <span class="number">2</span>,</div><div class="line">    num2 = <span class="number">10</span>;</div><div class="line"><span class="keyword">var</span> num3 = --num1 + num2;</div><div class="line"><span class="keyword">var</span> num4 = num1 + num2;</div><div class="line"><span class="built_in">console</span>.log(num3); <span class="comment">// 11</span></div><div class="line"><span class="built_in">console</span>.log(num4); <span class="comment">// 11</span></div></pre></td></tr></table></figure></p>
+<p>后置型：递增和递减操作在语句求值之后执行<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> num1 = <span class="number">2</span>,</div><div class="line">    num2 = <span class="number">10</span>;</div><div class="line"><span class="keyword">var</span> num3 = num1-- + num2;</div><div class="line"><span class="keyword">var</span> num4 = num1 + num2;</div><div class="line"><span class="built_in">console</span>.log(num3); <span class="comment">// 12</span></div><div class="line"><span class="built_in">console</span>.log(num4); <span class="comment">// 11</span></div></pre></td></tr></table></figure></p>
+<p>这四个操作符对任何值都适用，内部默认调用Number()进行转换。</p>
+<h4 id="一元加和减操作符"><a href="#一元加和减操作符" class="headerlink" title="一元加和减操作符"></a>一元加和减操作符</h4><p>一元加操作符以一个加号表示，放在数值前面。对数值不会产生任何影响。<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> <span class="built_in">num</span> = <span class="number">20</span>;</div><div class="line"><span class="built_in">num</span> = +<span class="built_in">num</span>;</div><div class="line">console.log(<span class="built_in">num</span>) <span class="comment">// 20</span></div></pre></td></tr></table></figure></p>
+<p>如果是非数值则内部调用<code>Number()</code>进行数据类型转化。</p>
+<p>一元减操作符用于将一个数值转化为负数<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> <span class="built_in">num</span> = <span class="number">20</span>;</div><div class="line"><span class="built_in">num</span> = -<span class="built_in">num</span>;</div><div class="line">console.log(<span class="built_in">num</span>) <span class="comment">// -20</span></div></pre></td></tr></table></figure></p>
+<p>如果是非数值则先内部调用<code>Number()</code>进行数据类型转化，然后再变为负数。</p>
+<h3 id="位操作符"><a href="#位操作符" class="headerlink" title="位操作符"></a>位操作符</h3><p><code>ECMAScript</code>中所有数值都以IEEE-754 64位格式存储，但位操作符不直接操作64位的值，而是将64位值转换为32位的整数，操作完成后再转换为64位。<br>对于有符号的整数，前31位表示整数的值，第32位表示符号：0表示正数，1表示负数。表示符号的叫符号位。正数以纯二进制格式存储，31位中的每一位都表示2的幂，没有用到的位以0填充，忽略不计。<br>二进制转化成十进制如下<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="number">10010</span> =&gt; (<span class="number">2</span>⁴*<span class="number">1</span>)+(<span class="number">2</span>³*<span class="number">0</span>)+(<span class="number">2</span>²*<span class="number">0</span>)+(<span class="number">2</span>¹*<span class="number">1</span>)+(<span class="number">2</span>⁰*<span class="number">0</span>)</div><div class="line">            <span class="number">16</span> +  <span class="number">0</span>   +   <span class="number">0</span>  +   <span class="number">2</span>   +  <span class="number">0</span> = <span class="number">18</span></div></pre></td></tr></table></figure></p>
+<p>负数是用二进制的补码进行存储。计算一个数值的二进制补码需要经过下面步骤：</p>
+<ol>
+<li>求这个数值绝对值的二进制码</li>
+<li>求二进制的反码，即0替换成1，1替换成0</li>
+<li>得到二进制反码加1</li>
+</ol>
+<p>求-18的二进制码步骤如下：</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">(<span class="number">1</span>)先取到<span class="number">18</span>的二进制码</div><div class="line"><span class="number">0000</span> <span class="number">0000</span> <span class="number">0000</span> <span class="number">0000</span> <span class="number">0000</span> <span class="number">0000</span> <span class="number">0001</span> <span class="number">0010</span></div><div class="line">(<span class="number">2</span>)取其反码</div><div class="line"><span class="number">1111</span> <span class="number">1111</span> <span class="number">1111</span> <span class="number">1111</span> <span class="number">1111</span> <span class="number">1111</span> <span class="number">1110</span> <span class="number">1101</span></div><div class="line">(<span class="number">3</span>)反码加一</div><div class="line"><span class="number">1111</span> <span class="number">1111</span> <span class="number">1111</span> <span class="number">1111</span> <span class="number">1111</span> <span class="number">1111</span> <span class="number">1110</span> <span class="number">1101</span></div><div class="line">                                      <span class="number">1</span></div><div class="line">----------------------------------------</div><div class="line"><span class="number">1111</span> <span class="number">1111</span> <span class="number">1111</span> <span class="number">1111</span> <span class="number">1111</span> <span class="number">1111</span> <span class="number">1111</span> <span class="number">1110</span></div></pre></td></tr></table></figure>
+<h4 id="按位非（-）"><a href="#按位非（-）" class="headerlink" title="按位非（~）"></a>按位非（~）</h4><p>执行按位非的结果返回数值的反码，按位非的本质是操作数的负值减1。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> num1 = <span class="number">2</span>;</div><div class="line"><span class="keyword">var</span> num2 = ~num1;</div><div class="line"><span class="built_in">console</span>.log(num2); <span class="comment">// -3</span></div></pre></td></tr></table></figure></p>
+<p>浮点数取整<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">console.<span class="built_in">log</span>(~~<span class="number">3.14</span>); <span class="comment">// 3</span></div><div class="line">console.<span class="built_in">log</span>(~~<span class="number">-3.14</span>); <span class="comment">//-3</span></div></pre></td></tr></table></figure></p>
+<p>indexOf判断字符是否存在<br><figure class="highlight axapta"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var <span class="keyword">str</span> = <span class="string">"hello"</span>;</div><div class="line"><span class="keyword">if</span>(~<span class="keyword">str</span>.indexOf(<span class="string">'e'</span>))&#123;</div><div class="line">  ...</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="按位与（-amp-）"><a href="#按位与（-amp-）" class="headerlink" title="按位与（&amp;）"></a>按位与（&amp;）</h4><p>按位与的操作是将两个数值的每一位对齐，两个数的值为1时，才返回1，其他为零。<br><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="code">  var result = 3 &amp; 5;</span></div><div class="line"><span class="code">  console.log(result) // 1</span></div><div class="line"><span class="code">  </span></div><div class="line"><span class="code">  0011</span></div><div class="line"><span class="section">&amp; 0101</span></div><div class="line">------</div><div class="line"><span class="code">  0001</span></div></pre></td></tr></table></figure></p>
+<p>可以用一个数和1进行按位&amp;操作来判断一个数是奇数还是偶数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">assert</span>(<span class="params">n</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (n &amp; <span class="number">1</span>) &#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">"奇数"</span>);</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">"偶数"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>因为奇数的最后一位肯定是1，而1只有最后一位为1，按位&amp;操作之后，结果肯定只有最后一位数为1。而偶数的二进制表示的最后一位数是0，和1进行按位&amp;操作，结果所有位数都为0。</p>
+<h4 id="按位或（-）"><a href="#按位或（-）" class="headerlink" title="按位或（|）"></a>按位或（|）</h4><p>只要两个数中有一个数为1，结果就为1，其他则为0。<br><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="code">  0001</span></div><div class="line"><span class="section">| 0011</span></div><div class="line">------</div><div class="line"><span class="code">  0011</span></div></pre></td></tr></table></figure></p>
+<p>可以用来对浮点数向下求整<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> <span class="built_in">num</span> = <span class="number">1.1</span> | <span class="number">0</span>; <span class="comment">// 1</span></div></pre></td></tr></table></figure></p>
+<h4 id="按位异或（-）"><a href="#按位异或（-）" class="headerlink" title="按位异或（^）"></a>按位异或（^）</h4><p>按位异或是两个数中只有一个1时返回1，其他情况返回0。<br><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="code">  0001</span></div><div class="line"><span class="section">^ 0011</span></div><div class="line">-------</div><div class="line"><span class="code">  0010</span></div></pre></td></tr></table></figure></p>
+<p>可以用来调换两个数值的值。<br><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var num1 = <span class="number">1</span>,</div><div class="line">    num2 = <span class="number">2</span><span class="comment">;</span></div><div class="line">num1 ^= num2<span class="comment">;</span></div><div class="line">num2 ^= num1<span class="comment">;</span></div><div class="line">num1 ^= num2<span class="comment">;</span></div><div class="line">console.log(num1)<span class="comment">; // 2</span></div><div class="line">console.log(num2)<span class="comment">; // 1</span></div></pre></td></tr></table></figure></p>
+<h4 id="有符号左移（-lt-lt-）"><a href="#有符号左移（-lt-lt-）" class="headerlink" title="有符号左移（&lt;&lt;）"></a>有符号左移（&lt;&lt;）</h4><p>有符号左移会将32位二进制数的所有位向左移动指定位数。如：<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> <span class="built_in">num</span> = <span class="number">2</span>; <span class="comment">// 二进制10</span></div><div class="line"><span class="built_in">num</span> = <span class="built_in">num</span> &lt;&lt; <span class="number">5</span>; <span class="comment">// 二进制1000000，十进制64</span></div></pre></td></tr></table></figure></p>
+<p>如果要求2的n次方，可以这样：<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">power</span><span class="params">(n)</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="number">1</span> &lt;&lt; n;</div><div class="line">&#125;</div><div class="line">power(<span class="number">5</span>); <span class="comment">// 32</span></div></pre></td></tr></table></figure></p>
+<h4 id="有符号右移（-gt-gt-）"><a href="#有符号右移（-gt-gt-）" class="headerlink" title="有符号右移（&gt;&gt;）"></a>有符号右移（&gt;&gt;）</h4><p>有符号右移会将32位二进制数的所有位向右移动指定位数。如：<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> <span class="built_in">num</span> = <span class="number">64</span>; <span class="comment">// 二进制1000000</span></div><div class="line"><span class="built_in">num</span> = <span class="built_in">num</span> &gt;&gt; <span class="number">5</span>; <span class="comment">// 二进制10，十进制2</span></div></pre></td></tr></table></figure></p>
+<p>可以用来求一个数的二分之一<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> <span class="built_in">num</span> = <span class="number">10</span> &gt;&gt; <span class="number">1</span>; <span class="comment">// 5</span></div></pre></td></tr></table></figure></p>
+<h4 id="无符号右移（-gt-gt-gt-）"><a href="#无符号右移（-gt-gt-gt-）" class="headerlink" title="无符号右移（&gt;&gt;&gt;）"></a>无符号右移（&gt;&gt;&gt;）</h4><p>正数的无符号右移与有符号右移结果是一样的。负数的无符号右移会把符号位也一起移动，而且无符号右移会把负数的二进制码当成正数的二进制码：<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> <span class="built_in">num</span> = <span class="number">-64</span>; <span class="comment">// 11111111111111111111111111000000</span></div><div class="line"><span class="built_in">num</span> = <span class="built_in">num</span> &gt;&gt;&gt; <span class="number">5</span>; <span class="comment">// 134217726</span></div></pre></td></tr></table></figure></p>
+<p>可以利用无符号右移来判断一个数的正负：<br><figure class="highlight ada"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> <span class="title">isPos</span>(n) &#123;</div><div class="line"><span class="keyword">return</span> <span class="type">(n</span> === (n &gt;&gt;&gt; <span class="number">0</span>)) ? <span class="literal">true</span> : <span class="type">false</span>; 	</div><div class="line">&#125;</div><div class="line"></div><div class="line">isPos(-<span class="number">1</span>); // <span class="literal">false</span></div><div class="line">isPos(<span class="number">1</span>); // <span class="literal">true</span></div></pre></td></tr></table></figure></p>
+<p>-1&gt;&gt;&gt;0虽然没有向右移动位数，但-1的二进制码已经变成了正数的二进制码,所以不会相等。</p>
+<p>应该尽量少用位操作符进行运算，这会导致代码阅读困难。</p>
+<h3 id="布尔操作符"><a href="#布尔操作符" class="headerlink" title="布尔操作符"></a>布尔操作符</h3><p>布尔操作符一共有三个：非（!）、与（&amp;&amp;）、或（||）。</p>
+<h4 id="逻辑非（-）"><a href="#逻辑非（-）" class="headerlink" title="逻辑非（!）"></a>逻辑非（!）</h4><p>逻辑非会将操作数转化为布尔值，然后对其求反。转换规则与<code>Boolean()</code>函数类似。<br><code>!!</code>会将一个数转换为Boolean值。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(!!<span class="string">"hello"</span>); <span class="comment">// true</span></div><div class="line"><span class="built_in">console</span>.log(!!<span class="number">0</span>); <span class="comment">// false</span></div><div class="line"><span class="built_in">console</span>.log(!!<span class="literal">NaN</span>); <span class="comment">// false</span></div><div class="line"><span class="built_in">console</span>.log(!!<span class="string">""</span>); <span class="comment">// false</span></div><div class="line"><span class="built_in">console</span>.log(!!<span class="number">10</span>); <span class="comment">// true</span></div></pre></td></tr></table></figure></p>
+<h4 id="逻辑与（-amp-amp-）"><a href="#逻辑与（-amp-amp-）" class="headerlink" title="逻辑与（&amp;&amp;）"></a>逻辑与（&amp;&amp;）</h4><p>逻辑与有两个操作数。只要其中有一个为false，则返回false。<br>在有一个操作数不是布尔值的情况下，逻辑与操作不一定返回布尔值，遵循以下规则：</p>
+<ul>
+<li>第一个操作数是对象，则返回第二个操作数</li>
+<li>第二个操作数是对象，则在第一个操作数求值结果为true的情况下返回该对象</li>
+<li>两个操作数都是对象，则返回第二个</li>
+<li>如果有一个操作数为null,则返回null</li>
+<li>如果有一个操作数为NaN,则返回NaN</li>
+<li>如果有一个操作数为Undefined,则返回Undefined</li>
+</ul>
+<p>逻辑与属于短路操作，第一个操作数为false，就不会对第二个操作数求值。</p>
+<h4 id="逻辑或（-）"><a href="#逻辑或（-）" class="headerlink" title="逻辑或（||）"></a>逻辑或（||）</h4><p>逻辑或有两个操作数。只要其中有一个为true，则返回true。</p>
+<p>在有一个操作数不是布尔值的情况下，逻辑或操作不一定返回布尔值，遵循以下规则：</p>
+<ul>
+<li>第一个操作数是对象，则返回第一个操作数</li>
+<li>第一个操作数求值结果为false，则返回第二个操作数</li>
+<li>两个操作数都是对象，则返回第一个</li>
+<li>如果有一个操作数为null,则返回null</li>
+<li>如果有一个操作数为NaN,则返回NaN</li>
+<li>如果有一个操作数为Undefined,则返回Undefined</li>
+</ul>
+<p>逻辑或也属于短路操作，第一个操作为true，就不会对第二个操作数求值。<br>可以利用这一行为避免为变量赋null和undefined值。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = <span class="literal">null</span>;</div><div class="line"><span class="keyword">var</span> result = obj || &#123;&#125;;</div><div class="line"><span class="built_in">console</span>.log(result); <span class="comment">// object</span></div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/weixin.png" alt="李欢 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信添加我</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Javascript/" rel="tag"># Javascript</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/18/2017-05-18-ES6学习笔记之数值的扩展/" rel="next" title="ES6学习笔记之数值的扩展">
+                <i class="fa fa-chevron-left"></i> ES6学习笔记之数值的扩展
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="李欢" />
+          <p class="site-author-name" itemprop="name">李欢</p>
+           
+              <p class="site-description motion-element" itemprop="description">个人博客</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Fanlee" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/2784226692/profile?topnav=1&wvr=6" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#语法"><span class="nav-number">1.</span> <span class="nav-text">语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#区分大小写"><span class="nav-number">1.1.</span> <span class="nav-text">区分大小写</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标识符"><span class="nav-number">1.2.</span> <span class="nav-text">标识符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注释"><span class="nav-number">1.3.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#严格模式"><span class="nav-number">1.4.</span> <span class="nav-text">严格模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#语句"><span class="nav-number">1.5.</span> <span class="nav-text">语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量"><span class="nav-number">1.6.</span> <span class="nav-text">变量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型"><span class="nav-number">2.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#typeof操作符"><span class="nav-number">2.1.</span> <span class="nav-text">typeof操作符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Undefined类型"><span class="nav-number">2.2.</span> <span class="nav-text">Undefined类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Null类型"><span class="nav-number">2.3.</span> <span class="nav-text">Null类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Boolean类型"><span class="nav-number">2.4.</span> <span class="nav-text">Boolean类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Number类型"><span class="nav-number">2.5.</span> <span class="nav-text">Number类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#浮点数值"><span class="nav-number">2.5.1.</span> <span class="nav-text">浮点数值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数值范围"><span class="nav-number">2.5.2.</span> <span class="nav-text">数值范围</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#NaN"><span class="nav-number">2.5.3.</span> <span class="nav-text">NaN</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数值转换"><span class="nav-number">2.5.4.</span> <span class="nav-text">数值转换</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String类型"><span class="nav-number">2.6.</span> <span class="nav-text">String类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串的特点"><span class="nav-number">2.6.1.</span> <span class="nav-text">字符串的特点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#转换为字符串"><span class="nav-number">2.6.2.</span> <span class="nav-text">转换为字符串</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Object类型"><span class="nav-number">2.7.</span> <span class="nav-text">Object类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作符"><span class="nav-number">3.</span> <span class="nav-text">操作符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一元操作符"><span class="nav-number">3.1.</span> <span class="nav-text">一元操作符</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一元加和减操作符"><span class="nav-number">3.1.1.</span> <span class="nav-text">一元加和减操作符</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#位操作符"><span class="nav-number">3.2.</span> <span class="nav-text">位操作符</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#按位非（-）"><span class="nav-number">3.2.1.</span> <span class="nav-text">按位非（~）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#按位与（-amp-）"><span class="nav-number">3.2.2.</span> <span class="nav-text">按位与（&）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#按位或（-）"><span class="nav-number">3.2.3.</span> <span class="nav-text">按位或（|）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#按位异或（-）"><span class="nav-number">3.2.4.</span> <span class="nav-text">按位异或（^）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#有符号左移（-lt-lt-）"><span class="nav-number">3.2.5.</span> <span class="nav-text">有符号左移（<<）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#有符号右移（-gt-gt-）"><span class="nav-number">3.2.6.</span> <span class="nav-text">有符号右移（>>）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#无符号右移（-gt-gt-gt-）"><span class="nav-number">3.2.7.</span> <span class="nav-text">无符号右移（>>>）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#布尔操作符"><span class="nav-number">3.3.</span> <span class="nav-text">布尔操作符</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#逻辑非（-）"><span class="nav-number">3.3.1.</span> <span class="nav-text">逻辑非（!）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#逻辑与（-amp-amp-）"><span class="nav-number">3.3.2.</span> <span class="nav-text">逻辑与（&&）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#逻辑或（-）"><span class="nav-number">3.3.3.</span> <span class="nav-text">逻辑或（||）</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">李欢</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (search_path.endsWith("json")) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
