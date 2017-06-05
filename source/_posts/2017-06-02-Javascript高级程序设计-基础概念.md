@@ -553,3 +553,240 @@ var obj = null;
 var result = obj || {};
 console.log(result); // object
 ```
+### 乘性操作符
+ECMAScript定义了三个乘性操作符：乘法、除法和求模。在操作数是非数值的情况下会默认在内部调用Number()函数进行数据类型的转换。
+#### 乘法
+处理特殊值乘法操作遵循一下规则：
+ - 如果乘积超过ECMAScript数值范围，则返回Infinity或者-Infinity
+```
+var num = Number.MAX_VALUE;
+var result = num * 2;
+console.log(result); // Infinity
+```
+ - 如果有一个操作数为NaN，则返回NaN
+ - 如果是Infinity与0相乘， 则返回NaN
+ - 如果是Infinity与非0相乘，则返回Infinity或者-Infinity
+ - 如果一个操作数不是数值，则在内部调用Number()将其转换为数值，再应用上面规则
+ 
+#### 除法
+处理特殊值乘法操作遵循一下规则：
+ - 如果乘积超过ECMAScript数值范围，则返回Infinity或者-Infinity
+ - 如果有一个操作数为NaN，则返回NaN
+ - 如果是Infinity被Infinity除，则结果是NaN
+ - 如果是0被0除，结果是NaN
+ - 如果是非0的有限数被0除，则返回Infinity或者-Infinity
+ 
+```
+console.log(100 / 0); // Infinity
+```
+- 如果是Infinity被任何非零的数除，则返回Infinity或者-Infinity
+```
+ console.log(Infinity / 100); //Infinity
+```
+- 如果一个操作数不是数值，则在内部调用Number()将其转换为数值，再应用上面规则
+
+### 加性操作符
+加性操作符分为加法和减法。加性操作符和乘性操作符类似，也会在后台转换不同的数据类型
+#### 加法
+如果两个操作符都是数值，返回下列结果：
+
+ - 如果有一个操作数是NaN，则结果是NaN
+ - Infinity加Infinity，结果是Infinity
+ - -Infinity加-Infinity，结果是-Infinity
+ - Infinity加-Infinity，结果是NaN
+ - +0加+0，结果是+0
+ - -0加-0，结果是-0
+ - +0加-0，结果是+0
+
+如果有一个操作符是字符串，就要应用如下规则：
+
+ - 两个操作符都是字符串，则把他们两个拼接起来
+ - 如果只有一个操作符是字符串，则将另一个转换为字符串，然后拼接起来
+ 
+#### 减法
+如果两个操作符都是数值，返回下列结果：
+
+ - 如果有一个操作数是NaN，则结果是NaN
+ - Infinity减Infinity，结果是NaN
+ - -Infinity减-Infinity，结果是NaN
+ - Infinity减-Infinity，结果是Infinity
+ - -Infinity减Infinity，结果是-Infinity
+ - +0减+0，结果是+0
+ - -0减-0，结果是-0
+ - +0减-0，结果是+0
+ - 如果一个操作数是字符串、布尔值、null、undefined，则现在内部调用Number()函数将其转换为数值，再根据前面的规则进行计算
+ - 如果一个操作数是对象，则调用valueOf()方法以取得该对象的数值，如果该对象没有valueOf()方法，则调用其toString()方法。
+ 
+#### 关系操作符
+关系操作符返回一个布尔值。
+当关系操作符的操作数使用了非数值的时候，也要进行数据转换，转换规则如下：
+
+ - 如果都是字符串，则比较字符串对应的Unicode编码
+ - 如果其中一个是数值，则把另一个也转换成数值
+ - 如果一个操作数是对象，则调用valueOf()方法以取得该对象的数值，如果该对象没有valueOf()方法，则调用其toString()方法。
+ - 如果一个操作数是布尔值，则将其转换成数值进行比较
+
+#### 相等操作符
+ECMAScript提供两组操作符：相等和不相等-先转换再比较，全等和不全等-仅比较而不转换。
+
+ - 比较对象时，比较的是对象的存储地址。如果两个对象的引用都指向相同的地址，则为true。
+ - undefined和null执行相等比较的时候返回true。
+
+在代码中尽量使用全等进行比较。
+
+#### 条件操作符
+条件操作符格式如下：
+```
+var num = (num1 > num2) ? num1 : num2;
+```
+当num1大于num2的时候，将num1赋值给num，否则将num2赋值给num。
+
+#### 赋值操作符
+作用就是把右侧的值赋给左侧的变量。
+```
+var num = 10;
+```
+
+#### 逗号操作符
+使用逗号操作符可以在一个语句中执行多个操作。
+可以用逗号操作符来声明多个变量：
+```
+var num1 = 10,
+    num2 = 20,
+    num3 = 30;
+```
+也可以用于赋值，但返回的是最后一个：
+```
+var num = (1, 2, 3, 5, 6);
+console.log(num); // 6
+```
+
+### 语句
+#### if语句
+当指定条件为 true 时，if 语句 会执行一条语句。如果该条件为 false，则执行另一条语句。
+```
+if (condition) {
+   statements1
+} else {
+   statements2
+}
+```
+
+#### do-while语句
+在对表达式求值前，循环体内的代码至少会被执行一次。
+```
+do {
+    statement
+} while (expression)
+```
+
+#### while语句
+while 语句可以在某个条件表达式为真的前提下，循环执行指定的一段代码，直到那个表达式不为真时结束循环。
+```
+while (condition) {
+  statement
+}
+```
+
+#### for语句
+for语句用于创建一个循环,它包含了三个可选的表达式,三个可选的表达式包围在圆括号中并由分号分隔,后面跟随一个语句或一组语句在循环中执行。
+```
+for (var i = 0; i < 9; i++) {
+   console.log(i);
+   // more statements
+}
+```
+由于ECMAScript不存在块级作用域，在循环内定义的变量也能在循环外访问到。
+```
+for(var i = 0; i < 10; i++){};
+console.log(i); // 10 
+```
+#### for-in语句
+for...in 语句以任意顺序遍历一个对象的可枚举属性。对于每个不同的属性，语句都会被执行。
+```
+var obj = {
+    name: "Tom",
+    age: 20,
+    job: 'student'
+};
+for(var attr in obj) {
+    console.log(attr) // name, age, job
+}
+```
+通过for-in循环输出的属性名顺序是不可预测的。
+
+#### break和continue语句
+break语句会立刻退出循环，强制执行循环后面的语句。
+```
+for(var i = 0; i < 5; i++ ){
+    if( i == 3) {
+      break;
+    };
+    console.log(i) // 0 1 2
+}
+```
+continue退出循环后从循环的顶部继续执行。
+```
+for(var i = 0; i < 5; i++ ){
+    if( i == 3) {
+      continue;
+    };
+    console.log(i) // 0 1 2 4
+}
+```
+#### switch语句
+switch语句评估一个表达式，，将表达式的值与case子句匹配，并执行与该情况相关联的语句。
+```
+switch (expression) {
+  case value1:
+    // 当 expression 的结果与 value1 匹配时，从此处开始执行
+    statements1；
+    [break;]
+  case value2:
+    // 当 expression 的结果与 value2 匹配时，从此处开始执行
+    statements2;
+    [break;]
+  ...
+  case valueN:
+    // 当 expression 的结果与 valueN 匹配时，从此处开始执行
+    statementsN;
+    [break;]
+  default:
+    // 如果 expression 与上面的 value 值都不匹配时，执行此处的语句
+    statements_def;
+    [break;]
+}
+```
+### 函数
+函数使用function关键字来声明，后跟一组参数以及函数体。
+```
+function functionName(arg0, arg1, ...argN){}
+```
+#### arguments
+arguments 是一个类似数组的对象, 对应于传递给函数的参数。
+arguments对象是所有函数中可用的局部变量。你可以使用arguments对象在函数中引用函数的参数。此对象包含传递给函数的每个参数的条目，第一个条目的索引从0开始。例如，如果一个函数传递了三个参数，你可以参考它们如下：
+```
+arguments[0]
+arguments[1]
+arguments[2]
+```
+参数也可以被设置：
+```
+arguments[1] = 'new value';
+```
+arguments对象不是一个 Array 。它类似于数组，但除了 长度之外没有任何数组属性。例如，它没有 pop 方法。但是它可以被转换为一个真正的数组：
+```
+var args = Array.prototype.slice.call(arguments); 
+var args = [].slice.call(arguments);
+```
+#### 没有重载
+ECMAScript函数不能实现重载，两个相同名字的函数，后面的会覆盖前面的函数。
+```
+ function fn(num) {
+   alert(2)
+ };
+ function fn() {
+   alert(1)
+ };
+ fn(10); // 1
+```
