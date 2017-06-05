@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -111,7 +111,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Pisces',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
     motion: true,
@@ -230,9 +230,43 @@
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
   
 </nav>
 
@@ -322,6 +356,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a class="cloud-tie-join-count" href="/2017/05/18/2017-05-18-ES6学习笔记之数值的扩展/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -344,11 +388,11 @@
 
       
         <h2 id="ES5中的Number类型"><a href="#ES5中的Number类型" class="headerlink" title="ES5中的Number类型"></a>ES5中的Number类型</h2><p><code>Number</code>采用IEEE754格式来表示整数和浮点数。<br>整数可以通过十进制、八进制、十六进制字面量来表示。</p>
-<p>八进制字面量第一位必须是<code>0</code>，如果字面值中的数值超过范围，前导的零将会被省略，后面数值当作十进制解析。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">console.<span class="built_in">log</span>(<span class="number">070</span>); <span class="comment">// 56</span></div><div class="line">console.<span class="built_in">log</span>(<span class="number">08</span>); <span class="comment">// 8</span></div><div class="line">console.<span class="built_in">log</span>(<span class="number">089</span>)； <span class="comment">// 89</span></div></pre></td></tr></table></figure></p>
+<p>八进制字面量第一位必须是<code>0</code>，如果字面值中的数值超过范围，前导的零将会被省略，后面数值当作十进制解析。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="number">070</span>); <span class="comment">// 56</span></div><div class="line"><span class="built_in">console</span>.log(<span class="number">08</span>); <span class="comment">// 8</span></div><div class="line"><span class="built_in">console</span>.log(<span class="number">089</span>)； <span class="comment">// 89</span></div></pre></td></tr></table></figure></p>
 <p>八进制字面量在严格模式下会报错</p>
-<p>十六进制字面量前两位必须是<code>0x</code>,超出字面量会报错。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">console.<span class="built_in">log</span>(<span class="number">0xF</span>); <span class="comment">// 15</span></div><div class="line">console.<span class="built_in">log</span>(<span class="number">0</span>xG); <span class="comment">// Uncaught SyntaxError: Invalid or unexpected token</span></div></pre></td></tr></table></figure></p>
+<p>十六进制字面量前两位必须是<code>0x</code>,超出字面量会报错。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="number">0xF</span>); <span class="comment">// 15</span></div><div class="line"><span class="built_in">console</span>.log(<span class="number">0</span>xG); <span class="comment">// Uncaught SyntaxError: Invalid or unexpected token</span></div></pre></td></tr></table></figure></p>
 <p>在进行算术计算的时候，八进制和十六进制的数值最终都会转换成十进制。</p>
-<h3 id="浮点数值"><a href="#浮点数值" class="headerlink" title="浮点数值"></a>浮点数值</h3><p>浮点数值需要的内存空间是保存整数值的两倍，如果小数点后面没有任何数值，或者浮点数本身就表示一个整数，那么都会转换为整数。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">console.<span class="built_in">log</span>(<span class="number">10.</span>); <span class="comment">// 10</span></div><div class="line">console.<span class="built_in">log</span>(<span class="number">10.0</span>); <span class="comment">// 10</span></div></pre></td></tr></table></figure></p>
+<h3 id="浮点数值"><a href="#浮点数值" class="headerlink" title="浮点数值"></a>浮点数值</h3><p>浮点数值需要的内存空间是保存整数值的两倍，如果小数点后面没有任何数值，或者浮点数本身就表示一个整数，那么都会转换为整数。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="number">10.</span>); <span class="comment">// 10</span></div><div class="line"><span class="built_in">console</span>.log(<span class="number">10.0</span>); <span class="comment">// 10</span></div></pre></td></tr></table></figure></p>
 <h3 id="数值范围"><a href="#数值范围" class="headerlink" title="数值范围"></a>数值范围</h3><p><code>ECMAScripot</code>的数值范围在<code>Number.MIN_VALUE</code>和<code>Number.MAX_VALUE</code>之间，如果超出这个范围， 将会被转换成<code>Infinity</code>值，该值不能用于计算，要想确定一个值是否是有穷的，通过<code>isFinite()</code>判断，函数参数位于最大值与最小值之间返回<code>true</code>。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>.MIN_VALUE); <span class="comment">// 5e-324</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>.MAX_VALUE); <span class="comment">// 1.7976931348623157e+308</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">isFinite</span>(<span class="built_in">Number</span>.MIN_VALUE + <span class="built_in">Number</span>.MIN_VALUE)); <span class="comment">// false</span></div></pre></td></tr></table></figure></p>
 <h3 id="NaN"><a href="#NaN" class="headerlink" title="NaN"></a>NaN</h3><p>这个数值表示一个本来要返回数值的操作数未返回数值的情况。</p>
 <ol>
@@ -397,7 +441,7 @@
 <h3 id="Number-isFinite-、Number-isNaN"><a href="#Number-isFinite-、Number-isNaN" class="headerlink" title="Number.isFinite()、Number.isNaN()"></a>Number.isFinite()、Number.isNaN()</h3><p>这两个方法与传统的全局方法<code>isFinite()</code>和<code>isNaN()</code>相比，这两个新方法只对数值有效。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="built_in">isFinite</span>(<span class="string">"10"</span>)); <span class="comment">// true</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>.isFinite(<span class="string">"10"</span>)); <span class="comment">// false</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">isNaN</span>(<span class="string">"NaN"</span>)); <span class="comment">// true</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>.isNaN(<span class="string">"NaN"</span>)); <span class="comment">// false</span></div></pre></td></tr></table></figure></p>
 <h3 id="Number-parseInt-Number-parseFloat"><a href="#Number-parseInt-Number-parseFloat" class="headerlink" title="Number.parseInt(), Number.parseFloat()"></a>Number.parseInt(), Number.parseFloat()</h3><p>与ES5<code>parseInt()</code>和<code>parseFloat()</code>行为完全一样。这样做的目的，是逐步减少全局性方法，使得语言逐步模块化。</p>
 <h3 id="Number-isInteger"><a href="#Number-isInteger" class="headerlink" title="Number.isInteger()"></a>Number.isInteger()</h3><p>用来判断一个数是否为整数。同样能够识别不同格式的整数，如果第一位是零，则忽略。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>.isInteger(<span class="number">10</span>)); <span class="comment">// true</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>.isInteger(<span class="string">"10"</span>)); <span class="comment">// false</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>.isInteger(<span class="number">10.0</span>)); <span class="comment">// true</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>.isInteger(<span class="number">10.1</span>)); <span class="comment">// false</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>.isInteger(<span class="number">010</span>)); <span class="comment">// true</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>.isInteger(<span class="number">0xF</span>)); <span class="comment">// true</span></div></pre></td></tr></table></figure></p>
-<h3 id="Number-EPSILON"><a href="#Number-EPSILON" class="headerlink" title="Number.EPSILON"></a>Number.EPSILON</h3><p>引入一个这么小的量的目的，在于为浮点数计算，设置一个误差范围。如果浮点数的计算误差小于<code>Number.EPSILON</code>，我们就可以认为等到了正确的结果。<br><figure class="highlight fortran"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">console.<span class="built_in">log</span>(<span class="keyword">Number</span>.<span class="built_in">EPSILON</span>); // <span class="number">2.220446049250313e-16</span></div></pre></td></tr></table></figure></p>
+<h3 id="Number-EPSILON"><a href="#Number-EPSILON" class="headerlink" title="Number.EPSILON"></a>Number.EPSILON</h3><p>引入一个这么小的量的目的，在于为浮点数计算，设置一个误差范围。如果浮点数的计算误差小于<code>Number.EPSILON</code>，我们就可以认为等到了正确的结果。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>.EPSILON); <span class="comment">// 2.220446049250313e-16</span></div></pre></td></tr></table></figure></p>
 <h3 id="安全整数和Number-isSafeInteger"><a href="#安全整数和Number-isSafeInteger" class="headerlink" title="安全整数和Number.isSafeInteger()"></a>安全整数和Number.isSafeInteger()</h3><p>ES6引入了<code>Number.MAX_SAFE_INTEGER</code>和<code>Number.MIN_SAFE_INTEGER</code>这两个常量，用来表示安全整数范围的上下限。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>.MAX_SAFE_INTEGER); <span class="comment">// 9007199254740991</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>.MIN_SAFE_INTEGER); <span class="comment">// -9007199254740991</span></div></pre></td></tr></table></figure></p>
 <p><code>Number.isSafeInteger()</code>则是用来判断一个整数是否落在这个范围之内。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>.isSafeInteger(<span class="built_in">Number</span>.MAX_SAFE_INTEGER + <span class="number">1</span>)); <span class="comment">//false</span></div></pre></td></tr></table></figure></p>
 <p>验证的时候不止要验证结果是否为安全数，还要验证参与计算的值是否为安全数。</p>
@@ -487,6 +531,8 @@
 
           
   <div class="comments" id="comments">
+    
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
     
   </div>
 
@@ -649,7 +695,7 @@
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
+    NexT.Pisces
   </a>
 </div>
 
@@ -729,6 +775,13 @@
   
   
 
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
@@ -757,6 +810,22 @@
 
 
   
+    
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "c8b02936fa434892823b660d40889371",
+        target: "cloud-tie-wrapper"
+      };
+    </script>
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
+  
+
+
+
+
+
 
 
 
@@ -764,18 +833,322 @@
 
   
 
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (search_path.endsWith("json")) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
 
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
 
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
 
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
 
-  
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
 
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
 
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
 
+                // show search results
 
+                if (isMatch) {
+                  // sort index by position of keyword
 
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
 
-  
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
 
 
 
