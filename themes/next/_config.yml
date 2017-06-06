@@ -162,7 +162,7 @@ social_icons:
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.jpg
 # in site  directory(source/uploads): /uploads/avatar.jpg
-#avatar:
+avatar: /uploads/avatar.png
 
 
 # Table Of Contents in the Sidebar
@@ -300,7 +300,7 @@ han: false
 #swiftype_key:
 
 # Baidu Analytics ID
-#baidu_analytics:
+baidu_analytics: 370badca5d2696614e258b57fbdf5cd3
 
 # Duoshuo ShortName
 #duoshuo_shortname:
@@ -315,7 +315,7 @@ disqus:
 #hypercomments_id:
 
 # Gentie productKey
-#gentie_productKey:
+gentie_productKey: c8b02936fa434892823b660d40889371
 
 # changyan
 changyan:
@@ -368,7 +368,7 @@ changyan:
 # user_id must NOT be null when admin_enable is true!
 # you can visit http://dev.duoshuo.com get duoshuo user id.
 duoshuo_info:
-  ua_enable: true
+  ua_enable: false
   admin_enable: false
   user_id: 0
   #admin_nickname: Author
@@ -436,7 +436,7 @@ busuanzi_count:
 
 
 # Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO
-baidu_push: false
+baidu_push: true
 
 # Google Calendar
 # Share your recent schedule to others via calendar page
