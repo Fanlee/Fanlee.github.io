@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Javascript" />
 
 
 
@@ -93,15 +93,17 @@
 
 
 
-<meta name="description" content="个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="lihuan&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/tags/Javascript/index.html">
+<meta name="description" content="在JavaScript中，对对象进行拷贝的场景比较常见。但是简单的复制语句只能对对象进行浅拷贝，即复制的是一份引用，而不是它所引用的对象。而更多的时候，我们希望对对象进行深拷贝，避免原始对象被无意修改。对象的深拷贝与浅拷贝的区别如下：  浅拷贝：仅仅复制对象的引用，而不是对象本身 深拷贝：把复制的对象所引用的全部对象都复制一遍  浅拷贝的实现简单的复制语句1234567function simpl">
+<meta name="keywords" content="Javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javascript之深浅拷贝">
+<meta property="og:url" content="http://yoursite.com/2017/06/06/2017-06-06-Javascript之深浅拷贝/index.html">
 <meta property="og:site_name" content="lihuan&#39;s Blog">
-<meta property="og:description" content="个人博客">
+<meta property="og:description" content="在JavaScript中，对对象进行拷贝的场景比较常见。但是简单的复制语句只能对对象进行浅拷贝，即复制的是一份引用，而不是它所引用的对象。而更多的时候，我们希望对对象进行深拷贝，避免原始对象被无意修改。对象的深拷贝与浅拷贝的区别如下：  浅拷贝：仅仅复制对象的引用，而不是对象本身 深拷贝：把复制的对象所引用的全部对象都复制一遍  浅拷贝的实现简单的复制语句1234567function simpl">
+<meta property="og:updated_time" content="2017-06-06T07:27:11.838Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="lihuan&#39;s Blog">
-<meta name="twitter:description" content="个人博客">
+<meta name="twitter:title" content="Javascript之深浅拷贝">
+<meta name="twitter:description" content="在JavaScript中，对对象进行拷贝的场景比较常见。但是简单的复制语句只能对对象进行浅拷贝，即复制的是一份引用，而不是它所引用的对象。而更多的时候，我们希望对对象进行深拷贝，避免原始对象被无意修改。对象的深拷贝与浅拷贝的区别如下：  浅拷贝：仅仅复制对象的引用，而不是对象本身 深拷贝：把复制的对象所引用的全部对象都复制一遍  浅拷贝的实现简单的复制语句1234567function simpl">
 
 
 
@@ -129,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/Javascript/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/06/06/2017-06-06-Javascript之深浅拷贝/"/>
 
 
 
 
 
-  <title>标签: Javascript | lihuan's Blog</title>
+  <title>Javascript之深浅拷贝 | lihuan's Blog</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -171,7 +173,7 @@
     
   
 
-  <div class="container sidebar-position-left  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -289,72 +291,200 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h1>Javascript<small>标签</small>
-      </h1>
-    </div>
-
+  <div id="posts" class="posts-expand">
     
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/06/06/2017-06-06-Javascript之深浅拷贝/" itemprop="url">
-              
-                <span itemprop="name">Javascript之深浅拷贝</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-06-06T00:00:00+08:00"
-              content="2017-06-06" >
-          06-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/06/02/2017-06-02-Javascript高级程序设计-基础概念/" itemprop="url">
-              
-                <span itemprop="name">Javascript高级程序设计-基础概念</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-06-02T00:00:00+08:00"
-              content="2017-06-02" >
-          06-02
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-  </div>
 
   
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/06/2017-06-06-Javascript之深浅拷贝/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="李欢">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lihuan's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Javascript之深浅拷贝</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-06T00:00:00+08:00">
+                2017-06-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">Javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a class="cloud-tie-join-count" href="/2017/06/06/2017-06-06-Javascript之深浅拷贝/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>在JavaScript中，对对象进行拷贝的场景比较常见。但是简单的复制语句只能对对象进行浅拷贝，即复制的是一份引用，而不是它所引用的对象。而更多的时候，我们希望对对象进行深拷贝，避免原始对象被无意修改。对象的深拷贝与浅拷贝的区别如下：</p>
+<ul>
+<li>浅拷贝：仅仅复制对象的引用，而不是对象本身</li>
+<li>深拷贝：把复制的对象所引用的全部对象都复制一遍</li>
+</ul>
+<h2 id="浅拷贝的实现"><a href="#浅拷贝的实现" class="headerlink" title="浅拷贝的实现"></a>浅拷贝的实现</h2><h3 id="简单的复制语句"><a href="#简单的复制语句" class="headerlink" title="简单的复制语句"></a>简单的复制语句</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">simpleClone</span>(<span class="params">target</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> obj = &#123;&#125;;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> attr <span class="keyword">in</span> target) &#123;</div><div class="line">      obj[attr] = target[attr];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> obj;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h3 id="Object-assign"><a href="#Object-assign" class="headerlink" title="Object.assign()"></a>Object.assign()</h3><p>Object.assign() 方法可以把任意多个的源对象自身的可枚举属性拷贝给目标对象，然后返回目标对象。但是 Object.assign() 进行的是浅拷贝，拷贝的是对象的属性的引用，而不是对象本身。<br><figure class="highlight delphi"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = <span class="comment">&#123; a: &#123;a: "hello", b: 21&#125;</span> &#125;;</div><div class="line"><span class="keyword">var</span> newObj = <span class="keyword">Object</span>.assign(<span class="comment">&#123;&#125;</span>, obj);</div></pre></td></tr></table></figure></p>
+<h2 id="深拷贝的实现"><a href="#深拷贝的实现" class="headerlink" title="深拷贝的实现"></a>深拷贝的实现</h2><h3 id="JSON-parse"><a href="#JSON-parse" class="headerlink" title="JSON.parse()"></a>JSON.parse()</h3><p>最偷懒，也是浏览器层面优化比较好的方式，就是使用JSON的解析和序列化API,既简单，效率也非常高（v8层面又C++实现的解析引擎）:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(target));</div></pre></td></tr></table></figure></p>
+<p>但是，这种拷贝的方法存在以下问题:</p>
+<ul>
+<li>一旦对象中存在函数类型（Function），此解析器会自动忽略掉Function</li>
+<li>字符串化之后必须是标准类型的JSON格式</li>
+<li>原型链丢失</li>
+</ul>
+<p>这种拷贝方式，最适合纯数据类型的对象或者数组。</p>
+<h3 id="递归拷贝"><a href="#递归拷贝" class="headerlink" title="递归拷贝"></a>递归拷贝</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepClone</span>(<span class="params">initalObj, finalObj</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> obj = finalObj || &#123;&#125;;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> attr <span class="keyword">in</span> initalObj) &#123;</div><div class="line">      <span class="keyword">var</span> prop = initalObj[attr];</div><div class="line">      <span class="comment">// 避免相互引用对象导致死循环，如initalObj.a = initalObj的情况</span></div><div class="line">      <span class="keyword">if</span> (prop === obj) &#123;</div><div class="line">        <span class="keyword">continue</span>;</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">if</span> (<span class="keyword">typeof</span> prop === <span class="string">'object'</span>) &#123;</div><div class="line">        obj[attr] = (prop.constructor === <span class="built_in">Array</span>) ? [] : &#123;&#125;;</div><div class="line">        <span class="built_in">arguments</span>.callee(prop, obj[attr]);</div><div class="line">      &#125; <span class="keyword">else</span> &#123;</div><div class="line">        obj[attr] = prop;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> obj;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Object-create"><a href="#Object-create" class="headerlink" title="Object.create()"></a>Object.create()</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepClone</span>(<span class="params">initalObj, finalObj</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> obj = finalObj || &#123;&#125;;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i <span class="keyword">in</span> initalObj) &#123;</div><div class="line">        <span class="keyword">var</span> prop = initalObj[i];</div><div class="line"> </div><div class="line">        <span class="comment">// 避免相互引用对象导致死循环，如initalObj.a = initalObj的情况</span></div><div class="line">        <span class="keyword">if</span>(prop === obj) &#123;</div><div class="line">            <span class="keyword">continue</span>;</div><div class="line">        &#125;</div><div class="line"> </div><div class="line">        <span class="keyword">if</span> (<span class="keyword">typeof</span> prop === <span class="string">'object'</span>) &#123;</div><div class="line">            obj[i] = (prop.constructor === <span class="built_in">Array</span>) ? [] : <span class="built_in">Object</span>.create(prop);</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            obj[i] = prop;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> obj;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/weixin.png" alt="李欢 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信添加我</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Javascript/" rel="tag"># Javascript</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/06/02/2017-06-02-Javascript高级程序设计-基础概念/" rel="next" title="Javascript高级程序设计-基础概念">
+                <i class="fa fa-chevron-left"></i> Javascript高级程序设计-基础概念
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -362,6 +492,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    
+  </div>
+
 
         </div>
         
@@ -381,8 +517,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.png"
@@ -464,6 +609,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#浅拷贝的实现"><span class="nav-number">1.</span> <span class="nav-text">浅拷贝的实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#简单的复制语句"><span class="nav-number">1.1.</span> <span class="nav-text">简单的复制语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Object-assign"><span class="nav-number">1.2.</span> <span class="nav-text">Object.assign()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#深拷贝的实现"><span class="nav-number">2.</span> <span class="nav-text">深拷贝的实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JSON-parse"><span class="nav-number">2.1.</span> <span class="nav-text">JSON.parse()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#递归拷贝"><span class="nav-number">2.2.</span> <span class="nav-text">递归拷贝</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Object-create"><span class="nav-number">2.3.</span> <span class="nav-text">Object.create()</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -584,10 +745,10 @@
 
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
 
-  
+
 
   
 
