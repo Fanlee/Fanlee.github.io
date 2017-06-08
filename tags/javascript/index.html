@@ -96,7 +96,7 @@
 <meta name="description" content="个人博客">
 <meta property="og:type" content="website">
 <meta property="og:title" content="lihuan&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/tags/Javascript/index.html">
+<meta property="og:url" content="http://yoursite.com/tags/javascript/index.html">
 <meta property="og:site_name" content="lihuan&#39;s Blog">
 <meta property="og:description" content="个人博客">
 <meta name="twitter:card" content="summary">
@@ -129,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/Javascript/"/>
+  <link rel="canonical" href="http://yoursite.com/tags/javascript/"/>
 
 
 
 
 
-  <title>标签: Javascript | lihuan's Blog</title>
+  <title>标签: javascript | lihuan's Blog</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -291,7 +291,7 @@
 
   <div id="posts" class="posts-collapse">
     <div class="collection-title">
-      <h1>Javascript<small>标签</small>
+      <h1>javascript<small>标签</small>
       </h1>
     </div>
 
@@ -303,9 +303,9 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2017/06/06/2017-06-06-Javascript之深浅拷贝/" itemprop="url">
+            <a class="post-title-link" href="/2017/05/15/2017-05-15-ES6学习笔记之let和const命令/" itemprop="url">
               
-                <span itemprop="name">Javascript之深浅拷贝</span>
+                <span itemprop="name">ES6学习笔记之let和const命令</span>
               
             </a>
         
@@ -313,9 +313,9 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2017-06-06T00:00:00+08:00"
-              content="2017-06-06" >
-          06-06
+              datetime="2017-05-15T00:00:00+08:00"
+              content="2017-05-15" >
+          05-15
         </time>
       </div>
 
@@ -331,9 +331,9 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2017/06/02/2017-06-02-Javascript高级程序设计-基础概念/" itemprop="url">
+            <a class="post-title-link" href="/2017/05/07/2017-05-07-js数组去重/" itemprop="url">
               
-                <span itemprop="name">Javascript高级程序设计-基础概念</span>
+                <span itemprop="name">JS的数组去重</span>
               
             </a>
         
@@ -341,9 +341,9 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2017-06-02T00:00:00+08:00"
-              content="2017-06-02" >
-          06-02
+              datetime="2017-05-07T21:13:48+08:00"
+              content="2017-05-07" >
+          05-07
         </time>
       </div>
 
@@ -397,7 +397,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -940,6 +940,51 @@
 
     $('.popup-btn-close').click(onPopupClose);
     $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+('.popup').click(function(e){
       e.stopPropagation();
     });
     $(document).on('keyup', function (event) {

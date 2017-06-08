@@ -93,17 +93,17 @@
 
 
 
-<meta name="description" content="在JavaScript中，对对象进行拷贝的场景比较常见。但是简单的复制语句只能对对象进行浅拷贝，即复制的是一份引用，而不是它所引用的对象。而更多的时候，我们希望对对象进行深拷贝，避免原始对象被无意修改。对象的深拷贝与浅拷贝的区别如下：  浅拷贝：仅仅复制对象的引用，而不是对象本身 深拷贝：把复制的对象所引用的全部对象都复制一遍  浅拷贝的实现简单的复制语句1234567function simpl">
+<meta name="description" content="Javascript变量松散类型的本质，决定了它只是在特定时间用于保存特定值的一个名字而已。变量的值及其数据类型可以在脚本的生命周期内改变。 基本类型和引用类型的值ECMAScript包含两种不同数据类型的值：基本类型值和引用类型值。Javascript不允许直接访问内存中的位置，在操作对象时，实际上是操作对象的引用而不是实际的对象。  基本类型值保存在栈内存中 引用类型值保存在堆内存中  动态的">
 <meta name="keywords" content="Javascript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Javascript之深浅拷贝">
-<meta property="og:url" content="http://yoursite.com/2017/06/06/2017-06-06-Javascript之深浅拷贝/index.html">
+<meta property="og:title" content="Javascript高级程序设计-变量、作用域和内存问题">
+<meta property="og:url" content="http://yoursite.com/2017/06/06/2017-06-08-Javascript高级程序设计-变量、作用域和内存问题/index.html">
 <meta property="og:site_name" content="lihuan&#39;s Blog">
-<meta property="og:description" content="在JavaScript中，对对象进行拷贝的场景比较常见。但是简单的复制语句只能对对象进行浅拷贝，即复制的是一份引用，而不是它所引用的对象。而更多的时候，我们希望对对象进行深拷贝，避免原始对象被无意修改。对象的深拷贝与浅拷贝的区别如下：  浅拷贝：仅仅复制对象的引用，而不是对象本身 深拷贝：把复制的对象所引用的全部对象都复制一遍  浅拷贝的实现简单的复制语句1234567function simpl">
-<meta property="og:updated_time" content="2017-06-06T07:27:11.838Z">
+<meta property="og:description" content="Javascript变量松散类型的本质，决定了它只是在特定时间用于保存特定值的一个名字而已。变量的值及其数据类型可以在脚本的生命周期内改变。 基本类型和引用类型的值ECMAScript包含两种不同数据类型的值：基本类型值和引用类型值。Javascript不允许直接访问内存中的位置，在操作对象时，实际上是操作对象的引用而不是实际的对象。  基本类型值保存在栈内存中 引用类型值保存在堆内存中  动态的">
+<meta property="og:updated_time" content="2017-06-08T03:13:30.143Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Javascript之深浅拷贝">
-<meta name="twitter:description" content="在JavaScript中，对对象进行拷贝的场景比较常见。但是简单的复制语句只能对对象进行浅拷贝，即复制的是一份引用，而不是它所引用的对象。而更多的时候，我们希望对对象进行深拷贝，避免原始对象被无意修改。对象的深拷贝与浅拷贝的区别如下：  浅拷贝：仅仅复制对象的引用，而不是对象本身 深拷贝：把复制的对象所引用的全部对象都复制一遍  浅拷贝的实现简单的复制语句1234567function simpl">
+<meta name="twitter:title" content="Javascript高级程序设计-变量、作用域和内存问题">
+<meta name="twitter:description" content="Javascript变量松散类型的本质，决定了它只是在特定时间用于保存特定值的一个名字而已。变量的值及其数据类型可以在脚本的生命周期内改变。 基本类型和引用类型的值ECMAScript包含两种不同数据类型的值：基本类型值和引用类型值。Javascript不允许直接访问内存中的位置，在操作对象时，实际上是操作对象的引用而不是实际的对象。  基本类型值保存在栈内存中 引用类型值保存在堆内存中  动态的">
 
 
 
@@ -131,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/06/06/2017-06-06-Javascript之深浅拷贝/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/06/06/2017-06-08-Javascript高级程序设计-变量、作用域和内存问题/"/>
 
 
 
 
 
-  <title>Javascript之深浅拷贝 | lihuan's Blog</title>
+  <title>Javascript高级程序设计-变量、作用域和内存问题 | lihuan's Blog</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -301,7 +301,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/06/2017-06-06-Javascript之深浅拷贝/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/06/2017-06-08-Javascript高级程序设计-变量、作用域和内存问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="李欢">
@@ -318,7 +318,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Javascript之深浅拷贝</h1>
+          <h1 class="post-title" itemprop="name headline">Javascript高级程序设计-变量、作用域和内存问题</h1>
         
 
         <div class="post-meta">
@@ -371,7 +371,7 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a class="cloud-tie-join-count" href="/2017/06/06/2017-06-06-Javascript之深浅拷贝/#comments" itemprop="discussionUrl">
+                <a class="cloud-tie-join-count" href="/2017/06/06/2017-06-08-Javascript高级程序设计-变量、作用域和内存问题/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count join-count" itemprop="commentCount"></span>
                 </a>
               </span>
@@ -397,23 +397,40 @@
       
 
       
-        <p>在JavaScript中，对对象进行拷贝的场景比较常见。但是简单的复制语句只能对对象进行浅拷贝，即复制的是一份引用，而不是它所引用的对象。而更多的时候，我们希望对对象进行深拷贝，避免原始对象被无意修改。对象的深拷贝与浅拷贝的区别如下：</p>
+        <p>Javascript变量松散类型的本质，决定了它只是在特定时间用于保存特定值的一个名字而已。变量的值及其数据类型可以在脚本的生命周期内改变。</p>
+<h2 id="基本类型和引用类型的值"><a href="#基本类型和引用类型的值" class="headerlink" title="基本类型和引用类型的值"></a>基本类型和引用类型的值</h2><p>ECMAScript包含两种不同数据类型的值：基本类型值和引用类型值。Javascript不允许直接访问内存中的位置，在操作对象时，实际上是操作对象的引用而不是实际的对象。</p>
 <ul>
-<li>浅拷贝：仅仅复制对象的引用，而不是对象本身</li>
-<li>深拷贝：把复制的对象所引用的全部对象都复制一遍</li>
+<li>基本类型值保存在栈内存中</li>
+<li>引用类型值保存在堆内存中</li>
 </ul>
-<h2 id="浅拷贝的实现"><a href="#浅拷贝的实现" class="headerlink" title="浅拷贝的实现"></a>浅拷贝的实现</h2><h3 id="简单的复制语句"><a href="#简单的复制语句" class="headerlink" title="简单的复制语句"></a>简单的复制语句</h3><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">simpleClone</span><span class="params">(target)</span> </span>&#123;</div><div class="line">    <span class="keyword">var</span> obj = &#123;&#125;;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> attr <span class="keyword">in</span> target) &#123;</div><div class="line">      obj[attr] = target[attr];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> obj;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<h3 id="Object-assign"><a href="#Object-assign" class="headerlink" title="Object.assign()"></a>Object.assign()</h3><p>Object.assign() 方法可以把任意多个的源对象自身的可枚举属性拷贝给目标对象，然后返回目标对象。但是 Object.assign() 进行的是浅拷贝，拷贝的是对象的属性的引用，而不是对象本身。<br><figure class="highlight delphi"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = <span class="comment">&#123; a: &#123;a: "hello", b: 21&#125;</span> &#125;;</div><div class="line"><span class="keyword">var</span> newObj = <span class="keyword">Object</span>.assign(<span class="comment">&#123;&#125;</span>, obj);</div></pre></td></tr></table></figure></p>
-<h2 id="深拷贝的实现"><a href="#深拷贝的实现" class="headerlink" title="深拷贝的实现"></a>深拷贝的实现</h2><h3 id="JSON-parse"><a href="#JSON-parse" class="headerlink" title="JSON.parse()"></a>JSON.parse()</h3><p>最偷懒，也是浏览器层面优化比较好的方式，就是使用JSON的解析和序列化API,既简单，效率也非常高（v8层面又C++实现的解析引擎）:<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">JSON</span><span class="selector-class">.parse</span>(<span class="selector-tag">JSON</span><span class="selector-class">.stringify</span>(<span class="selector-tag">target</span>));</div></pre></td></tr></table></figure></p>
-<p>但是，这种拷贝的方法存在以下问题:</p>
+<h3 id="动态的属性"><a href="#动态的属性" class="headerlink" title="动态的属性"></a>动态的属性</h3><p>定义一个基本类型值和引用类型值是一样的：创建一个变量并为该变量赋值。对于引用类型的值，我们可以为其添加属性和方法。</p>
+<h3 id="复制变量值"><a href="#复制变量值" class="headerlink" title="复制变量值"></a>复制变量值</h3><p>从一个变量向另一个变量复制基本类型值的时候，会在变量对象上创建一个新值，两个变量可以参与任何操作而不相互影响。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> num1 = <span class="number">5</span>;</div><div class="line"><span class="keyword">var</span> num2 = num1;</div><div class="line"><span class="built_in">console</span>.log(num1) <span class="comment">// 5</span></div><div class="line"><span class="built_in">console</span>.log(num2) <span class="comment">// 5</span></div></pre></td></tr></table></figure></p>
+<p>当从一个变量向另一个变量复制引用类型值的时候，其实复制的是对象的引用，复制操作结束后，两个变量的引用指向同一个对象。修改其中一个变量会影响到另一个变量。<br><figure class="highlight sqf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var obj1 = &#123;<span class="built_in">name</span>: <span class="string">'Tom'</span>&#125;;</div><div class="line">var obj2 = obj1;</div><div class="line">obj2.<span class="built_in">name</span> = <span class="string">'joy'</span>;</div><div class="line">console.<span class="built_in">log</span>(obj1.<span class="built_in">name</span>); <span class="comment">//joy</span></div></pre></td></tr></table></figure></p>
+<h3 id="传递参数"><a href="#传递参数" class="headerlink" title="传递参数"></a>传递参数</h3><p>ECMAScript中所有参数都是按值传递的。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">setName</span>(<span class="params">obj</span>)</span>&#123;</div><div class="line">    obj.name = <span class="string">'Tom'</span>;</div><div class="line">    obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line">    obj.name = <span class="string">'Joy'</span>;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line">setName(obj);</div><div class="line"><span class="built_in">console</span>.log(person.name); <span class="comment">// 'Tom'</span></div></pre></td></tr></table></figure></p>
+<p>当传入的参数是对象的时候，也是按值传递，如果是按引用传递的话，当obj被赋予新的对象的时候，person也会跟着变化。</p>
+<h3 id="检测类型"><a href="#检测类型" class="headerlink" title="检测类型"></a>检测类型</h3><p>检测一个变量是不是基本类型值的时候可以通过typeof操作符，注意当值为null的时候，使用typeof操作符会返回object。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="literal">null</span>); <span class="comment">// object</span></div></pre></td></tr></table></figure></p>
+<p>检测是哪一种引用类型值的时候用instanceof<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = [];</div><div class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> <span class="built_in">RegExp</span>();</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(a <span class="keyword">instanceof</span> <span class="built_in">Array</span>) <span class="comment">// true</span></div><div class="line"><span class="built_in">console</span>.log(b <span class="keyword">instanceof</span> <span class="built_in">RegExp</span>) <span class="comment">//true</span></div></pre></td></tr></table></figure></p>
+<p>所有引用类型的值都是Object的实例，所以在检测引用类型值和Object构造函数的时候，始终返回true。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = [];</div><div class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> <span class="built_in">RegExp</span>();</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(a <span class="keyword">instanceof</span> <span class="built_in">Object</span>) <span class="comment">// true</span></div><div class="line"><span class="built_in">console</span>.log(b <span class="keyword">instanceof</span> <span class="built_in">Object</span>) <span class="comment">//true</span></div></pre></td></tr></table></figure></p>
+<h2 id="执行环境及作用域"><a href="#执行环境及作用域" class="headerlink" title="执行环境及作用域"></a>执行环境及作用域</h2><p>　执行环境定义了变量或函数有权访问的其他数据。每个执行环境都有一个与之关联的变量对象，环境中定义的所有变量和函数都保存在这个对象中。<br>　全局执行环境是最外围的一个执行环境，在Web浏览器中，全局执行环境被认为是window对象，因此所有的全局变量和函数都是作为window对象的属性和方法创建的。某个执行环境所有代码执行完毕后，该环境被销毁，保存在其中的所有变量和函数也随之被销毁。<br>　每个函数都有自己的执行环境，当执行流进入一个函数时，函数的环境就被推入一个环境栈中。而在函数执行之后，栈将环境弹出，把控制权交给之前的执行环境。<br>　当代码在一个环境中执行时，会创建变量对象和一个作用域链。作用域链的用途是保证对执行环境的有权访问和所有函数和变量的有序访问。作用域链的前端始终都是当前执行的代码所在环境的变量对象。如果这个环境是函数，则将其活动对象作为变量对象，活动对象在最开始只包含一个变量，即arguments对象。全局执行环境的变量对象始终是作用域链中的最后一个对象。<br>　标识符的解析是沿着作用域链一级一级搜索标识符的过程。搜索过程始终从作用域链的前端开始。然后逐级的向后回溯。<br><figure class="highlight qml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">var</span> <span class="built_in">color</span> = <span class="string">"red"</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">changeColor</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">var</span> anotherColor = <span class="string">"blue"</span>;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">swapColor</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">var</span> tempColor = anotherColor;</div><div class="line">    &#125;;</div><div class="line">    swapColor();</div><div class="line">&#125;</div><div class="line">changeColor();</div></pre></td></tr></table></figure></p>
+<p>　上面代码有三个执行环境：全局环境、changeColor()的局部环境和swapColor()的局部环境。全局环境中有变量color和函数changeColor()，changeColor()的局部环境中包含变量anotherColor和函数swapColor()，swapColor()局部环境中包含变量tempColor。swapColor()局部环境能访问他的包含环境的所有变量，而changeColor()局部环境和全局环境就不能访问swapColor()局部环境中的变量。<br>　内部环境能够通过作用域链访问所有的外部环境，但外部环境不能访问内部环境中的任何变量和函数。</p>
+<h3 id="延长作用域链"><a href="#延长作用域链" class="headerlink" title="延长作用域链"></a>延长作用域链</h3><p>下面两个语句能够在作用域链的前端增加一个变量对象。该变量对象会在代码执行后被移除出。</p>
 <ul>
-<li>一旦对象中存在函数类型（Function），此解析器会自动忽略掉Function</li>
-<li>字符串化之后必须是标准类型的JSON格式</li>
-<li>原型链丢失</li>
+<li>try-catch语句的catch块</li>
+<li>with语句</li>
 </ul>
-<p>这种拷贝方式，最适合纯数据类型的对象或者数组。</p>
-<h3 id="递归拷贝"><a href="#递归拷贝" class="headerlink" title="递归拷贝"></a>递归拷贝</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepClone</span>(<span class="params">initalObj, finalObj</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> obj = finalObj || &#123;&#125;;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> attr <span class="keyword">in</span> initalObj) &#123;</div><div class="line">      <span class="keyword">var</span> prop = initalObj[attr];</div><div class="line">      <span class="comment">// 避免相互引用对象导致死循环，如initalObj.a = initalObj的情况</span></div><div class="line">      <span class="keyword">if</span> (prop === obj) &#123;</div><div class="line">        <span class="keyword">continue</span>;</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">if</span> (<span class="keyword">typeof</span> prop === <span class="string">'object'</span>) &#123;</div><div class="line">        obj[attr] = (prop.constructor === <span class="built_in">Array</span>) ? [] : &#123;&#125;;</div><div class="line">        <span class="built_in">arguments</span>.callee(prop, obj[attr]);</div><div class="line">      &#125; <span class="keyword">else</span> &#123;</div><div class="line">        obj[attr] = prop;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> obj;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="Object-create"><a href="#Object-create" class="headerlink" title="Object.create()"></a>Object.create()</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepClone</span>(<span class="params">initalObj, finalObj</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> obj = finalObj || &#123;&#125;;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i <span class="keyword">in</span> initalObj) &#123;</div><div class="line">        <span class="keyword">var</span> prop = initalObj[i];</div><div class="line"> </div><div class="line">        <span class="comment">// 避免相互引用对象导致死循环，如initalObj.a = initalObj的情况</span></div><div class="line">        <span class="keyword">if</span>(prop === obj) &#123;</div><div class="line">            <span class="keyword">continue</span>;</div><div class="line">        &#125;</div><div class="line"> </div><div class="line">        <span class="keyword">if</span> (<span class="keyword">typeof</span> prop === <span class="string">'object'</span>) &#123;</div><div class="line">            obj[i] = (prop.constructor === <span class="built_in">Array</span>) ? [] : <span class="built_in">Object</span>.create(prop);</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            obj[i] = prop;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> obj;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>with会将指定的对象添加到作用域链中，catch会创建一个新的变量，其中包含的是被抛出的错误对象的声明。<br><figure class="highlight qml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">bulidUrl</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="built_in">var</span> qs = <span class="string">"?debug=true"</span>;</div><div class="line">  <span class="keyword">with</span>(location) &#123;</div><div class="line">    <span class="built_in">var</span> <span class="built_in">url</span> = href + qs;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> <span class="built_in">url</span>;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(bulidUrl()) <span class="comment">// http://localhost:63342/test/93.html?_ijt=butdjev1qf9q4jjb9qetp365sp?debug=true</span></div></pre></td></tr></table></figure></p>
+<p>with语句接收的是location对象，因此变量对象中就包含了所有location对象的属性和方法。其中的href就是location.href。</p>
+<h3 id="没有块级作用域"><a href="#没有块级作用域" class="headerlink" title="没有块级作用域"></a>没有块级作用域</h3><p>Javascript没有块级作用域，for语句初始化变量的表达式所定义的变量，在循环外部的执行环境也能访问到。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)&#123;&#125;;</div><div class="line"><span class="built_in">console</span>.log(i); <span class="comment">// 10</span></div></pre></td></tr></table></figure></p>
+<h4 id="声明变量"><a href="#声明变量" class="headerlink" title="声明变量"></a>声明变量</h4><p>使用var声明的变量会自动被添加到最接近的环境中。如果初始化变量没有用var声明，该变量会自动被添加到全局环境。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">num1, num2</span>)</span>&#123;</div><div class="line">    num = num1 + num2;</div><div class="line">    <span class="keyword">return</span> num;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(add(<span class="number">10</span>, <span class="number">20</span>)); <span class="comment">// 30</span></div><div class="line"><span class="built_in">console</span>.log(num); <span class="comment">// 30</span></div></pre></td></tr></table></figure></p>
+<h4 id="查询标识符"><a href="#查询标识符" class="headerlink" title="查询标识符"></a>查询标识符</h4><p>搜索过程从作用域链的前端开始，向上逐级查询与给的名字匹配的标识符。<br>如果在局部环境没有找到标识符，则沿着作用域链向上搜索。<br><figure class="highlight qml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">var</span> <span class="built_in">color</span> = <span class="string">"red"</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayColor</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">color</span>;</div><div class="line">&#125;;</div><div class="line"><span class="built_in">console</span>.log(sayColor()); <span class="comment">//color</span></div></pre></td></tr></table></figure></p>
+<p>如果在局部环境找到标识符，则停止搜索。<br><figure class="highlight qml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">var</span> <span class="built_in">color</span> = <span class="string">"red"</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayColor</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">var</span> <span class="built_in">color</span> = <span class="string">"blue"</span></div><div class="line">    <span class="keyword">return</span> <span class="built_in">color</span>;</div><div class="line">&#125;;</div><div class="line"><span class="built_in">console</span>.log(sayColor()); <span class="comment">//blue</span></div></pre></td></tr></table></figure></p>
+<h2 id="垃圾收集"><a href="#垃圾收集" class="headerlink" title="垃圾收集"></a>垃圾收集</h2><p>Javascript具有自动垃圾收集机制。执行环境会负责管理代码执行过程中使用的内存。离开作用域的值将被自动标记为可回收，因此将在垃圾收集期间被删除。</p>
+<h3 id="标记清除"><a href="#标记清除" class="headerlink" title="标记清除"></a>标记清除</h3><p>Javascript最常用的垃圾收集方式是标记清除。这种算法的思想是给当前不用的值加上标记，然后再回收其内存。</p>
+<h3 id="引用计数"><a href="#引用计数" class="headerlink" title="引用计数"></a>引用计数</h3><p>这种算法的思想是跟踪所有的值被引用的次数。Javascript引擎目前都不再使用这种算法。</p>
+<h3 id="管理内存"><a href="#管理内存" class="headerlink" title="管理内存"></a>管理内存</h3><p>优化内存占用的最佳方式是解除引用，就是一旦数据不再使用，手动将值设置为null来释放引用。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">createPerson</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> localPerson = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line">    localPerson.name = name;</div><div class="line">    <span class="keyword">return</span> localPerson;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> globalPerson = createPerson(<span class="string">'Tom'</span>);</div><div class="line"></div><div class="line">globalPerson = <span class="literal">null</span>;</div></pre></td></tr></table></figure>
+<p>解除一个值的引用并不意味着自动回收该值所占用的内存，解除引用的正在目的是让值脱离执行环境，以便垃圾收集器下次运行时将其回收。</p>
+
       
     </div>
 
@@ -460,8 +477,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/06/02/2017-06-02-Javascript高级程序设计-基础概念/" rel="next" title="Javascript高级程序设计-基础概念">
-                <i class="fa fa-chevron-left"></i> Javascript高级程序设计-基础概念
+              <a href="/2017/06/06/2017-06-06-Javascript之深浅拷贝/" rel="next" title="Javascript之深浅拷贝">
+                <i class="fa fa-chevron-left"></i> Javascript之深浅拷贝
               </a>
             
           </div>
@@ -469,10 +486,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/06/06/2017-06-08-Javascript高级程序设计-变量、作用域和内存问题/" rel="prev" title="Javascript高级程序设计-变量、作用域和内存问题">
-                Javascript高级程序设计-变量、作用域和内存问题 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -623,7 +636,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#浅拷贝的实现"><span class="nav-number">1.</span> <span class="nav-text">浅拷贝的实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#简单的复制语句"><span class="nav-number">1.1.</span> <span class="nav-text">简单的复制语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Object-assign"><span class="nav-number">1.2.</span> <span class="nav-text">Object.assign()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#深拷贝的实现"><span class="nav-number">2.</span> <span class="nav-text">深拷贝的实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JSON-parse"><span class="nav-number">2.1.</span> <span class="nav-text">JSON.parse()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#递归拷贝"><span class="nav-number">2.2.</span> <span class="nav-text">递归拷贝</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Object-create"><span class="nav-number">2.3.</span> <span class="nav-text">Object.create()</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本类型和引用类型的值"><span class="nav-number">1.</span> <span class="nav-text">基本类型和引用类型的值</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#动态的属性"><span class="nav-number">1.1.</span> <span class="nav-text">动态的属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#复制变量值"><span class="nav-number">1.2.</span> <span class="nav-text">复制变量值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#传递参数"><span class="nav-number">1.3.</span> <span class="nav-text">传递参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#检测类型"><span class="nav-number">1.4.</span> <span class="nav-text">检测类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#执行环境及作用域"><span class="nav-number">2.</span> <span class="nav-text">执行环境及作用域</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#延长作用域链"><span class="nav-number">2.1.</span> <span class="nav-text">延长作用域链</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#没有块级作用域"><span class="nav-number">2.2.</span> <span class="nav-text">没有块级作用域</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#声明变量"><span class="nav-number">2.2.1.</span> <span class="nav-text">声明变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查询标识符"><span class="nav-number">2.2.2.</span> <span class="nav-text">查询标识符</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#垃圾收集"><span class="nav-number">3.</span> <span class="nav-text">垃圾收集</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#标记清除"><span class="nav-number">3.1.</span> <span class="nav-text">标记清除</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引用计数"><span class="nav-number">3.2.</span> <span class="nav-text">引用计数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#管理内存"><span class="nav-number">3.3.</span> <span class="nav-text">管理内存</span></a></li></ol></li></ol></div>
             
 
           </div>
