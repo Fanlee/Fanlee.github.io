@@ -370,4 +370,5 @@ console.log(utcDate); // Sun Dec 01 1996 08:00:00 GMT+0800 (中国标准时间)
 ### 日期/时间组件方法
 日期/时间组件方法有下图这些。
 ![mark](http://optwq0urg.bkt.clouddn.com/blog/20170615/164010994.png?imageslim)
+
 ![mark](http://optwq0urg.bkt.clouddn.com/blog/20170615/164435910.png?imageslim)
