@@ -402,9 +402,9 @@
 <li>浅拷贝：仅仅复制对象的引用，而不是对象本身</li>
 <li>深拷贝：把复制的对象所引用的全部对象都复制一遍</li>
 </ul>
-<h2 id="浅拷贝的实现"><a href="#浅拷贝的实现" class="headerlink" title="浅拷贝的实现"></a>浅拷贝的实现</h2><h3 id="简单的复制语句"><a href="#简单的复制语句" class="headerlink" title="简单的复制语句"></a>简单的复制语句</h3><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">simpleClone</span><span class="params">(target)</span> </span>&#123;</div><div class="line">    <span class="keyword">var</span> obj = &#123;&#125;;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> attr <span class="keyword">in</span> target) &#123;</div><div class="line">      obj[attr] = target[attr];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> obj;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h2 id="浅拷贝的实现"><a href="#浅拷贝的实现" class="headerlink" title="浅拷贝的实现"></a>浅拷贝的实现</h2><h3 id="简单的复制语句"><a href="#简单的复制语句" class="headerlink" title="简单的复制语句"></a>简单的复制语句</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">simpleClone</span>(<span class="params">target</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> obj = &#123;&#125;;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> attr <span class="keyword">in</span> target) &#123;</div><div class="line">      obj[attr] = target[attr];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> obj;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 <h3 id="Object-assign"><a href="#Object-assign" class="headerlink" title="Object.assign()"></a>Object.assign()</h3><p>Object.assign() 方法可以把任意多个的源对象自身的可枚举属性拷贝给目标对象，然后返回目标对象。但是 Object.assign() 进行的是浅拷贝，拷贝的是对象的属性的引用，而不是对象本身。<br><figure class="highlight delphi"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = <span class="comment">&#123; a: &#123;a: "hello", b: 21&#125;</span> &#125;;</div><div class="line"><span class="keyword">var</span> newObj = <span class="keyword">Object</span>.assign(<span class="comment">&#123;&#125;</span>, obj);</div></pre></td></tr></table></figure></p>
-<h2 id="深拷贝的实现"><a href="#深拷贝的实现" class="headerlink" title="深拷贝的实现"></a>深拷贝的实现</h2><h3 id="JSON-parse"><a href="#JSON-parse" class="headerlink" title="JSON.parse()"></a>JSON.parse()</h3><p>最偷懒，也是浏览器层面优化比较好的方式，就是使用JSON的解析和序列化API,既简单，效率也非常高（v8层面又C++实现的解析引擎）:<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">JSON</span><span class="selector-class">.parse</span>(<span class="selector-tag">JSON</span><span class="selector-class">.stringify</span>(<span class="selector-tag">target</span>));</div></pre></td></tr></table></figure></p>
+<h2 id="深拷贝的实现"><a href="#深拷贝的实现" class="headerlink" title="深拷贝的实现"></a>深拷贝的实现</h2><h3 id="JSON-parse"><a href="#JSON-parse" class="headerlink" title="JSON.parse()"></a>JSON.parse()</h3><p>最偷懒，也是浏览器层面优化比较好的方式，就是使用JSON的解析和序列化API,既简单，效率也非常高（v8层面又C++实现的解析引擎）:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(target));</div></pre></td></tr></table></figure></p>
 <p>但是，这种拷贝的方法存在以下问题:</p>
 <ul>
 <li>一旦对象中存在函数类型（Function），此解析器会自动忽略掉Function</li>
@@ -460,8 +460,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/06/02/2017-06-02-Javascript高级程序设计-基础概念/" rel="next" title="Javascript高级程序设计-基础概念">
-                <i class="fa fa-chevron-left"></i> Javascript高级程序设计-基础概念
+              <a href="/2017/06/06/2017-06-08-Javascript高级程序设计-变量、作用域和内存问题/" rel="next" title="Javascript高级程序设计-变量、作用域和内存问题">
+                <i class="fa fa-chevron-left"></i> Javascript高级程序设计-变量、作用域和内存问题
               </a>
             
           </div>
@@ -470,8 +470,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/06/06/2017-06-08-Javascript高级程序设计-变量、作用域和内存问题/" rel="prev" title="Javascript高级程序设计-变量、作用域和内存问题">
-                Javascript高级程序设计-变量、作用域和内存问题 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/06/15/2017-06-15-Javascript高级程序设计-引用类型/" rel="prev" title="Javascript高级程序设计-引用类型">
+                Javascript高级程序设计-引用类型 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -546,7 +546,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
